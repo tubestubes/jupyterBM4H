@@ -1,0 +1,1242 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 4 &#8212; Jupyter Book of Probabilistic Programming and Bayesian Methods for Hackers</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 5" href="Ch5_LossFunctions_PyMC3.html" />
+    <link rel="prev" title="Chapter 3" href="Ch3_IntroMCMC_PyMC3.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Jupyter Book of Probabilistic Programming and Bayesian Methods for Hackers</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch1_Introduction_PyMC3.html">
+   Probabilistic Programming
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch2_MorePyMC_PyMC3.html">
+   Chapter 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch3_IntroMCMC_PyMC3.html">
+   Chapter 3
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch5_LossFunctions_PyMC3.html">
+   Chapter 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch6_Priors_PyMC3.html">
+   Chapter 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch7.1_DontOverfit.html">
+   Implementation of Salisman’s Don’t Overfit submission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch7.1_DontOverfit.html#develop-tim-s-model">
+   Develop Tim’s model
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nbs/Ch4_LawOfLargeNumbers_PyMC3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/nbs/Ch4_LawOfLargeNumbers_PyMC3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-greatest-theorem-never-told">
+   The greatest theorem never told
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-law-of-large-numbers">
+     The Law of Large Numbers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intuition">
+     Intuition
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-we-compute-var-z-though">
+     How do we compute
+     <span class="math notranslate nohighlight">
+      \(Var(Z)\)
+     </span>
+     though?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expected-values-and-probabilities">
+     Expected values and probabilities
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-does-this-all-have-to-do-with-bayesian-statistics">
+     What does this all have to do with Bayesian statistics?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-disorder-of-small-numbers">
+   The Disorder of Small Numbers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-aggregated-geographic-data">
+     Example: Aggregated geographic data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-kaggle-s-u-s-census-return-rate-challenge">
+     Example:  Kaggle’s
+     <em>
+      U.S. Census Return Rate Challenge
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-how-to-order-reddit-submissions">
+     Example: How to order Reddit submissions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting">
+     Sorting!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#but-this-is-too-slow-for-real-time">
+     But this is too slow for real-time!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extension-to-starred-rating-systems">
+     Extension to Starred rating systems
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-counting-github-stars">
+       Example: Counting Github stars
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#appendix">
+     Appendix
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#derivation-of-sorting-submissions-formula">
+       Derivation of sorting submissions formula
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercises">
+       Exercises
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#kicker-careers-ranked-by-make-percentage">
+       Kicker Careers Ranked by Make Percentage
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#average-household-income-by-programming-language">
+       Average household income by programming language
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="chapter-4">
+<h1>Chapter 4<a class="headerlink" href="#chapter-4" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Original</span> <span class="pre">content</span> <span class="pre">created</span> <span class="pre">by</span> <span class="pre">Cam</span> <span class="pre">Davidson-Pilon</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Ported</span> <span class="pre">to</span> <span class="pre">Python</span> <span class="pre">3</span> <span class="pre">and</span> <span class="pre">PyMC3</span> <span class="pre">by</span> <span class="pre">Max</span> <span class="pre">Margenot</span> <span class="pre">(&#64;clean_utensils)</span> <span class="pre">and</span> <span class="pre">Thomas</span> <span class="pre">Wiecki</span> <span class="pre">(&#64;twiecki)</span> <span class="pre">at</span> <span class="pre">Quantopian</span> <span class="pre">(&#64;quantopian)</span></code></p>
+<hr class="docutils" />
+<div class="section" id="the-greatest-theorem-never-told">
+<h2>The greatest theorem never told<a class="headerlink" href="#the-greatest-theorem-never-told" title="Permalink to this headline">¶</a></h2>
+<p>This chapter focuses on an idea that is always bouncing around our minds, but is rarely made explicit outside books devoted to statistics. In fact, we’ve been using this simple idea in every example thus far.</p>
+<div class="section" id="the-law-of-large-numbers">
+<h3>The Law of Large Numbers<a class="headerlink" href="#the-law-of-large-numbers" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(Z_i\)</span> be <span class="math notranslate nohighlight">\(N\)</span> independent samples from some probability distribution. According to <em>the Law of Large numbers</em>,  so long as the expected value <span class="math notranslate nohighlight">\(E[Z]\)</span> is finite, the following holds,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{N} \sum_{i=1}^N Z_i \rightarrow E[ Z ],  \;\;\; N \rightarrow \infty.\]</div>
+<p>In words:</p>
+<blockquote>
+<div><p>The average of a sequence of random variables from the same distribution converges to the expected value of that distribution.</p>
+</div></blockquote>
+<p>This may seem like a boring result, but it will be the most useful tool you use.</p>
+</div>
+<div class="section" id="intuition">
+<h3>Intuition<a class="headerlink" href="#intuition" title="Permalink to this headline">¶</a></h3>
+<p>If the above Law is somewhat surprising,  it can be made more clear by examining a simple example.</p>
+<p>Consider a random variable <span class="math notranslate nohighlight">\(Z\)</span> that can take only two values, <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>. Suppose we have a large number of samples of <span class="math notranslate nohighlight">\(Z\)</span>, denoting a specific sample <span class="math notranslate nohighlight">\(Z_i\)</span>. The Law says that we can approximate the expected value of <span class="math notranslate nohighlight">\(Z\)</span> by averaging over all samples. Consider the average:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{N} \sum_{i=1}^N \;Z_i \]</div>
+<p>By construction, <span class="math notranslate nohighlight">\(Z_i\)</span> can only take on <span class="math notranslate nohighlight">\(c_1\)</span> or <span class="math notranslate nohighlight">\(c_2\)</span>, hence we can partition the sum over these two values:</p>
+<p>\begin{align}
+\frac{1}{N} \sum_{i=1}^N ;Z_i
+&amp; =\frac{1}{N} \big(  \sum_{ Z_i = c_1}c_1 + \sum_{Z_i=c_2}c_2 \big) \[5pt]
+&amp; = c_1 \sum_{ Z_i = c_1}\frac{1}{N} + c_2 \sum_{ Z_i = c_2}\frac{1}{N} \[5pt]
+&amp; = c_1 \times \text{ (approximate frequency of <span class="math notranslate nohighlight">\(c_1\)</span>) } \
+&amp; ;;;;;;;;; + c_2 \times \text{ (approximate frequency of <span class="math notranslate nohighlight">\(c_2\)</span>) } \[5pt]
+&amp; \approx c_1 \times P(Z = c_1) + c_2 \times P(Z = c_2 ) \[5pt]
+&amp; = E[Z]
+\end{align}</p>
+<p>Equality holds in the limit, but we can get closer and closer by using more and more samples in the average. This Law holds for almost <em>any distribution</em>, minus some important cases we will encounter later.</p>
+<div class="section" id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<hr class="docutils" />
+<p>Below is a diagram of the Law of Large numbers in action for three different sequences of Poisson random variables.</p>
+<p>We sample <code class="docutils literal notranslate"><span class="pre">sample_size</span> <span class="pre">=</span> <span class="pre">100000</span></code> Poisson random variables with parameter <span class="math notranslate nohighlight">\(\lambda = 4.5\)</span>. (Recall the expected value of a Poisson random variable is equal to its parameter.) We calculate the average for the first <span class="math notranslate nohighlight">\(n\)</span> samples, for <span class="math notranslate nohighlight">\(n=1\)</span> to <code class="docutils literal notranslate"><span class="pre">sample_size</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">IPython.core.pylabtools</span> <span class="kn">import</span> <span class="n">figsize</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">figsize</span><span class="p">(</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mi">5</span> <span class="p">)</span>
+
+<span class="n">sample_size</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">expected_value</span> <span class="o">=</span> <span class="n">lambda_</span> <span class="o">=</span> <span class="mf">4.5</span>
+<span class="n">poi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span>
+<span class="n">N_samples</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">sample_size</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">poi</span><span class="p">(</span> <span class="n">lambda_</span><span class="p">,</span> <span class="n">sample_size</span> <span class="p">)</span> 
+    
+    <span class="n">partial_average</span> <span class="o">=</span> <span class="p">[</span> <span class="n">samples</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">N_samples</span> <span class="p">]</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">N_samples</span><span class="p">,</span> <span class="n">partial_average</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;average </span><span class="se">\</span>
+<span class="s2">of  $n$ samples; seq. </span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">k</span>)
+    
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">N_samples</span><span class="p">,</span> <span class="n">expected_value</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span> <span class="n">partial_average</span><span class="p">),</span> 
+    <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;true expected value&quot;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span> <span class="mf">4.35</span><span class="p">,</span> <span class="mf">4.65</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Convergence of the average of </span><span class="se">\n</span><span class="s2"> random variables to its </span><span class="se">\</span>
+<span class="s2">expected value&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s2">&quot;average of $n$ samples&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s2">&quot;# of samples, $n$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch4_LawOfLargeNumbers_PyMC3_3_0.png" src="../_images/Ch4_LawOfLargeNumbers_PyMC3_3_0.png" />
+</div>
+</div>
+<p>Looking at the above plot, it is clear that when the sample size is small, there is greater variation in the average (compare how <em>jagged and jumpy</em> the average is initially, then <em>smooths</em> out). All three paths <em>approach</em> the value 4.5, but just flirt with it as <span class="math notranslate nohighlight">\(N\)</span> gets large. Mathematicians and statistician have another name for <em>flirting</em>: convergence.</p>
+<p>Another very relevant question we can ask is <em>how quickly am I converging to the expected value?</em> Let’s plot something new. For a specific <span class="math notranslate nohighlight">\(N\)</span>, let’s do the above trials thousands of times and compute how far away we are from the true expected value, on average. But wait — <em>compute on average</em>? This is simply the law of large numbers again! For example, we are interested in, for a specific <span class="math notranslate nohighlight">\(N\)</span>, the quantity:</p>
+<div class="math notranslate nohighlight">
+\[D(N) = \sqrt{ \;E\left[\;\; \left( \frac{1}{N}\sum_{i=1}^NZ_i  - 4.5 \;\right)^2 \;\;\right] \;\;}\]</div>
+<p>The above formulae is interpretable as a distance away from the true value (on average), for some <span class="math notranslate nohighlight">\(N\)</span>. (We take the square root so the dimensions of the above quantity and our random variables are the same). As the above is an expected value, it can be approximated using the law of large numbers: instead of averaging <span class="math notranslate nohighlight">\(Z_i\)</span>, we calculate the following multiple times and average them:</p>
+<div class="math notranslate nohighlight">
+\[ Y_k = \left( \;\frac{1}{N}\sum_{i=1}^NZ_i  - 4.5 \; \right)^2 \]</div>
+<p>By computing the above many, <span class="math notranslate nohighlight">\(N_y\)</span>, times (remember, it is random), and averaging them:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{N_Y} \sum_{k=1}^{N_Y} Y_k \rightarrow E[ Y_k ] = E\;\left[\;\; \left( \frac{1}{N}\sum_{i=1}^NZ_i  - 4.5 \;\right)^2 \right]\]</div>
+<p>Finally, taking the square root:</p>
+<div class="math notranslate nohighlight">
+\[ \sqrt{\frac{1}{N_Y} \sum_{k=1}^{N_Y} Y_k} \approx D(N) \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="n">N_Y</span> <span class="o">=</span> <span class="mi">250</span> <span class="c1">#use this many to approximate D(N)</span>
+<span class="n">N_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">2500</span> <span class="p">)</span> <span class="c1">#use this many samples in the approx. to the variance.</span>
+<span class="n">D_N_results</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">N_array</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="n">lambda_</span> <span class="o">=</span> <span class="mf">4.5</span> 
+<span class="n">expected_value</span> <span class="o">=</span> <span class="n">lambda_</span> <span class="c1">#for X ~ Poi(lambda) , E[ X ] = lambda</span>
+
+<span class="k">def</span> <span class="nf">D_N</span><span class="p">(</span> <span class="n">n</span> <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function approx. D_n, the average variance of using n samples.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">poi</span><span class="p">(</span> <span class="n">lambda_</span><span class="p">,</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">N_Y</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">average_Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span>  <span class="p">(</span><span class="n">average_Z</span> <span class="o">-</span> <span class="n">expected_value</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>  <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">)</span>
+    
+    
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">N_array</span><span class="p">):</span>
+    <span class="n">D_N_results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span>  <span class="n">D_N</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s2">&quot;$N$&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s2">&quot;expected squared-distance from true value&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">N_array</span><span class="p">,</span> <span class="n">D_N_results</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;expected distance between</span><span class="se">\n\</span>
+<span class="s2">expected value and </span><span class="se">\n</span><span class="s2">average of $N$ random variables.&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">N_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">expected_value</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N_array</span><span class="p">),</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> 
+        <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\frac{\sqrt{\lambda}}{\sqrt</span><span class="si">{N}</span><span class="s2">}$&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;How &#39;fast&#39; is the sample average converging? &quot;</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch4_LawOfLargeNumbers_PyMC3_5_0.png" src="../_images/Ch4_LawOfLargeNumbers_PyMC3_5_0.png" />
+</div>
+</div>
+<p>As expected, the expected distance between our sample average and the actual expected value shrinks as <span class="math notranslate nohighlight">\(N\)</span> grows large. But also notice that the <em>rate</em> of convergence decreases, that is, we need only 10 000 additional samples to move from 0.020 to 0.015, a difference of 0.005, but <em>20 000</em> more samples to again decrease from 0.015  to 0.010, again only a 0.005 decrease.</p>
+<p>It turns out we can measure this rate of convergence. Above I have plotted a second line, the function <span class="math notranslate nohighlight">\(\sqrt{\lambda}/\sqrt{N}\)</span>. This was not chosen arbitrarily. In most cases, given a sequence of random variable distributed like <span class="math notranslate nohighlight">\(Z\)</span>, the rate of convergence to <span class="math notranslate nohighlight">\(E[Z]\)</span> of the Law of Large Numbers is</p>
+<div class="math notranslate nohighlight">
+\[ \frac{ \sqrt{ \; Var(Z) \; } }{\sqrt{N} }\]</div>
+<p>This is useful to know: for a given large <span class="math notranslate nohighlight">\(N\)</span>, we know (on average) how far away we are from the estimate. On the other hand, in a Bayesian setting, this can seem like a useless result: Bayesian analysis is OK with uncertainty so what’s the <em>statistical</em> point of adding extra precise digits? Though drawing samples can be so computationally cheap that having a <em>larger</em> <span class="math notranslate nohighlight">\(N\)</span> is fine too.</p>
+</div>
+</div>
+<div class="section" id="how-do-we-compute-var-z-though">
+<h3>How do we compute <span class="math notranslate nohighlight">\(Var(Z)\)</span> though?<a class="headerlink" href="#how-do-we-compute-var-z-though" title="Permalink to this headline">¶</a></h3>
+<p>The variance is simply another expected value that can be approximated! Consider the following, once we have the expected value (by using the Law of Large Numbers to estimate it, denote it <span class="math notranslate nohighlight">\(\mu\)</span>), we can estimate the variance:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{N}\sum_{i=1}^N \;(Z_i - \mu)^2 \rightarrow E[ \;( Z - \mu)^2 \;] = Var( Z )\]</div>
+</div>
+<div class="section" id="expected-values-and-probabilities">
+<h3>Expected values and probabilities<a class="headerlink" href="#expected-values-and-probabilities" title="Permalink to this headline">¶</a></h3>
+<p>There is an even less explicit relationship between expected value and estimating probabilities. Define the <em>indicator function</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbb{1}_A(x) = 
+\begin{cases} 1 &amp;  x \in A \\\\
+              0 &amp;  else
+\end{cases}
+\end{split}\]</div>
+<p>Then, by the law of large numbers, if we have many samples <span class="math notranslate nohighlight">\(X_i\)</span>, we can estimate the probability of an event <span class="math notranslate nohighlight">\(A\)</span>, denoted <span class="math notranslate nohighlight">\(P(A)\)</span>, by:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{N} \sum_{i=1}^N \mathbb{1}_A(X_i) \rightarrow E[\mathbb{1}_A(X)] =  P(A) \]</div>
+<p>Again, this is fairly obvious after a moments thought: the indicator function is only 1 if the event occurs, so we are summing only the times the event occurs and dividing by the total number of trials  (consider how we usually approximate probabilities using frequencies). For example, suppose we wish to estimate the probability that a <span class="math notranslate nohighlight">\(Z \sim Exp(.5)\)</span> is greater than 5, and we have many samples from a <span class="math notranslate nohighlight">\(Exp(.5)\)</span> distribution.</p>
+<div class="math notranslate nohighlight">
+\[ P( Z &gt; 5 ) =  \frac{1}{N}\sum_{i=1}^N \mathbb{1}_{z &gt; 5 }(Z_i) \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span> <span class="mf">0.5</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0001
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-does-this-all-have-to-do-with-bayesian-statistics">
+<h3>What does this all have to do with Bayesian statistics?<a class="headerlink" href="#what-does-this-all-have-to-do-with-bayesian-statistics" title="Permalink to this headline">¶</a></h3>
+<p><em>Point estimates</em>, to be introduced in the next chapter, in Bayesian inference are computed using expected values. In more analytical Bayesian inference, we would have been required to evaluate complicated expected values represented as multi-dimensional integrals. No longer. If we can sample from the posterior distribution directly, we simply need to evaluate averages. Much easier. If accuracy is a priority, plots like the ones above show how fast you are converging. And if further accuracy is  desired, just take more samples from the posterior.</p>
+<p>When is enough enough? When can you stop drawing samples from the posterior? That is the practitioners decision, and also dependent on the variance of the samples (recall from above a high variance means the average will converge slower).</p>
+<p>We also should understand when the Law of Large Numbers fails. As the name implies, and comparing the graphs above for small <span class="math notranslate nohighlight">\(N\)</span>, the Law is only true for large sample sizes. Without this, the asymptotic result is not reliable. Knowing in what situations the Law fails can give us <em>confidence in how unconfident we should be</em>. The next section deals with this issue.</p>
+</div>
+</div>
+<div class="section" id="the-disorder-of-small-numbers">
+<h2>The Disorder of Small Numbers<a class="headerlink" href="#the-disorder-of-small-numbers" title="Permalink to this headline">¶</a></h2>
+<p>The Law of Large Numbers is only valid as <span class="math notranslate nohighlight">\(N\)</span> gets <em>infinitely</em> large: never truly attainable.  While the law is a powerful tool, it is foolhardy to apply it liberally. Our next example illustrates this.</p>
+<div class="section" id="example-aggregated-geographic-data">
+<h3>Example: Aggregated geographic data<a class="headerlink" href="#example-aggregated-geographic-data" title="Permalink to this headline">¶</a></h3>
+<p>Often data comes in aggregated form. For instance, data may be grouped by state, county, or city level. Of course, the population numbers vary per geographic area. If the data is an average of some characteristic of each the geographic areas, we must be conscious of the Law of Large Numbers and how it can <em>fail</em> for areas with small populations.</p>
+<p>We will observe this on a toy dataset. Suppose there are five thousand counties in our dataset. Furthermore,  population number in each state are uniformly distributed between 100 and 1500. The way the population numbers are generated is irrelevant to the discussion, so we do not justify this. We are interested in measuring the average height of individuals per county. Unbeknownst to us, height does <strong>not</strong> vary across county, and each individual, regardless of the county he or she is currently living in, has the same distribution of what their height may be:</p>
+<div class="math notranslate nohighlight">
+\[ \text{height} \sim \text{Normal}(150, 15 ) \]</div>
+<p>We aggregate the individuals at the county level, so we only have data for the <em>average in the county</em>. What might our dataset look like?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> 
+<span class="n">std_height</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">mean_height</span> <span class="o">=</span> <span class="mi">150</span>
+
+<span class="n">n_counties</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">pop_generator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span>
+
+<span class="c1">#generate some artificial population numbers</span>
+<span class="n">population</span> <span class="o">=</span> <span class="n">pop_generator</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="n">n_counties</span> <span class="p">)</span>
+
+<span class="n">average_across_county</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="n">n_counties</span> <span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">n_counties</span> <span class="p">):</span>
+    <span class="c1">#generate some individuals and take the mean</span>
+    <span class="n">average_across_county</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mean_height</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="n">std_height</span><span class="p">,</span>
+                                        <span class="n">population</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    
+<span class="c1">#located the counties with the apparently most extreme average heights.</span>
+<span class="n">i_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span> <span class="n">average_across_county</span> <span class="p">)</span>
+<span class="n">i_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span> <span class="n">average_across_county</span> <span class="p">)</span>
+
+<span class="c1">#plot population size vs. recorded average</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="n">population</span><span class="p">,</span> <span class="n">average_across_county</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;#7A68A6&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="p">[</span> <span class="n">population</span><span class="p">[</span><span class="n">i_min</span><span class="p">],</span> <span class="n">population</span><span class="p">[</span><span class="n">i_max</span><span class="p">]</span> <span class="p">],</span> 
+           <span class="p">[</span><span class="n">average_across_county</span><span class="p">[</span><span class="n">i_min</span><span class="p">],</span> <span class="n">average_across_county</span><span class="p">[</span><span class="n">i_max</span><span class="p">]</span> <span class="p">],</span>
+           <span class="n">s</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">facecolors</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+           <span class="n">edgecolors</span> <span class="o">=</span> <span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="n">linewidths</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;extreme heights&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1500</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;Average height vs. County Population&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;County Population&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Average height in county&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1500</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;true expected </span><span class="se">\</span>
+<span class="s2">height&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">scatterpoints</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch4_LawOfLargeNumbers_PyMC3_10_0.png" src="../_images/Ch4_LawOfLargeNumbers_PyMC3_10_0.png" />
+</div>
+</div>
+<p>What do we observe? <em>Without accounting for population sizes</em> we run the risk of making an enormous inference error: if we ignored population size, we would say that the county with the shortest and tallest individuals have been correctly circled. But this inference is wrong for the following reason. These two counties do <em>not</em> necessarily have the most extreme heights. The error results from the calculated average of smaller populations not being a good reflection of the true expected value of the population (which in truth should be <span class="math notranslate nohighlight">\(\mu =150\)</span>). The sample size/population size/<span class="math notranslate nohighlight">\(N\)</span>, whatever you wish to call it,  is simply too small to invoke the Law of Large Numbers effectively.</p>
+<p>We provide more damning evidence against this inference. Recall the population numbers were uniformly distributed over 100 to 1500. Our intuition should tell us that the counties with the most extreme population heights should also be uniformly spread over 100 to 1500, and certainly independent of the county’s population. Not so. Below are the population sizes of the counties with the most extreme heights.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Population sizes of 10 &#39;shortest&#39; counties: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">population</span><span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span> <span class="n">average_across_county</span> <span class="p">)[:</span><span class="mi">10</span><span class="p">]</span> <span class="p">],</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Population sizes of 10 &#39;tallest&#39; counties: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">population</span><span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span> <span class="o">-</span><span class="n">average_across_county</span> <span class="p">)[:</span><span class="mi">10</span><span class="p">]</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Population sizes of 10 &#39;shortest&#39; counties: 
+[109 135 135 133 109 157 175 120 105 131] 
+
+Population sizes of 10 &#39;tallest&#39; counties: 
+[122 133 313 109 124 280 106 198 326 216]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Not at all uniform over 100 to 1500. This is an absolute failure of the Law of Large Numbers.</p>
+</div>
+<div class="section" id="example-kaggle-s-u-s-census-return-rate-challenge">
+<h3>Example:  Kaggle’s <em>U.S. Census Return Rate Challenge</em><a class="headerlink" href="#example-kaggle-s-u-s-census-return-rate-challenge" title="Permalink to this headline">¶</a></h3>
+<p>Below is data from the 2010 US census, which partitions populations beyond counties to the level of block groups (which are aggregates of city blocks or equivalents). The dataset is from a Kaggle machine learning competition some colleagues and I participated in. The objective was to predict the census letter mail-back rate of a group block, measured between 0 and 100, using census variables (median income, number of females in the block-group, number of trailer parks, average number of children etc.). Below we plot the census mail-back rate versus block group population:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mf">6.5</span> <span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span> <span class="s2">&quot;./data/census_data.csv&quot;</span><span class="p">,</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                        <span class="n">delimiter</span><span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;#7A68A6&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Census mail-back rate vs Population&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mail-back rate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;population of block-group&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mf">15e3</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">105</span><span class="p">)</span>
+
+<span class="n">i_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span>  <span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">i_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span>  <span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+ 
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="p">[</span> <span class="n">data</span><span class="p">[</span><span class="n">i_min</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">i_max</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">],</span> 
+             <span class="p">[</span> <span class="n">data</span><span class="p">[</span><span class="n">i_min</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>  <span class="n">data</span><span class="p">[</span><span class="n">i_max</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="p">],</span>
+             <span class="n">s</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">facecolors</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+             <span class="n">edgecolors</span> <span class="o">=</span> <span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="n">linewidths</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="s2">&quot;most extreme points&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">scatterpoints</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch4_LawOfLargeNumbers_PyMC3_14_0.png" src="../_images/Ch4_LawOfLargeNumbers_PyMC3_14_0.png" />
+</div>
+</div>
+<p>The above is a classic phenomenon in statistics. I say <em>classic</em> referring to the “shape” of the scatter plot above. It follows a classic triangular form, that tightens as we increase the sample size (as the Law of Large Numbers becomes more exact).</p>
+<p>I am perhaps overstressing the point and maybe I should have titled the book <em>“You don’t have big data problems!”</em>, but here again is an example of the trouble with <em>small datasets</em>, not big ones. Simply, small datasets cannot be processed using the Law of Large Numbers. Compare with applying the Law without hassle to big datasets (ex. big data). I mentioned earlier that paradoxically big data prediction problems are solved by relatively simple algorithms. The paradox is partially resolved by understanding that the Law of Large Numbers creates solutions that are <em>stable</em>, i.e. adding or subtracting a few data points will not affect the solution much. On the other hand, adding or removing data points to a small dataset can create very different results.</p>
+<p>For further reading on the hidden dangers of the Law of Large Numbers, I would highly recommend the excellent manuscript <a class="reference external" href="http://nsm.uh.edu/~dgraur/niv/TheMostDangerousEquation.pdf">The Most Dangerous Equation</a>.</p>
+</div>
+<div class="section" id="example-how-to-order-reddit-submissions">
+<h3>Example: How to order Reddit submissions<a class="headerlink" href="#example-how-to-order-reddit-submissions" title="Permalink to this headline">¶</a></h3>
+<p>You may have disagreed with the original statement that the Law of Large numbers is known to everyone, but only implicitly in our subconscious decision making. Consider ratings on online products: how often do you trust an average 5-star rating if there is only 1 reviewer? 2 reviewers? 3 reviewers? We implicitly understand that with such few reviewers that the average rating is <strong>not</strong> a good reflection of the true value of the product.</p>
+<p>This has created flaws in how we sort items, and more generally, how we compare items. Many people have realized that sorting online search results by their rating, whether the objects be books, videos, or online comments, return poor results. Often the seemingly top videos or comments have perfect ratings only from a few enthusiastic fans, and truly more quality videos or comments are hidden in later pages with <em>falsely-substandard</em> ratings of around 4.8. How can we correct this?</p>
+<p>Consider the popular site Reddit (I purposefully did not link to the website as you would never come back). The site hosts links to stories or images, called submissions, for people to comment on. Redditors can vote up or down on each submission (called upvotes and downvotes). Reddit, by default, will sort submissions to a given subreddit by Hot, that is, the submissions that have the most upvotes recently.</p>
+<img src="http://i.imgur.com/3v6bz9f.png" />
+<p>How would you determine which submissions are the best? There are a number of ways to achieve this:</p>
+<ol class="simple">
+<li><p><em>Popularity</em>: A submission is considered good if it has many upvotes. A problem with this model is that a submission with hundreds of upvotes, but thousands of downvotes. While being very <em>popular</em>, the submission is likely more controversial than best.</p></li>
+<li><p><em>Difference</em>: Using the <em>difference</em> of upvotes and downvotes. This solves the above problem, but fails when we consider the temporal nature of submission. Depending on when a submission is posted, the website may be experiencing high or low traffic. The difference method will bias the <em>Top</em> submissions to be the those made during high traffic periods, which have accumulated more upvotes than submissions that were not so graced, but are not necessarily the best.</p></li>
+<li><p><em>Time adjusted</em>:  Consider using Difference divided by the age of the submission. This creates a <em>rate</em>, something like <em>difference per second</em>, or <em>per minute</em>. An immediate counter-example is, if we use per second, a 1 second old submission with 1 upvote would be better than a 100 second old submission with 99 upvotes. One can avoid this by only considering at least t second old submission. But what is a good t value? Does this mean no submission younger than t is good? We end up comparing unstable quantities with stable quantities (young vs. old submissions).</p></li>
+<li><p><em>Ratio</em>: Rank submissions by the ratio of upvotes to total number of votes (upvotes plus downvotes). This solves the temporal issue, such that new submissions who score well can be considered Top just as likely as older submissions, provided they have many upvotes to total votes. The problem here is that a submission with a single upvote (ratio = 1.0) will beat a submission with 999 upvotes and 1 downvote (ratio = 0.999), but clearly the latter submission is <em>more likely</em> to be better.</p></li>
+</ol>
+<p>I used the phrase <em>more likely</em> for good reason. It is possible that the former submission, with a single upvote, is in fact a better submission than the later with 999 upvotes. The hesitation to agree with this is because we have not seen the other 999 potential votes the former submission might get. Perhaps it will achieve an additional 999 upvotes and 0 downvotes and be considered better than the latter, though not likely.</p>
+<p>What we really want is an estimate of the <em>true upvote ratio</em>. Note that the true upvote ratio is not the same as the observed upvote ratio: the true upvote ratio is hidden, and we only observe upvotes vs. downvotes (one can think of the true upvote ratio as “what is the underlying probability someone gives this submission a upvote, versus a downvote”). So the 999 upvote/1 downvote submission probably has a true upvote ratio close to 1, which we can assert with confidence thanks to the Law of Large Numbers, but on the other hand we are much less certain about the true upvote ratio of the submission with only a single upvote. Sounds like a Bayesian problem to me.</p>
+<p>One way to determine a prior on the upvote ratio is to look at the historical distribution of upvote ratios. This can be accomplished by scraping Reddit’s submissions and determining a distribution. There are a few problems with this technique though:</p>
+<ol class="simple">
+<li><p>Skewed data:  The vast majority of submissions have very few votes, hence there will be many submissions with ratios near the extremes (see the “triangular plot” in the above Kaggle dataset), effectively skewing our distribution to the extremes. One could try to only use submissions with votes greater than some threshold. Again, problems are encountered. There is a tradeoff between number of submissions available to use and a higher threshold with associated ratio precision.</p></li>
+<li><p>Biased data: Reddit is composed of different subpages, called subreddits. Two examples are <em>r/aww</em>, which posts pics of cute animals, and <em>r/politics</em>. It is very likely that the user behaviour towards submissions of these two subreddits are very different: visitors are likely friendly and affectionate in the former, and would therefore upvote submissions more, compared to the latter, where submissions are likely to be controversial and disagreed upon. Therefore not all submissions are the same.</p></li>
+</ol>
+<p>In light of these, I think it is better to use a <code class="docutils literal notranslate"><span class="pre">Uniform</span></code> prior.</p>
+<p>With our prior in place, we can find the posterior of the true upvote ratio. The Python script <code class="docutils literal notranslate"><span class="pre">top_showerthoughts_submissions.py</span></code> will scrape the best posts from the <code class="docutils literal notranslate"><span class="pre">showerthoughts</span></code> community on Reddit. This is a text-only community so the title of each post <em>is</em> the post. Below is the top post as well as some other sample posts:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#adding a number to the end of the %run call will get the ith top post.</span>
+<span class="o">%</span><span class="k">run</span> top_showerthoughts_submissions.py 2
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Post contents: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">top_post</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Post contents: 
+
+Toilet paper should be free and have advertising printed on it.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">contents: an array of the text from the last 100 top submissions to a subreddit</span>
+<span class="sd">votes: a 2d numpy array of upvotes, downvotes for each submission.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">n_submissions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">votes</span><span class="p">)</span>
+<span class="n">submissions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span> <span class="n">n_submissions</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Some Submissions (out of </span><span class="si">%d</span><span class="s2"> total) </span><span class="se">\n</span><span class="s2">-----------&quot;</span><span class="o">%</span><span class="k">n_submissions</span>)
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">submissions</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span> <span class="o">+</span> <span class="n">contents</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;upvotes/downvotes: &quot;</span><span class="p">,</span><span class="n">votes</span><span class="p">[</span><span class="n">i</span><span class="p">,:],</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Some Submissions (out of 98 total) 
+-----------
+&quot;Rappers from the 90&#39;s used guns when they had beef rappers today use Twitter.&quot;
+upvotes/downvotes:  [32  3] 
+
+&quot;All polls are biased towards people who are willing to take polls&quot;
+upvotes/downvotes:  [1918  101] 
+
+&quot;Taco Bell should give customers an extra tortilla so they can make a burrito out of all the stuff that spilled out of the other burritos they ate.&quot;
+upvotes/downvotes:  [79 17] 
+
+&quot;There should be an /r/alanismorissette where it&#39;s just examples of people using &quot;ironic&quot; incorrectly&quot;
+upvotes/downvotes:  [33  6] 
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a given true upvote ratio <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(N\)</span> votes, the number of upvotes will look like a Binomial random variable with parameters <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(N\)</span>. (This is because of the equivalence between upvote ratio and probability of upvoting versus downvoting, out of <span class="math notranslate nohighlight">\(N\)</span> possible votes/trials). We create a function that performs Bayesian inference on <span class="math notranslate nohighlight">\(p\)</span>, for a particular submission’s upvote/downvote pair.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+
+<span class="k">def</span> <span class="nf">posterior_upvote_ratio</span><span class="p">(</span> <span class="n">upvotes</span><span class="p">,</span> <span class="n">downvotes</span><span class="p">,</span> <span class="n">samples</span> <span class="o">=</span> <span class="mi">20000</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function accepts the number of upvotes and downvotes a particular submission recieved, </span>
+<span class="sd">    and the number of posterior samples to return to the user. Assumes a uniform prior.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">upvotes</span> <span class="o">+</span> <span class="n">downvotes</span>
+    <span class="k">with</span> <span class="n">pm</span><span class="o">.</span><span class="n">Model</span><span class="p">()</span> <span class="k">as</span> <span class="n">model</span><span class="p">:</span>
+        <span class="n">upvote_ratio</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="s2">&quot;upvote_ratio&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">observations</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Binomial</span><span class="p">(</span> <span class="s2">&quot;obs&quot;</span><span class="p">,</span>  <span class="n">N</span><span class="p">,</span> <span class="n">upvote_ratio</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">upvotes</span><span class="p">)</span>
+        
+        <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">pm</span><span class="o">.</span><span class="n">Metropolis</span><span class="p">())</span>
+    
+    <span class="n">burned_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">samples</span><span class="o">/</span><span class="mi">4</span><span class="p">):]</span>
+    <span class="k">return</span> <span class="n">burned_trace</span><span class="p">[</span><span class="s2">&quot;upvote_ratio&quot;</span><span class="p">]</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below are the resulting posterior distributions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span> <span class="mf">11.</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">posteriors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">colours</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#348ABD&quot;</span><span class="p">,</span> <span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="s2">&quot;#7A68A6&quot;</span><span class="p">,</span> <span class="s2">&quot;#467821&quot;</span><span class="p">,</span> <span class="s2">&quot;#CF4457&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">submissions</span><span class="p">)):</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">submissions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">posteriors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">posterior_upvote_ratio</span><span class="p">(</span> <span class="n">votes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">votes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">posteriors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">normed</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">.9</span><span class="p">,</span> 
+            <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="n">colours</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="k">5</span>], lw = 3,
+            <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;(</span><span class="si">%d</span><span class="s1"> up:</span><span class="si">%d</span><span class="s1"> down)</span><span class="se">\n</span><span class="si">%s</span><span class="s1">...&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">votes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">votes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">contents</span><span class="p">[</span><span class="n">j</span><span class="p">][:</span><span class="mi">50</span><span class="p">])</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">posteriors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">normed</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">.2</span><span class="p">,</span> 
+            <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;stepfilled&quot;</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="n">colours</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Posterior distributions of upvote ratios on different submissions&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applied interval-transform to upvote_ratio and added transformed upvote_ratio_interval_ to model.
+ [-------100%-------] 20000 of 20000 in 1.4 sec. | SPS: 14595.5 | ETA: 0.0Applied interval-transform to upvote_ratio and added transformed upvote_ratio_interval_ to model.
+ [-------100%-------] 20000 of 20000 in 1.3 sec. | SPS: 15189.5 | ETA: 0.0Applied interval-transform to upvote_ratio and added transformed upvote_ratio_interval_ to model.
+ [-------100%-------] 20000 of 20000 in 1.3 sec. | SPS: 15429.0 | ETA: 0.0Applied interval-transform to upvote_ratio and added transformed upvote_ratio_interval_ to model.
+ [-------100%-------] 20000 of 20000 in 1.3 sec. | SPS: 15146.5 | ETA: 0.0
+</pre></div>
+</div>
+<img alt="../_images/Ch4_LawOfLargeNumbers_PyMC3_23_1.png" src="../_images/Ch4_LawOfLargeNumbers_PyMC3_23_1.png" />
+</div>
+</div>
+<p>Some distributions are very tight, others have very long tails (relatively speaking), expressing our uncertainty with what the true upvote ratio might be.</p>
+</div>
+<div class="section" id="sorting">
+<h3>Sorting!<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h3>
+<p>We have been ignoring the goal of this exercise: how do we sort the submissions from <em>best to worst</em>? Of course, we cannot sort distributions, we must sort scalar numbers. There are many ways to distill a distribution down to a scalar: expressing the distribution through its expected value, or mean, is one way. Choosing the mean is a bad choice though. This is because the mean does not take into account the uncertainty of distributions.</p>
+<p>I  suggest using the <em>95% least plausible value</em>, defined as the value such that there is only a 5% chance the true parameter is lower (think of the lower bound on the 95% credible region). Below are the posterior distributions with the 95% least-plausible value plotted:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="n">posteriors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lower_limits</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">submissions</span><span class="p">)):</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">submissions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">posteriors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">normed</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">.9</span><span class="p">,</span> 
+            <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="n">colours</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;(</span><span class="si">%d</span><span class="s1"> up:</span><span class="si">%d</span><span class="s1"> down)</span><span class="se">\n</span><span class="si">%s</span><span class="s1">...&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">votes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">votes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">contents</span><span class="p">[</span><span class="n">j</span><span class="p">][:</span><span class="mi">50</span><span class="p">])</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span> <span class="n">posteriors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">normed</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">.2</span><span class="p">,</span> 
+            <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;stepfilled&quot;</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="n">colours</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span> <span class="n">posteriors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)[</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.05</span><span class="o">*</span><span class="n">N</span><span class="p">)</span> <span class="p">]</span>
+    <span class="c1">#plt.vlines( v, 0, 15 , color = &quot;k&quot;, alpha = 1, linewidths=3 )</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span> <span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colours</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">linestyles</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span>  <span class="n">linewidths</span><span class="o">=</span><span class="mi">3</span>  <span class="p">)</span>
+    <span class="n">lower_limits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Posterior distributions of upvote ratios on different submissions&quot;</span><span class="p">);</span>
+<span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="n">lower_limits</span> <span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="n">lower_limits</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 0 2 3] [0.80034320917496615, 0.94092009444598201, 0.74660503350561902, 0.72190353389632911]
+</pre></div>
+</div>
+<img alt="../_images/Ch4_LawOfLargeNumbers_PyMC3_25_1.png" src="../_images/Ch4_LawOfLargeNumbers_PyMC3_25_1.png" />
+</div>
+</div>
+<p>The best submissions, according to our procedure, are the submissions that are <em>most-likely</em> to score a high percentage of upvotes. Visually those are the submissions with the 95% least plausible value close to 1.</p>
+<p>Why is sorting based on this quantity a good idea? By ordering by the 95% least plausible value, we are being the most conservative with what we think is best.  When using the lower-bound of the 95% credible interval, we believe with high certainty that the ‘true upvote ratio’ is at the very least equal to this value (or greater), thereby ensuring that the best submissions are still on top. Under this ordering, we impose the following very natural properties:</p>
+<ol class="simple">
+<li><p>given two submissions with the same observed upvote ratio, we will assign the submission with more votes as better (since we are more confident it has a higher ratio).</p></li>
+<li><p>given two submissions with the same number of votes, we still assign the submission with more upvotes as <em>better</em>.</p></li>
+</ol>
+</div>
+<div class="section" id="but-this-is-too-slow-for-real-time">
+<h3>But this is too slow for real-time!<a class="headerlink" href="#but-this-is-too-slow-for-real-time" title="Permalink to this headline">¶</a></h3>
+<p>I agree, computing the posterior of every submission takes a long time, and by the time you have computed it, likely the data has changed. I delay the mathematics to the appendix, but I suggest using the following formula to compute the lower bound very fast.</p>
+<div class="math notranslate nohighlight">
+\[ \frac{a}{a + b} - 1.65\sqrt{ \frac{ab}{ (a+b)^2(a + b +1 ) } }\]</div>
+<p>where
+\begin{align}
+&amp; a = 1 + u \
+&amp; b = 1 + d \
+\end{align}</p>
+<p><span class="math notranslate nohighlight">\(u\)</span> is the number of upvotes, and <span class="math notranslate nohighlight">\(d\)</span> is the number of downvotes. The formula is a shortcut in Bayesian inference, which will be further explained in Chapter 6 when we discuss priors in more detail.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">intervals</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">u</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">d</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">std_err</span> <span class="o">=</span> <span class="mf">1.65</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="mf">1.</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="n">mu</span><span class="p">,</span> <span class="n">std_err</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Approximate lower bounds:&quot;</span><span class="p">)</span>
+<span class="n">posterior_mean</span><span class="p">,</span> <span class="n">std_err</span>  <span class="o">=</span> <span class="n">intervals</span><span class="p">(</span><span class="n">votes</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">votes</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">lb</span> <span class="o">=</span> <span class="n">posterior_mean</span> <span class="o">-</span> <span class="n">std_err</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lb</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Top 40 Sorted according to approximate lower bounds:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span> <span class="o">-</span><span class="n">lb</span> <span class="p">)</span>
+<span class="n">ordered_contents</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">order</span><span class="p">[:</span><span class="mi">40</span><span class="p">]:</span>
+    <span class="n">ordered_contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">contents</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">votes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">votes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">contents</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Approximate lower bounds:
+[ 0.93349005  0.9532194   0.94149718  0.90859764  0.88705356  0.8558795
+  0.85644927  0.93752679  0.95767101  0.91131012  0.910073    0.915999
+  0.9140058   0.83276025  0.87593961  0.87436674  0.92830849  0.90642832
+  0.89187973  0.89950891  0.91295322  0.78607629  0.90250203  0.79950031
+  0.85219422  0.83703439  0.7619808   0.81301134  0.7313114   0.79137561
+  0.82701445  0.85542404  0.82309334  0.75211374  0.82934814  0.82674958
+  0.80933194  0.87448152  0.85350205  0.75460106  0.82934814  0.74417233
+  0.79924258  0.8189683   0.75460106  0.90744016  0.83838023  0.78802791
+  0.78400654  0.64638659  0.62047936  0.76137738  0.81365241  0.83838023
+  0.78457533  0.84980627  0.79249393  0.69020315  0.69593922  0.70758151
+  0.70268831  0.91620627  0.73346864  0.86382644  0.80877728  0.72708753
+  0.79822085  0.68333632  0.81699014  0.65100453  0.79809005  0.74702492
+  0.77318569  0.83221179  0.66500492  0.68134548  0.7249286   0.59412132
+  0.58191312  0.73142963  0.73142963  0.66251028  0.87152685  0.74107856
+  0.60935684  0.87152685  0.77484517  0.88783675  0.81814153  0.54569789
+  0.6122496   0.75613569  0.53511973  0.74556767  0.81814153  0.85773646
+  0.6122496   0.64814153]
+
+
+Top 40 Sorted according to approximate lower bounds:
+
+
+596 18 Someone should develop an AI specifically for reading Terms &amp; Conditions and flagging dubious parts.
+-------------
+2360 98 Porn is the only industry where it is not only acceptable but standard to separate people based on race, sex and sexual preference.
+-------------
+1918 101 All polls are biased towards people who are willing to take polls
+-------------
+948 50 They should charge less for drinks in the drive-thru because you can&#39;t refill them.
+-------------
+3740 239 When I was in elementary school and going through the DARE program, I was positive a gang of older kids was going to corner me and force me to smoke pot. Then I became an adult and realized nobody is giving free drugs to somebody that doesn&#39;t want them.
+-------------
+166 7 &quot;Noted&quot; is the professional way of saying &quot;K&quot;.
+-------------
+29 0 Rewatching Mr. Bean, I&#39;ve realised that the character is an eccentric genius and not a blithering idiot.
+-------------
+289 18 You&#39;ve been doing weird cameos in your friends&#39; dreams since kindergarten.
+-------------
+269 17 At some point every parent has stopped wiping their child&#39;s butt and hoped for the best.
+-------------
+121 6 Is it really fair to say a person over 85 has heart failure? Technically, that heart has done exceptionally well.
+-------------
+535 40 It&#39;s surreal to think that the sun and moon and stars we gaze up at are the same objects that have been observed for millenia, by everyone in the history of humanity from cavemen to Aristotle to Jesus to George Washington.
+-------------
+527 40 I wonder if America&#39;s internet is censored in a similar way that North Korea&#39;s is, but we have no idea of it happening.
+-------------
+1510 131 Kenny&#39;s family is poor because they&#39;re always paying for his funeral.
+-------------
+43 1 If I was as careful with my whole paycheck as I am with my last $20 I&#39;d be a whole lot better off
+-------------
+162 10 Black hair ties are probably the most popular bracelets in the world.
+-------------
+107 6 The best answer to the interview question &quot;What is your greatest weakness?&quot; is &quot;interviews&quot;.
+-------------
+127 8 Surfing the internet without ads feels like a summer evening without mosquitoes
+-------------
+159 12 I wonder if Superman ever put a pair of glasses on Lois Lane&#39;s dog, and she was like &quot;what&#39;s this Clark? Did you get me a new dog?&quot;
+-------------
+21 0 Sitting on a cold toilet seat or a warm toilet seat both suck for different reasons.
+-------------
+1414 157 My life is really like Rihanna&#39;s song, &quot;just work work work work work&quot; and the rest of it I can&#39;t really understand.
+-------------
+222 22 I&#39;m honestly slightly concerned how often Reddit commenters make me laugh compared to my real life friends.
+-------------
+52 3 The world must have been a spookier place altogether when candles and gas lamps were the only sources of light at night besides the moon and the stars.
+-------------
+194 19 I have not been thankful enough in the last few years that the Black Eyed Peas are no longer ever on the radio
+-------------
+18 0 Living on the coast is having the window seat of the land you live on.
+-------------
+18 0 Binoculars are like walkie talkies for the deaf.
+-------------
+28 1 Now that I am a parent of multiple children I have realized that my parents were lying through their teeth when they said they didn&#39;t have a favorite.
+-------------
+16 0 I sneer at people who read tabloids, but every time I look someone up on Wikipedia the first thing I look for is what controversies they&#39;ve been involved in.
+-------------
+1559 233 Kid&#39;s menus at restaurants should be smaller portions of the same adult dishes at lower prices and not the junk food that they usually offer.
+-------------
+1426 213 Eventually once all phones are waterproof we&#39;ll be able to push people into pools again
+-------------
+61 5 Myspace is so outdated that jokes about it being outdated has become outdated
+-------------
+52 4 As a kid, seeing someone step on a banana peel and not slip was a disappointment.
+-------------
+90 9 Yahoo!® is the RadioShack® of the Internet.
+-------------
+34 2 People who &quot;tell it like it is&quot; rarely do so to say something nice
+-------------
+39 3 Closing your eyes after turning off your alarm is a very dangerous game.
+-------------
+39 3 Your known &#39;first word&#39; is the first word your parents heard you speak. In reality, it may have been a completely different word you said when you were alone.
+-------------
+87 10 &quot;Smells Like Teen Spirit&quot; is as old to listeners of today as &quot;Yellow Submarine&quot; was to listeners of 1991.
+-------------
+239 36 if an ocean didnt stop immigrants from coming to America what makes us think a wall will?
+-------------
+22 1 The phonebook was the biggest invasion of privacy that everyone was oddly ok with.
+-------------
+57 6 I&#39;m actually the most productive when I procrastinate because I&#39;m doing everything I possibly can to avoid the main task at hand.
+-------------
+57 6 You will never feel how long time is until you have allergies and snot slowly dripping out of your nostrils, while sitting in a classroom with no tissues.
+-------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can view the ordering visually by plotting the posterior mean and bounds, and sorting by the lower bound. In the plot below, notice that the left error-bar is sorted (as we suggested this is the best way to determine an ordering), so the means, indicated by dots, do not follow any strong pattern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_order</span> <span class="o">=</span> <span class="n">order</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">40</span><span class="p">:]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span> <span class="n">posterior_mean</span><span class="p">[</span><span class="n">r_order</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">r_order</span><span class="p">)</span> <span class="p">),</span> 
+               <span class="n">xerr</span><span class="o">=</span><span class="n">std_err</span><span class="p">[</span><span class="n">r_order</span><span class="p">],</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#7A68A6&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">r_order</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span> <span class="p">),</span> <span class="nb">map</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[:</span><span class="mi">30</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="n">ordered_contents</span><span class="p">)</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch4_LawOfLargeNumbers_PyMC3_29_0.png" src="../_images/Ch4_LawOfLargeNumbers_PyMC3_29_0.png" />
+</div>
+</div>
+<p>In the graphic above, you can see why sorting by mean would be sub-optimal.</p>
+</div>
+<div class="section" id="extension-to-starred-rating-systems">
+<h3>Extension to Starred rating systems<a class="headerlink" href="#extension-to-starred-rating-systems" title="Permalink to this headline">¶</a></h3>
+<p>The above procedure works well for upvote-downvotes schemes, but what about systems that use star ratings, e.g. 5 star rating systems. Similar problems apply with simply taking the average: an item with two perfect ratings would beat an item with thousands of perfect ratings, but a single sub-perfect rating.</p>
+<p>We can consider the upvote-downvote problem above as binary: 0 is a downvote, 1 if an upvote. A <span class="math notranslate nohighlight">\(N\)</span>-star rating system can be seen as a more continuous version of above, and we can set <span class="math notranslate nohighlight">\(n\)</span> stars rewarded is equivalent to rewarding <span class="math notranslate nohighlight">\(\frac{n}{N}\)</span>. For example, in a 5-star system, a 2 star rating corresponds to 0.4. A perfect rating is a 1. We can use the same formula as before, but with <span class="math notranslate nohighlight">\(a,b\)</span> defined differently:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{a}{a + b} - 1.65\sqrt{ \frac{ab}{ (a+b)^2(a + b +1 ) } }\]</div>
+<p>where</p>
+<p>\begin{align}
+&amp; a = 1 + S \
+&amp; b = 1 + N - S \
+\end{align}</p>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of users who rated, and <span class="math notranslate nohighlight">\(S\)</span> is the sum of all the ratings, under the equivalence scheme mentioned above.</p>
+<div class="section" id="example-counting-github-stars">
+<h4>Example: Counting Github stars<a class="headerlink" href="#example-counting-github-stars" title="Permalink to this headline">¶</a></h4>
+<p>What is the average number of stars a Github repository has? How would you calculate this? There are over 6 million respositories, so there is more than enough data to invoke the Law of Large numbers. Let’s start pulling some data. TODO</p>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h3>
+<p>While the Law of Large Numbers is cool, it is only true so much as its name implies: with large sample sizes only. We have seen how our inference can be affected by not considering <em>how the data is shaped</em>.</p>
+<ol class="simple">
+<li><p>By (cheaply) drawing many samples from the posterior distributions, we can ensure that the Law of Large Number applies as we approximate expected values (which we will do in the next chapter).</p></li>
+<li><p>Bayesian inference understands that with small sample sizes, we can observe wild randomness. Our posterior distribution will reflect this by being more spread rather than tightly concentrated. Thus, our inference should be correctable.</p></li>
+<li><p>There are major implications of not considering the sample size, and trying to sort objects that are unstable leads to pathological orderings. The method provided above solves this problem.</p></li>
+</ol>
+</div>
+<div class="section" id="appendix">
+<h3>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="derivation-of-sorting-submissions-formula">
+<h4>Derivation of sorting submissions formula<a class="headerlink" href="#derivation-of-sorting-submissions-formula" title="Permalink to this headline">¶</a></h4>
+<p>Basically what we are doing is using a Beta prior (with parameters <span class="math notranslate nohighlight">\(a=1, b=1\)</span>, which is a uniform distribution), and using a Binomial likelihood with observations <span class="math notranslate nohighlight">\(u, N = u+d\)</span>. This means our posterior is a Beta distribution with parameters <span class="math notranslate nohighlight">\(a' = 1 + u, b' = 1 + (N - u) = 1+d\)</span>. We then need to find the value, <span class="math notranslate nohighlight">\(x\)</span>, such that 0.05 probability is less than <span class="math notranslate nohighlight">\(x\)</span>. This is usually done by inverting the CDF (<a class="reference external" href="http://en.wikipedia.org/wiki/Cumulative_Distribution_Function">Cumulative Distribution Function</a>), but the CDF of the beta, for integer parameters, is known but is a large sum [3].</p>
+<p>We instead use a Normal approximation. The mean of the Beta is <span class="math notranslate nohighlight">\(\mu = a'/(a'+b')\)</span> and the variance is</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2 = \frac{a'b'}{ (a' + b')^2(a'+b'+1) }\]</div>
+<p>Hence we solve the following equation for <span class="math notranslate nohighlight">\(x\)</span> and have an approximate lower bound.</p>
+<div class="math notranslate nohighlight">
+\[ 0.05 = \Phi\left( \frac{(x - \mu)}{\sigma}\right) \]</div>
+<p><span class="math notranslate nohighlight">\(\Phi\)</span> being the <a class="reference external" href="http://en.wikipedia.org/wiki/Normal_distribution#Cumulative_distribution">cumulative distribution for the normal distribution</a></p>
+</div>
+<div class="section" id="exercises">
+<h4>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h4>
+<p>1. How would you estimate the quantity <span class="math notranslate nohighlight">\(E\left[ \cos{X} \right]\)</span>, where <span class="math notranslate nohighlight">\(X \sim \text{Exp}(4)\)</span>? What about <span class="math notranslate nohighlight">\(E\left[ \cos{X} | X \lt 1\right]\)</span>, i.e. the expected value <em>given</em> we know <span class="math notranslate nohighlight">\(X\)</span> is less than 1? Would you need more samples than the original samples size to be equally accurate?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Enter code here</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="p">(</span> <span class="n">scale</span><span class="o">=</span><span class="mi">4</span> <span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mf">1e5</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="p">)</span>
+<span class="c1">## ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>2. The following table was located in the paper “Going for Three: Predicting the Likelihood of Field Goal Success with Logistic Regression” [2]. The table ranks football field-goal kickers by their percent of non-misses. What mistake have the researchers made?</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="kicker-careers-ranked-by-make-percentage">
+<h4>Kicker Careers Ranked by Make Percentage<a class="headerlink" href="#kicker-careers-ranked-by-make-percentage" title="Permalink to this headline">¶</a></h4>
+<table><tbody><tr><th>Rank </th><th>Kicker </th><th>Make % </th><th>Number  of Kicks</th></tr><tr><td>1 </td><td>Garrett Hartley </td><td>87.7 </td><td>57</td></tr><tr><td>2</td><td> Matt Stover </td><td>86.8 </td><td>335</td></tr><tr><td>3 </td><td>Robbie Gould </td><td>86.2 </td><td>224</td></tr><tr><td>4 </td><td>Rob Bironas </td><td>86.1 </td><td>223</td></tr><tr><td>5</td><td> Shayne Graham </td><td>85.4 </td><td>254</td></tr><tr><td>… </td><td>… </td><td>…</td><td> </td></tr><tr><td>51</td><td> Dave Rayner </td><td>72.2 </td><td>90</td></tr><tr><td>52</td><td> Nick Novak </td><td>71.9 </td><td>64</td></tr><tr><td>53 </td><td>Tim Seder </td><td>71.0 </td><td>62</td></tr><tr><td>54 </td><td>Jose Cortez </td><td>70.7</td><td> 75</td></tr><tr><td>55 </td><td>Wade Richey </td><td>66.1</td><td> 56</td></tr></tbody></table><p>In August 2013, <a class="reference external" href="http://bpodgursky.wordpress.com/2013/08/21/average-income-per-programming-language/">a popular post</a> on the average income per programmer of different languages was trending. Here’s the summary chart: (reproduced without permission, cause when you lie with stats, you gunna get the hammer). What do you notice about the extremes?</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="average-household-income-by-programming-language">
+<h4>Average household income by programming language<a class="headerlink" href="#average-household-income-by-programming-language" title="Permalink to this headline">¶</a></h4>
+<table >
+ <tr><td>Language</td><td>Average Household Income ($)</td><td>Data Points</td></tr>
+ <tr><td>Puppet</td><td>87,589.29</td><td>112</td></tr>
+ <tr><td>Haskell</td><td>89,973.82</td><td>191</td></tr>
+ <tr><td>PHP</td><td>94,031.19</td><td>978</td></tr>
+ <tr><td>CoffeeScript</td><td>94,890.80</td><td>435</td></tr>
+ <tr><td>VimL</td><td>94,967.11</td><td>532</td></tr>
+ <tr><td>Shell</td><td>96,930.54</td><td>979</td></tr>
+ <tr><td>Lua</td><td>96,930.69</td><td>101</td></tr>
+ <tr><td>Erlang</td><td>97,306.55</td><td>168</td></tr>
+ <tr><td>Clojure</td><td>97,500.00</td><td>269</td></tr>
+ <tr><td>Python</td><td>97,578.87</td><td>2314</td></tr>
+ <tr><td>JavaScript</td><td>97,598.75</td><td>3443</td></tr>
+ <tr><td>Emacs Lisp</td><td>97,774.65</td><td>355</td></tr>
+ <tr><td>C#</td><td>97,823.31</td><td>665</td></tr>
+ <tr><td>Ruby</td><td>98,238.74</td><td>3242</td></tr>
+ <tr><td>C++</td><td>99,147.93</td><td>845</td></tr>
+ <tr><td>CSS</td><td>99,881.40</td><td>527</td></tr>
+ <tr><td>Perl</td><td>100,295.45</td><td>990</td></tr>
+ <tr><td>C</td><td>100,766.51</td><td>2120</td></tr>
+ <tr><td>Go</td><td>101,158.01</td><td>231</td></tr>
+ <tr><td>Scala</td><td>101,460.91</td><td>243</td></tr>
+ <tr><td>ColdFusion</td><td>101,536.70</td><td>109</td></tr>
+ <tr><td>Objective-C</td><td>101,801.60</td><td>562</td></tr>
+ <tr><td>Groovy</td><td>102,650.86</td><td>116</td></tr>
+ <tr><td>Java</td><td>103,179.39</td><td>1402</td></tr>
+ <tr><td>XSLT</td><td>106,199.19</td><td>123</td></tr>
+ <tr><td>ActionScript</td><td>108,119.47</td><td>113</td></tr>
+</table></div>
+</div>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Wainer, Howard. <em>The Most Dangerous Equation</em>. American Scientist, Volume 95.</p></li>
+<li><p>Clarck, Torin K., Aaron W. Johnson, and Alexander J. Stimpson. “Going for Three: Predicting the Likelihood of Field Goal Success with Logistic Regression.” (2013): n. page. <a class="reference external" href="http://www.sloansportsconference.com/wp-content/uploads/2013/Going%20for%20Three%20Predicting%20the%20Likelihood%20of%20Field%20Goal%20Success%20with%20Logistic%20Regression.pdf">Web</a>. 20 Feb. 2013.</p></li>
+<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Beta_function#Incomplete_beta_function">http://en.wikipedia.org/wiki/Beta_function#Incomplete_beta_function</a></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="k">def</span> <span class="nf">css_styling</span><span class="p">():</span>
+    <span class="n">styles</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../styles/custom.css&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">styles</span><span class="p">)</span>
+<span class="n">css_styling</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+    @font-face {
+        font-family: "Computer Modern";
+        src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunss.otf');
+    }
+    @font-face {
+        font-family: "Computer Modern";
+        font-weight: bold;
+        src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunsx.otf');
+    }
+    @font-face {
+        font-family: "Computer Modern";
+        font-style: oblique;
+        src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunsi.otf');
+    }
+    @font-face {
+        font-family: "Computer Modern";
+        font-weight: bold;
+        font-style: oblique;
+        src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunso.otf');
+    }
+    div.cell{
+        width:800px;
+        margin-left:16% !important;
+        margin-right:auto;
+    }
+    h1 {
+        font-family: Helvetica, serif;
+    }
+    h4{
+        margin-top:12px;
+        margin-bottom: 3px;
+       }
+    div.text_cell_render{
+        font-family: Computer Modern, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        line-height: 145%;
+        font-size: 130%;
+        width:800px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .CodeMirror{
+            font-family: "Source Code Pro", source-code-pro,Consolas, monospace;
+    }
+    .prompt{
+        display: None;
+    }
+    .text_cell_render h5 {
+        font-weight: 300;
+        font-size: 22pt;
+        color: #4057A1;
+        font-style: italic;
+        margin-bottom: .5em;
+        margin-top: 0.5em;
+        display: block;
+    }
+
+    .warning{
+        color: rgb( 240, 20, 20 )
+        }  
+</style>
+<script>
+    MathJax.Hub.Config({
+                        TeX: {
+                           extensions: ["AMSmath.js"]
+                           },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                },
+                displayAlign: 'center', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 4}}
+                }
+        });
+</script>
+</div></div>
+</div>
+<style>
+    img{
+        max-width:800px}
+</style></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nbs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Ch3_IntroMCMC_PyMC3.html" title="previous page">Chapter 3</a>
+    <a class='right-next' id="next-link" href="Ch5_LossFunctions_PyMC3.html" title="next page">Chapter 5</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By CamDavidsonPilon<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1653 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 6 &#8212; Jupyter Book of Probabilistic Programming and Bayesian Methods for Hackers</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Implementation of Salisman’s Don’t Overfit submission" href="Ch7.1_DontOverfit.html" />
+    <link rel="prev" title="Chapter 5" href="Ch5_LossFunctions_PyMC3.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Jupyter Book of Probabilistic Programming and Bayesian Methods for Hackers</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch1_Introduction_PyMC3.html">
+   Probabilistic Programming
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch2_MorePyMC_PyMC3.html">
+   Chapter 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch3_IntroMCMC_PyMC3.html">
+   Chapter 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch4_LawOfLargeNumbers_PyMC3.html">
+   Chapter 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch5_LossFunctions_PyMC3.html">
+   Chapter 5
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch7.1_DontOverfit.html">
+   Implementation of Salisman’s Don’t Overfit submission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch7.1_DontOverfit.html#develop-tim-s-model">
+   Develop Tim’s model
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nbs/Ch6_Priors_PyMC3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/nbs/Ch6_Priors_PyMC3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-our-priorities-straight">
+   Getting our priorities straight
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subjective-vs-objective-priors">
+     Subjective vs Objective priors
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#subjective-priors">
+       Subjective Priors
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decision-decisions">
+     Decision, decisions…
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#empirical-bayes">
+     Empirical Bayes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#useful-priors-to-know-about">
+   Useful priors to know about
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-gamma-distribution">
+     The Gamma distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-wishart-distribution">
+     The Wishart distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-beta-distribution">
+     The Beta distribution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-bayesian-multi-armed-bandits">
+       Example: Bayesian Multi-Armed Bandits
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applications">
+     Applications
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-proposed-solution">
+     A Proposed Solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-measure-of-good">
+     A Measure of
+     <em>
+      Good
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extending-the-algorithm">
+     Extending the algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eliciting-expert-prior">
+   Eliciting expert prior
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trial-roulette-method">
+     Trial roulette method
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-stock-returns">
+       Example: Stock Returns
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#protips-for-the-wishart-distribution">
+     Protips for the Wishart distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conjugate-priors">
+   Conjugate Priors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jefferys-priors">
+   Jefferys Priors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#effect-of-the-prior-as-n-increases">
+   Effect of the prior as
+   <span class="math notranslate nohighlight">
+    \(N\)
+   </span>
+   increases
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayesian-perspective-of-penalized-linear-regressions">
+     Bayesian perspective of Penalized Linear Regressions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#penalized-least-squares">
+       Penalized least-squares
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#references">
+         References
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="chapter-6">
+<h1>Chapter 6<a class="headerlink" href="#chapter-6" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Original</span> <span class="pre">content</span> <span class="pre">created</span> <span class="pre">by</span> <span class="pre">Cam</span> <span class="pre">Davidson-Pilon</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Ported</span> <span class="pre">to</span> <span class="pre">Python</span> <span class="pre">3</span> <span class="pre">and</span> <span class="pre">PyMC3</span> <span class="pre">by</span> <span class="pre">Max</span> <span class="pre">Margenot</span> <span class="pre">(&#64;clean_utensils)</span> <span class="pre">and</span> <span class="pre">Thomas</span> <span class="pre">Wiecki</span> <span class="pre">(&#64;twiecki)</span> <span class="pre">at</span> <span class="pre">Quantopian</span> <span class="pre">(&#64;quantopian)</span></code></p>
+<hr class="docutils" />
+<p>This chapter of <a class="reference external" href="https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers">Bayesian Methods for Hackers</a> focuses on the most debated and discussed part of Bayesian methodologies: how to choose an appropriate prior distribution. We also present how the prior’s influence changes as our dataset increases, and an interesting relationship between priors and penalties on linear regression.</p>
+<div class="section" id="getting-our-priorities-straight">
+<h2>Getting our priorities straight<a class="headerlink" href="#getting-our-priorities-straight" title="Permalink to this headline">¶</a></h2>
+<p>Up until now, we have mostly ignored our choice of priors. This is unfortunate as we can be very expressive with our priors, but we also must be careful about choosing them. This is especially true if we want to be objective, that is, not to express any personal beliefs in the priors.</p>
+<div class="section" id="subjective-vs-objective-priors">
+<h3>Subjective vs Objective priors<a class="headerlink" href="#subjective-vs-objective-priors" title="Permalink to this headline">¶</a></h3>
+<p>Bayesian priors can be classified into two classes: <em>objective</em> priors, which aim to allow the data to influence the posterior the most, and <em>subjective</em> priors, which allow the practitioner to express his or her views into the prior.</p>
+<p>What is an example of an objective prior? We have seen some already, including the <em>flat</em> prior, which is a uniform distribution over the entire possible range of the unknown. Using a flat prior implies that we give each possible value an equal weighting. Choosing this type of prior is invoking what is called “The Principle of Indifference”, literally we have no prior reason to favor one value over another. Calling a flat prior over a restricted space an objective prior is not correct, though it seems similar. If we know <span class="math notranslate nohighlight">\(p\)</span> in a Binomial model is greater than 0.5, then <span class="math notranslate nohighlight">\(\text{Uniform}(0.5,1)\)</span> is not an objective prior (since we have used prior knowledge) even though it is “flat” over [0.5, 1]. The flat prior must be flat along the <em>entire</em> range of possibilities.</p>
+<p>Aside from the flat prior, other examples of objective priors are less obvious, but they contain important characteristics that reflect objectivity. For now, it should be said that <em>rarely</em> is a objective prior <em>truly</em> objective. We will see this later.</p>
+<div class="section" id="subjective-priors">
+<h4>Subjective Priors<a class="headerlink" href="#subjective-priors" title="Permalink to this headline">¶</a></h4>
+<p>On the other hand, if we added more probability mass to certain areas of the prior, and less elsewhere, we are biasing our inference towards the unknowns existing in the former area. This is known as a subjective, or <em>informative</em> prior. In the figure below, the subjective prior reflects a belief that the unknown likely lives around 0.5, and not around the extremes. The objective prior is insensitive to this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">from</span> <span class="nn">IPython.core.pylabtools</span> <span class="kn">import</span> <span class="n">figsize</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#348ABD&quot;</span><span class="p">,</span> <span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="s2">&quot;#7A68A6&quot;</span><span class="p">,</span> <span class="s2">&quot;#467821&quot;</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y1</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> 
+    <span class="n">label</span><span class="o">=</span><span class="s1">&#39;An objective prior </span><span class="se">\n</span><span class="s1">(uninformative, </span><span class="se">\n</span><span class="s1">&quot;Principle of Indifference&quot;)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span> <span class="p">,</span>
+     <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;A subjective prior </span><span class="se">\n</span><span class="s2">(informative)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">25</span><span class="p">:],</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">25</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;another subjective prior&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">25</span><span class="p">:],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">leg</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+<span class="n">leg</span><span class="o">.</span><span class="n">get_frame</span><span class="p">()</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Comparing objective vs. subjective priors for an unknown probability&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_2_0.png" src="../_images/Ch6_Priors_PyMC3_2_0.png" />
+</div>
+</div>
+<p>The choice of a subjective prior does not always imply that we are using the practitioner’s subjective opinion: more often the subjective prior was once a posterior to a previous problem, and now the practitioner is updating this posterior with new data. A subjective prior can also be used to inject <em>domain knowledge</em> of the problem into the model. We will see examples of these two situations later.</p>
+</div>
+</div>
+<div class="section" id="decision-decisions">
+<h3>Decision, decisions…<a class="headerlink" href="#decision-decisions" title="Permalink to this headline">¶</a></h3>
+<p>The choice, either <em>objective</em> or <em>subjective</em> mostly depends on the problem being solved, but there are a few cases where one is preferred over the other. In instances of scientific research, the choice of an objective prior is obvious. This eliminates any biases in the results, and two researchers who might have differing prior opinions would feel an objective prior is fair. Consider a more extreme situation:</p>
+<blockquote>
+<div><p>A tobacco company publishes a report with a Bayesian methodology that retreated 60 years of medical research on tobacco use. Would you believe the results? Unlikely. The researchers probably chose a subjective prior that too strongly biased results in their favor.</p>
+</div></blockquote>
+<p>Unfortunately, choosing an objective prior is not as simple as selecting a flat prior, and even today the problem is still not completely solved. The problem with naively choosing the uniform prior is that pathological issues can arise. Some of these issues are pedantic, but we delay more serious issues to the Appendix of this Chapter (TODO).</p>
+<p>We must remember that choosing a prior, whether subjective or objective, is still part of the modeling process. To quote Gelman [5]:</p>
+<blockquote>
+<div><p>… after the model has been fit, one should look at the posterior distribution
+and see if it makes sense. If the posterior distribution does not make sense, this implies
+that additional prior knowledge is available that has not been included in the model,
+and that contradicts the assumptions of the prior distribution that has been used. It is
+then appropriate to go back and alter the prior distribution to be more consistent with
+this external knowledge.</p>
+</div></blockquote>
+<p>If the posterior does not make sense, then clearly one had an idea what the posterior <em>should</em> look like (not what one <em>hopes</em> it looks like), implying that the current prior does not contain all the prior information and should be updated. At this point, we can discard the current prior and choose a more reflective one.</p>
+<p>Gelman [4] suggests that using a uniform distribution with large bounds is often a good choice for objective priors. Although, one should be wary about using Uniform objective priors with large bounds, as they can assign too large of a prior probability to non-intuitive points. Ask yourself: do you really think the unknown could be incredibly large? Often quantities are naturally biased towards 0. A Normal random variable with large variance (small precision) might be a better choice, or an Exponential with a fat tail in the strictly positive (or negative) case.</p>
+<p>If using a particularly subjective prior, it is your responsibility to be able to explain the choice of that prior, else you are no better than the tobacco company’s guilty parties.</p>
+</div>
+<div class="section" id="empirical-bayes">
+<h3>Empirical Bayes<a class="headerlink" href="#empirical-bayes" title="Permalink to this headline">¶</a></h3>
+<p>While not a true Bayesian method, <em>empirical Bayes</em> is a trick that combines frequentist and Bayesian inference. As mentioned previously, for (almost) every inference problem there is a Bayesian method and a frequentist method. The significant difference between the two is that Bayesian methods have a prior distribution, with hyperparameters <span class="math notranslate nohighlight">\(\alpha\)</span>, while empirical methods do not have any notion of a prior. Empirical Bayes combines the two methods by using frequentist methods to select <span class="math notranslate nohighlight">\(\alpha\)</span>, and then proceeds with Bayesian methods on the original problem.</p>
+<p>A very simple example follows: suppose we wish to estimate the parameter <span class="math notranslate nohighlight">\(\mu\)</span> of a Normal distribution, with <span class="math notranslate nohighlight">\(\sigma = 5\)</span>. Since <span class="math notranslate nohighlight">\(\mu\)</span> could range over the whole real line, we can use a Normal distribution as a prior for <span class="math notranslate nohighlight">\(\mu\)</span>. How to select the prior’s hyperparameters, denoted (<span class="math notranslate nohighlight">\(\mu_p, \sigma_p^2\)</span>)? The <span class="math notranslate nohighlight">\(\sigma_p^2\)</span> parameter can be chosen to reflect the uncertainty we have. For <span class="math notranslate nohighlight">\(\mu_p\)</span>, we have two options:</p>
+<ol class="simple">
+<li><p>Empirical Bayes suggests using the empirical sample mean, which will center the prior around the observed empirical mean:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \mu_p = \frac{1}{N} \sum_{i=0}^N X_i \]</div>
+<ol class="simple">
+<li><p>Traditional Bayesian inference suggests using prior knowledge, or a more objective prior (zero mean and fat standard deviation).</p></li>
+</ol>
+<p>Empirical Bayes can be argued as being semi-objective, since while the choice of prior model is ours (hence subjective), the parameters are solely determined by the data.</p>
+<p>Personally, I feel that Empirical Bayes is <em>double-counting</em> the data. That is, we are using the data twice: once in the prior, which will influence our results towards the observed data, and again in the inferential engine of MCMC. This double-counting will understate our true uncertainty. To minimize this double-counting, I would only suggest using Empirical Bayes when you have <em>lots</em> of observations, else the prior will have too strong of an influence. I would also recommend, if possible, to maintain high uncertainty (either by setting a large <span class="math notranslate nohighlight">\(\sigma_p^2\)</span> or equivalent.)</p>
+<p>Empirical Bayes also violates a theoretical axiom in Bayesian inference. The textbook Bayesian algorithm of:</p>
+<blockquote>
+<div><p><em>prior</em> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <em>observed data</em> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <em>posterior</em></p>
+</div></blockquote>
+<p>is violated by Empirical Bayes, which instead uses</p>
+<blockquote>
+<div><p><em>observed data</em> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <em>prior</em> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <em>observed data</em> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <em>posterior</em></p>
+</div></blockquote>
+<p>Ideally, all priors should be specified <em>before</em> we observe the data, so that the data does not influence our prior opinions (see the volumes of research by Daniel Kahneman <em>et. al</em> about <a class="reference external" href="http://en.wikipedia.org/wiki/Anchoring_and_adjustment">anchoring</a>).</p>
+</div>
+</div>
+<div class="section" id="useful-priors-to-know-about">
+<h2>Useful priors to know about<a class="headerlink" href="#useful-priors-to-know-about" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-gamma-distribution">
+<h3>The Gamma distribution<a class="headerlink" href="#the-gamma-distribution" title="Permalink to this headline">¶</a></h3>
+<p>A Gamma random variable, denoted <span class="math notranslate nohighlight">\(X \sim \text{Gamma}(\alpha, \beta)\)</span>, is a random variable over the positive real numbers. It is in fact a generalization of the Exponential random variable, that is:</p>
+<div class="math notranslate nohighlight">
+\[ \text{Exp}(\beta) \sim \text{Gamma}(1, \beta) \]</div>
+<p>This additional parameter allows the probability density function to have more flexibility, hence allowing the practitioner to express his or her subjective priors more accurately. The density function for a <span class="math notranslate nohighlight">\(\text{Gamma}(\alpha, \beta)\)</span> random variable is:</p>
+<div class="math notranslate nohighlight">
+\[ f(x \mid \alpha, \beta) = \frac{\beta^{\alpha}x^{\alpha-1}e^{-\beta x}}{\Gamma(\alpha)} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Gamma(\alpha)\)</span> is the <a class="reference external" href="http://en.wikipedia.org/wiki/Gamma_function">Gamma function</a>, and for differing values of <span class="math notranslate nohighlight">\((\alpha, \beta)\)</span> looks like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">gamma</span>
+
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span> <span class="p">,</span><span class="mi">20</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="n">beta</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;(</span><span class="si">%.1f</span><span class="s2">,</span><span class="si">%.1f</span><span class="s2">)&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">),</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">tight</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\alpha, \beta$ - parameters&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_8_0.png" src="../_images/Ch6_Priors_PyMC3_8_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="the-wishart-distribution">
+<h3>The Wishart distribution<a class="headerlink" href="#the-wishart-distribution" title="Permalink to this headline">¶</a></h3>
+<p>Until now, we have only seen random variables that are scalars. Of course, we can also have <em>random matrices</em>! Specifically, the Wishart distribution is a distribution over all <a class="reference external" href="http://en.wikipedia.org/wiki/Positive-definite_matrix">positive semi-definite matrices</a>. Why is this useful to have in our arsenal? (Proper) covariance matrices are positive-definite, hence the Wishart is an appropriate prior for covariance matrices. We can’t really visualize a distribution of matrices, so I’ll plot some realizations from the <span class="math notranslate nohighlight">\(5 \times 5\)</span> (above) and <span class="math notranslate nohighlight">\(20 \times 20\)</span> (below) Wishart distribution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">wishart</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">)),</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> 
+                <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;hot&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Random matrices from a Wishart Distribution&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_10_0.png" src="../_images/Ch6_Priors_PyMC3_10_0.png" />
+</div>
+</div>
+<p>One thing to notice is the symmetry of these matrices. The Wishart distribution can be a little troubling to deal with, but we will use it in an example later.</p>
+</div>
+<div class="section" id="the-beta-distribution">
+<h3>The Beta distribution<a class="headerlink" href="#the-beta-distribution" title="Permalink to this headline">¶</a></h3>
+<p>You may have seen the term <code class="docutils literal notranslate"><span class="pre">beta</span></code> in previous code in this book. Often, I was implementing a Beta distribution. The Beta distribution is very useful in Bayesian statistics. A random variable <span class="math notranslate nohighlight">\(X\)</span> has a <span class="math notranslate nohighlight">\(\text{Beta}\)</span> distribution, with parameters <span class="math notranslate nohighlight">\((\alpha, \beta)\)</span>, if its density function is:</p>
+<div class="math notranslate nohighlight">
+\[f_X(x | \; \alpha, \beta ) = \frac{ x^{(\alpha - 1)}(1-x)^{ (\beta - 1) } }{B(\alpha, \beta) }\]</div>
+<p>where <span class="math notranslate nohighlight">\(B\)</span> is the <a class="reference external" href="http://en.wikipedia.org/wiki/Beta_function">Beta function</a> (hence the name). The random variable <span class="math notranslate nohighlight">\(X\)</span> is only allowed in [0,1], making the Beta distribution a popular distribution for decimal values, probabilities and proportions. The values of <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, both positive values, provide great flexibility in the shape of the distribution. Below we plot some distributions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">.99</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span>
+<span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;(</span><span class="si">%.1f</span><span class="s2">,</span><span class="si">%.1f</span><span class="s2">)&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">tight</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;(a,b)-parameters&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_13_0.png" src="../_images/Ch6_Priors_PyMC3_13_0.png" />
+</div>
+</div>
+<p>One thing I’d like the reader to notice is the presence of the flat distribution above, specified by parameters <span class="math notranslate nohighlight">\((1,1)\)</span>. This is the Uniform distribution. Hence the Beta distribution is a generalization of the Uniform distribution, something we will revisit many times.</p>
+<p>There is an interesting connection between the Beta distribution and the Binomial distribution. Suppose we are interested in some unknown proportion or probability <span class="math notranslate nohighlight">\(p\)</span>. We assign a <span class="math notranslate nohighlight">\(\text{Beta}(\alpha, \beta)\)</span> prior to <span class="math notranslate nohighlight">\(p\)</span>. We observe some data generated by a Binomial process, say <span class="math notranslate nohighlight">\(X \sim \text{Binomial}(N, p)\)</span>, with <span class="math notranslate nohighlight">\(p\)</span> still unknown. Then our posterior <em>is again a Beta distribution</em>, i.e. <span class="math notranslate nohighlight">\(p | X \sim \text{Beta}( \alpha + X, \beta + N -X )\)</span>. Succinctly, one can relate the two by “a Beta prior with Binomial observations creates a Beta posterior”. This is a very useful property, both computationally and heuristically.</p>
+<p>In light of the above two paragraphs, if we start with a <span class="math notranslate nohighlight">\(\text{Beta}(1,1)\)</span> prior on <span class="math notranslate nohighlight">\(p\)</span> (which is a Uniform), observe data <span class="math notranslate nohighlight">\(X \sim \text{Binomial}(N, p)\)</span>, then our posterior is <span class="math notranslate nohighlight">\(\text{Beta}(1 + X, 1 + N - X)\)</span>.</p>
+<div class="section" id="example-bayesian-multi-armed-bandits">
+<h4>Example: Bayesian Multi-Armed Bandits<a class="headerlink" href="#example-bayesian-multi-armed-bandits" title="Permalink to this headline">¶</a></h4>
+<p><em>Adapted from an example by Ted Dunning of MapR Technologies</em></p>
+<blockquote>
+<div><p>Suppose you are faced with <span class="math notranslate nohighlight">\(N\)</span> slot machines (colourfully called multi-armed bandits). Each bandit has an unknown probability of distributing a prize (assume for now the prizes are the same for each bandit, only the probabilities differ). Some bandits are very generous, others not so much. Of course, you don’t know what these probabilities are. By only choosing one bandit per round, our task is devise a strategy to maximize our winnings.</p>
+</div></blockquote>
+<p>Of course, if we knew the bandit with the largest probability, then always picking this bandit would yield the maximum winnings. So our task can be phrased as “Find the best bandit, and as quickly as possible”.</p>
+<p>The task is complicated by the stochastic nature of the bandits. A suboptimal bandit can return many winnings, purely by chance, which would make us believe that it is a very profitable bandit. Similarly, the best bandit can return many duds. Should we keep trying losers then, or give up?</p>
+<p>A more troublesome problem is, if we have found a bandit that returns <em>pretty good</em> results, do we keep drawing from it to maintain our <em>pretty good score</em>, or do we try other bandits in hopes of finding an <em>even-better</em> bandit? This is the exploration vs. exploitation dilemma.</p>
+</div>
+</div>
+<div class="section" id="applications">
+<h3>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h3>
+<p>The Multi-Armed Bandit problem at first seems very artificial, something only a mathematician would love, but that is only before we address some applications:</p>
+<ul class="simple">
+<li><p>Internet display advertising: companies have a suite of potential ads they can display to visitors, but the company is not sure which ad strategy to follow to maximize sales. This is similar to A/B testing, but has the added advantage of naturally minimizing strategies that do not work (and generalizes to A/B/C/D… strategies)</p></li>
+<li><p>Ecology: animals have a finite amount of energy to expend, and following certain behaviours has uncertain rewards. How does the animal maximize its fitness?</p></li>
+<li><p>Finance: which stock option gives the highest return, under time-varying return profiles.</p></li>
+<li><p>Clinical trials: a researcher would like to find the best treatment, out of many possible treatment, while minimizing losses.</p></li>
+<li><p>Psychology: how does punishment and reward affect our behaviour? How do humans learn?</p></li>
+</ul>
+<p>Many of these questions above are fundamental to the application’s field.</p>
+<p>It turns out the <em>optimal solution</em> is incredibly difficult, and it took decades for an overall solution to develop. There are also many approximately-optimal solutions which are quite good. The one I wish to discuss is one of the few solutions that can scale incredibly well. The solution is known as <em>Bayesian Bandits</em>.</p>
+</div>
+<div class="section" id="a-proposed-solution">
+<h3>A Proposed Solution<a class="headerlink" href="#a-proposed-solution" title="Permalink to this headline">¶</a></h3>
+<p>Any proposed strategy is called an <em>online algorithm</em> (not in the internet sense, but in the continuously-being-updated sense), and more specifically a reinforcement learning algorithm. The algorithm starts in an ignorant state, where it knows nothing, and begins to acquire data by testing the system. As it acquires data and results, it learns what the best and worst behaviours are (in this case, it learns which bandit is the best). With this in mind, perhaps we can add an additional application of the Multi-Armed Bandit problem:</p>
+<ul class="simple">
+<li><p>Psychology: how does punishment and reward affect our behaviour? How do humans learn?</p></li>
+</ul>
+<p>The Bayesian solution begins by assuming priors on the probability of winning for each bandit. In our vignette we assumed complete ignorance of these probabilities. So a very natural prior is the flat prior over 0 to 1. The algorithm proceeds as follows:</p>
+<p>For each round:</p>
+<ol class="simple">
+<li><p>Sample a random variable <span class="math notranslate nohighlight">\(X_b\)</span> from the prior of bandit <span class="math notranslate nohighlight">\(b\)</span>, for all <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
+<li><p>Select the bandit with largest sample, i.e. select <span class="math notranslate nohighlight">\(B = \text{argmax}\;\; X_b\)</span>.</p></li>
+<li><p>Observe the result of pulling bandit <span class="math notranslate nohighlight">\(B\)</span>, and update your prior on bandit <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>Return to 1.</p></li>
+</ol>
+<p>That’s it. Computationally, the algorithm involves sampling from <span class="math notranslate nohighlight">\(N\)</span> distributions. Since the initial priors are <span class="math notranslate nohighlight">\(\text{Beta}(\alpha=1,\beta=1)\)</span> (a uniform distribution), and the observed result <span class="math notranslate nohighlight">\(X\)</span> (a win or loss, encoded 1 and 0 respectfully) is Binomial, the posterior is a <span class="math notranslate nohighlight">\(\text{Beta}(\alpha=1+X,\beta=1+1−X)\)</span>.</p>
+<p>To answer our question from before, this algorithm suggests that we should not discard losers, but we should pick them at a decreasing rate as we gather confidence that there exist <em>better</em> bandits. This follows because there is always a non-zero chance that a loser will achieve the status of <span class="math notranslate nohighlight">\(B\)</span>, but the probability of this event decreases as we play more rounds (see figure below).</p>
+<p>Below we implement Bayesian Bandits using two classes, <code class="docutils literal notranslate"><span class="pre">Bandits</span></code> that defines the slot machines, and <code class="docutils literal notranslate"><span class="pre">BayesianStrategy</span></code> which implements the above learning strategy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span>
+
+<span class="k">class</span> <span class="nc">Bandits</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class represents N bandits machines.</span>
+
+<span class="sd">    parameters:</span>
+<span class="sd">        p_array: a (n,) Numpy array of probabilities &gt;0, &lt;1.</span>
+
+<span class="sd">    methods:</span>
+<span class="sd">        pull( i ): return the results, 0 or 1, of pulling </span>
+<span class="sd">                   the ith bandit.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_array</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span class="n">p_array</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">p_array</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">pull</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="c1">#i is which arm to pull</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">)</span>
+
+    
+<span class="k">class</span> <span class="nc">BayesianStrategy</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implements a online, learning strategy to solve</span>
+<span class="sd">    the Multi-Armed Bandit problem.</span>
+<span class="sd">    </span>
+<span class="sd">    parameters:</span>
+<span class="sd">        bandits: a Bandit class with .pull method</span>
+<span class="sd">    </span>
+<span class="sd">    methods:</span>
+<span class="sd">        sample_bandits(n): sample and train on n pulls.</span>
+
+<span class="sd">    attributes:</span>
+<span class="sd">        N: the cumulative number of samples</span>
+<span class="sd">        choices: the historical choices as a (N,) array</span>
+<span class="sd">        bb_score: the historical score as a (N,) array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bandits</span><span class="p">):</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">bandits</span> <span class="o">=</span> <span class="n">bandits</span>
+        <span class="n">n_bandits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bandits</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_bandits</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trials</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_bandits</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">N</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">choices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bb_score</span> <span class="o">=</span> <span class="p">[]</span>
+
+    
+    <span class="k">def</span> <span class="nf">sample_bandits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        
+        <span class="n">bb_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">choices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="c1">#sample from the bandits&#39;s priors, and select the largest sample</span>
+            <span class="n">choice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">wins</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">trials</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">wins</span><span class="p">))</span>
+            
+            <span class="c1">#sample the chosen bandit</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bandits</span><span class="o">.</span><span class="n">pull</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+            
+            <span class="c1">#update priors and score</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wins</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span> <span class="o">+=</span> <span class="n">result</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trials</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">bb_score</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">N</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">choices</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">choice</span>
+            
+        <span class="bp">self</span><span class="o">.</span><span class="n">bb_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">bb_score</span><span class="p">,</span> <span class="n">bb_score</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">choices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">choices</span><span class="p">,</span> <span class="n">choices</span><span class="p">]</span>
+        <span class="k">return</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below we visualize the learning of the Bayesian Bandit solution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">11.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">beta</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">.999</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_priors</span><span class="p">(</span><span class="n">bayesian_strategy</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">plt_vlines</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="c1">## plotting function</span>
+    <span class="n">wins</span> <span class="o">=</span> <span class="n">bayesian_strategy</span><span class="o">.</span><span class="n">wins</span>
+    <span class="n">trials</span> <span class="o">=</span> <span class="n">bayesian_strategy</span><span class="o">.</span><span class="n">trials</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">wins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">trials</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">wins</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">lw</span> <span class="o">=</span> <span class="n">lw</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_markeredgecolor</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">,</span> 
+                         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;underlying probability: </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">plt_vlines</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">prob</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">prob</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">,</span>
+                       <span class="n">colors</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span> <span class="n">linestyles</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">tight</span> <span class="o">=</span> <span class="s2">&quot;True&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Posteriors After </span><span class="si">%d</span><span class="s2"> pull&quot;</span> <span class="o">%</span> <span class="n">bayesian_strategy</span><span class="o">.</span><span class="n">N</span> <span class="o">+</span>\
+                    <span class="s2">&quot;s&quot;</span><span class="o">*</span><span class="p">(</span><span class="n">bayesian_strategy</span><span class="o">.</span><span class="n">N</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">tight</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hidden_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.60</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>
+<span class="n">bandits</span> <span class="o">=</span> <span class="n">Bandits</span><span class="p">(</span><span class="n">hidden_prob</span><span class="p">)</span>
+<span class="n">bayesian_strat</span> <span class="o">=</span> <span class="n">BayesianStrategy</span><span class="p">(</span><span class="n">bandits</span><span class="p">)</span>
+
+<span class="n">draw_samples</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">600</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">draw_samples</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="n">bayesian_strat</span><span class="o">.</span><span class="n">sample_bandits</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">plot_priors</span><span class="p">(</span><span class="n">bayesian_strat</span><span class="p">,</span> <span class="n">hidden_prob</span><span class="p">)</span>
+    <span class="c1">#plt.legend()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">tight</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_19_0.png" src="../_images/Ch6_Priors_PyMC3_19_0.png" />
+</div>
+</div>
+<p>Note that we don’t really care how accurate we become about the inference of the hidden probabilities — for this problem we are more interested in choosing the best bandit (or more accurately, becoming <em>more confident</em> in choosing the best bandit). For this reason, the distribution of the red bandit is very wide (representing ignorance about what that hidden probability might be) but we are reasonably confident that it is not the best, so the algorithm chooses to ignore it.</p>
+<p>From the above, we can see that after 1000 pulls, the majority of the “blue” function leads the pack, hence we will almost always choose this arm. This is good, as this arm is indeed the best.</p>
+<p>Below is a D3 app that demonstrates our algorithm updating/learning three bandits.  The first figure are the raw counts of pulls and wins, and the second figure is a dynamically updating plot. I encourage you to try to guess which bandit is optimal, prior to revealing the true probabilities, by selecting the <code class="docutils literal notranslate"><span class="pre">arm</span> <span class="pre">buttons</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="c1">#try executing the below command twice if the first time doesn&#39;t work</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;BanditsD3.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+       <style type="text/css">
+
+
+
+
+        .bar{
+          font: 12px sans-serif;
+          text-align: right;
+          padding: 3px;
+          margin: 1px;
+          color: white;
+        }
+
+        path {
+            stroke-width: 3;
+            fill: none;
+        }
+
+        line {
+            stroke: black;
+        }
+
+        text {
+            font-family: Computer Modern, Arial;
+            font-size: 11pt;
+        }
+
+        button{
+            margin: 6px;
+            width:70px;
+
+            }
+        button:hover{
+            cursor: pointer;
+
+            }
+       .clearfix:after {
+           content: "";
+           display: table;
+           clear: both;
+        }            
+      </style>
+
+
+
+
+
+
+        <div id = "paired-bar-chart"  style="width: 600px; margin: auto;" > </div>
+         <div id ="beta-graphs"  style="width: 600px; margin-left:125px; " > </div>
+
+
+
+
+        <div id="buttons" style="margin:20px auto; width: 300px;">
+            <button id="button1" onClick = "update_arm(0)"> Arm 1</button>
+            <button id="button2" onClick = "update_arm(1)"> Arm 2</button>
+            <button id="button3" onClick = "update_arm(2)"> Arm 3</button>
+            <br/>
+
+            <button  
+                style="width:100px;"
+                onClick = 'bayesian_bandits()' >Run Bayesian Bandits </button>
+            <button id="buttonReveal"  style="width:100px;"  onClick = 'd3.select("#reveal-div").style("display", "block" )' >Reveal probabilities </button>
+        </div>  
+
+        <div id="reveal-div" style="margin:20px auto; width: 300px; display:none"></div>
+
+       <div style="margin:auto; width: 400px" >
+
+            <div style="margin: auto;width: 50px"> 
+                <p style="margin: 0px;"> Rewards </p>
+                <p  style="font-size:30pt; margin: 5px;" id="rewards"> 0 </p>
+            </div>            
+
+            <div style="margin: auto; width: 50px"> 
+                <p style="margin: 0px;"> Pulls </p>
+                <p id="pulls" style="margin: 5px;font-size:30pt"> 0 </p>
+            </div>    
+
+            <div style="margin: auto; width: 50px" > 
+                <p style="margin: 0px;"> Reward/Pull Ratio </p>
+                <p id="ratio" style="margin: 5px;font-size:30pt"> 0 </p>
+            </div>       
+
+        </div>
+
+<script type="text/javascript" src="https://dl.dropbox.com/s/2qhdohtgzszp3yx/d3bandits.js"></script>
+</div></div>
+</div>
+<p>Deviations of the observed ratio from the highest probability is a measure of performance. For example,in the long run, optimally we can attain the reward/pull ratio of the maximum bandit probability. Long-term realized ratios less than the maximum represent inefficiencies. (Realized ratios larger than the maximum probability is due to randomness, and will eventually fall below).</p>
+</div>
+<div class="section" id="a-measure-of-good">
+<h3>A Measure of <em>Good</em><a class="headerlink" href="#a-measure-of-good" title="Permalink to this headline">¶</a></h3>
+<p>We need a metric to calculate how well we are doing. Recall the absolute <em>best</em> we can do is to always pick the bandit with the largest probability of winning. Denote this best bandit’s probability by <span class="math notranslate nohighlight">\(w_{opt}\)</span>. Our score should be relative to how well we would have done had we chosen the best bandit from the beginning. This motivates the <em>total regret</em> of a strategy, defined:</p>
+<p>\begin{align}
+R_T &amp; = \sum_{i=1}^{T} \left( w_{opt} - w_{B(i)} \right)\
+&amp; = Tw^* - \sum_{i=1}^{T} ;  w_{B(i)}
+\end{align}</p>
+<p>where <span class="math notranslate nohighlight">\(w_{B(i)}\)</span> is the probability of a prize of the chosen bandit in the <span class="math notranslate nohighlight">\(i\)</span> round. A total regret of 0 means the strategy is matching the best possible score. This is likely not possible, as initially our algorithm will often make the wrong choice.  Ideally, a strategy’s total regret should flatten as it learns the best bandit. (Mathematically, we achieve <span class="math notranslate nohighlight">\(w_{B(i)}=w_{opt}\)</span> often)</p>
+<p>Below we plot the total regret of this simulation, including the scores of some other strategies:</p>
+<ol class="simple">
+<li><p>Random: randomly choose a bandit to pull. If you can’t beat this, just stop.</p></li>
+<li><p>Largest Bayesian credible bound: pick the bandit with the largest upper bound in its 95% credible region of the underlying probability.</p></li>
+<li><p>Bayes-UCB algorithm: pick the bandit with the largest <em>score</em>, where score is a dynamic quantile of the posterior (see [4] )</p></li>
+<li><p>Mean of posterior: choose the bandit with the largest posterior mean. This is what a human player (sans computer) would likely do.</p></li>
+<li><p>Largest proportion: pick the bandit with the current largest observed proportion of winning.</p></li>
+</ol>
+<p>The code for these are in the <code class="docutils literal notranslate"><span class="pre">other_strats.py</span></code>, where you can implement your own very easily.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">other_strats</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1">#define a harder problem</span>
+<span class="n">hidden_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">])</span>
+<span class="n">bandits</span> <span class="o">=</span> <span class="n">Bandits</span><span class="p">(</span><span class="n">hidden_prob</span><span class="p">)</span>
+
+<span class="c1">#define regret</span>
+<span class="k">def</span> <span class="nf">regret</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">choices</span><span class="p">):</span>
+    <span class="n">w_opt</span> <span class="o">=</span> <span class="n">probabilities</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">w_opt</span> <span class="o">-</span> <span class="n">probabilities</span><span class="p">[</span><span class="n">choices</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)])</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+<span class="c1">#create new strategies</span>
+<span class="n">strategies</span><span class="o">=</span> <span class="p">[</span><span class="n">upper_credible_choice</span><span class="p">,</span> 
+            <span class="n">bayesian_bandit_choice</span><span class="p">,</span> 
+            <span class="n">ucb_bayes</span> <span class="p">,</span> 
+            <span class="n">max_mean</span><span class="p">,</span>
+            <span class="n">random_choice</span><span class="p">]</span>
+<span class="n">algos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">strat</span> <span class="ow">in</span> <span class="n">strategies</span><span class="p">:</span>
+    <span class="n">algos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">GeneralBanditStrat</span><span class="p">(</span><span class="n">bandits</span><span class="p">,</span> <span class="n">strat</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#train 10000 times</span>
+<span class="k">for</span> <span class="n">strat</span> <span class="ow">in</span> <span class="n">algos</span><span class="p">:</span>
+    <span class="n">strat</span><span class="o">.</span><span class="n">sample_bandits</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+    
+<span class="c1">#test and plot</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">strat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">algos</span><span class="p">):</span>
+    <span class="n">_regret</span> <span class="o">=</span> <span class="n">regret</span><span class="p">(</span><span class="n">hidden_prob</span><span class="p">,</span> <span class="n">strat</span><span class="o">.</span><span class="n">choices</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">_regret</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">strategies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Total Regret of Bayesian Bandits Strategy vs. Random guessing&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Number of pulls&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Regret after $n$ pulls&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;upper left&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_24_0.png" src="../_images/Ch6_Priors_PyMC3_24_0.png" />
+</div>
+</div>
+<p>Like we wanted, Bayesian bandits and other strategies have decreasing rates of regret, representing we are achieving optimal choices. To be more scientific so as to remove any possible luck in the above simulation, we should instead look at the <em>expected total regret</em>:</p>
+<div class="math notranslate nohighlight">
+\[\bar{R}_T = E[ R_T ] \]</div>
+<p>It can be shown that any <em>sub-optimal</em> strategy’s expected total regret is bounded below logarithmically. Formally,</p>
+<div class="math notranslate nohighlight">
+\[ E[R_T] = \Omega \left( \;\log(T)\; \right) \]</div>
+<p>Thus, any strategy that matches logarithmic-growing regret is said to “solve” the Multi-Armed Bandit problem [3].</p>
+<p>Using the Law of Large Numbers, we can approximate Bayesian Bandit’s expected total regret by performing the same experiment many times (500 times, to be fair):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#this can be slow, so I recommend NOT running it. </span>
+
+<span class="n">trials</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">expected_total_regret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i_strat</span><span class="p">,</span> <span class="n">strat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">strategies</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
+        <span class="n">general_strat</span> <span class="o">=</span> <span class="n">GeneralBanditStrat</span><span class="p">(</span><span class="n">bandits</span><span class="p">,</span> <span class="n">strat</span><span class="p">)</span>
+        <span class="n">general_strat</span><span class="o">.</span><span class="n">sample_bandits</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+        <span class="n">_regret</span> <span class="o">=</span>  <span class="n">regret</span><span class="p">(</span><span class="n">hidden_prob</span><span class="p">,</span> <span class="n">general_strat</span><span class="o">.</span><span class="n">choices</span><span class="p">)</span>
+        <span class="n">expected_total_regret</span><span class="p">[:,</span><span class="n">i_strat</span><span class="p">]</span> <span class="o">+=</span> <span class="n">_regret</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">expected_total_regret</span><span class="p">[:,</span><span class="n">i_strat</span><span class="p">]</span><span class="o">/</span><span class="n">trials</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">strat</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Expected Total Regret of Multi-armed Bandit strategies&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Number of pulls&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Exepected Total Regret </span><span class="se">\n</span><span class="s2"> after $n$ pulls&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;upper left&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_26_0.png" src="../_images/Ch6_Priors_PyMC3_26_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="p">[</span><span class="n">pl1</span><span class="p">,</span> <span class="n">pl2</span><span class="p">,</span> <span class="n">pl3</span><span class="p">]</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">expected_total_regret</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="n">pl1</span><span class="p">,</span> <span class="n">pl2</span><span class="p">,</span> <span class="n">pl3</span><span class="p">],</span> 
+           <span class="p">[</span><span class="s2">&quot;Upper Credible Bound&quot;</span><span class="p">,</span> <span class="s2">&quot;Bayesian Bandit&quot;</span><span class="p">,</span> <span class="s2">&quot;UCB-Bayes&quot;</span><span class="p">],</span>
+            <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Exepected Total Regret </span><span class="se">\n</span><span class="s2"> after $\log</span><span class="si">{n}</span><span class="s2">$ pulls&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span> <span class="s2">&quot;log-scale of above&quot;</span> <span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Exepected Total Regret </span><span class="se">\n</span><span class="s2"> after $\log</span><span class="si">{n}</span><span class="s2">$ pulls&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_27_0.png" src="../_images/Ch6_Priors_PyMC3_27_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="extending-the-algorithm">
+<h3>Extending the algorithm<a class="headerlink" href="#extending-the-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>Because of the Bayesian Bandits algorithm’s simplicity, it is easy to extend. Some possibilities:</p>
+<ul>
+<li><p>If interested in the <em>minimum</em> probability (eg: where prizes are a bad thing), simply choose <span class="math notranslate nohighlight">\(B = \text{argmin} \; X_b\)</span> and proceed.</p></li>
+<li><p>Adding learning rates: Suppose the underlying environment may change over time. Technically the standard Bayesian Bandit algorithm would self-update itself (awesome) by noting that what it thought was the best is starting to fail more often. We can motivate the algorithm to learn changing environments quicker by simply adding a <em>rate</em> term upon updating:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  self.wins[choice] = rate*self.wins[choice] + result
+  self.trials[choice] = rate*self.trials[choice] + 1
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">rate</span> <span class="pre">&lt;</span> <span class="pre">1</span></code>, the algorithm will <em>forget</em> its previous wins quicker and there will be a downward  pressure towards ignorance. Conversely, setting <code class="docutils literal notranslate"><span class="pre">rate</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> implies your algorithm will act more risky, and bet on earlier winners more often and be more resistant to changing environments.</p>
+</li>
+<li><p>Hierarchical algorithms: We can setup a Bayesian Bandit algorithm on top of smaller bandit algorithms. Suppose we have <span class="math notranslate nohighlight">\(N\)</span> Bayesian Bandit models, each varying in some behavior (for example  different <code class="docutils literal notranslate"><span class="pre">rate</span></code> parameters, representing varying sensitivity to changing environments). On top of these <span class="math notranslate nohighlight">\(N\)</span> models is another Bayesian Bandit learner that will select a sub-Bayesian Bandit. This chosen Bayesian Bandit will then make an internal choice as to which machine to pull. The super-Bayesian Bandit updates itself depending on whether the sub-Bayesian Bandit was correct or not.</p></li>
+<li><p>Extending the rewards, denoted <span class="math notranslate nohighlight">\(y_a\)</span> for bandit <span class="math notranslate nohighlight">\(a\)</span>, to random variables from a distribution <span class="math notranslate nohighlight">\(f_{y_a}(y)\)</span> is straightforward. More generally, this problem can be rephrased as “Find the bandit with the largest expected value”, as playing the bandit with the largest expected value is optimal. In the case above, <span class="math notranslate nohighlight">\(f_{y_a}\)</span> was Bernoulli with probability <span class="math notranslate nohighlight">\(p_a\)</span>, hence the expected value for a bandit is equal to <span class="math notranslate nohighlight">\(p_a\)</span>, which is why it looks like we are aiming to maximize the probability of winning. If <span class="math notranslate nohighlight">\(f\)</span> is not Bernoulli, and it is non-negative, which can be accomplished apriori by shifting the distribution (we assume we know <span class="math notranslate nohighlight">\(f\)</span>), then the algorithm behaves as before:</p>
+<p>For each round,</p>
+<ol class="simple">
+<li><p>Sample a random variable <span class="math notranslate nohighlight">\(X_b\)</span> from the prior of bandit <span class="math notranslate nohighlight">\(b\)</span>, for all <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
+<li><p>Select the bandit with largest sample, i.e. select bandit <span class="math notranslate nohighlight">\(B = \text{argmax}\;\; X_b\)</span>.</p></li>
+<li><p>Observe the result,<span class="math notranslate nohighlight">\(R \sim f_{y_a}\)</span>, of pulling bandit <span class="math notranslate nohighlight">\(B\)</span>, and update your prior on bandit <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>Return to 1</p></li>
+</ol>
+<p>The issue is in the sampling of <span class="math notranslate nohighlight">\(X_b\)</span> drawing phase. With Beta priors and Bernoulli observations, we have a Beta posterior — this is easy to sample from. But now, with arbitrary distributions <span class="math notranslate nohighlight">\(f\)</span>, we have a non-trivial posterior. Sampling from these can be difficult.</p>
+</li>
+<li><p>There has been some interest in extending the Bayesian Bandit algorithm to commenting systems. Recall in Chapter 4, we developed a ranking algorithm based on the Bayesian lower-bound of the proportion of upvotes to total votes. One problem with this approach is that it will bias the top rankings towards older comments, since older comments naturally have more votes (and hence the lower-bound is tighter to the true proportion). This creates a positive feedback cycle where older comments gain more votes, hence are displayed more often, hence gain more votes, etc. This pushes any new, potentially better comments, towards the bottom. J. Neufeld proposes a system to remedy this that uses a Bayesian Bandit solution.</p></li>
+</ul>
+<p>His proposal is to consider each comment as a Bandit, with the number of pulls equal to the number of votes cast, and number of rewards as the number of upvotes, hence creating a <span class="math notranslate nohighlight">\(\text{Beta}(1+U,1+D)\)</span> posterior. As visitors visit the page, samples are drawn from each bandit/comment, but instead of displaying the comment with the <span class="math notranslate nohighlight">\(\max\)</span> sample, the comments are ranked according to the ranking of their respective samples. From J. Neufeld’s blog [7]:</p>
+<blockquote>
+<div><p>[The] resulting ranking algorithm is quite straightforward, each new time the comments page is loaded, the score for each comment is sampled from a <span class="math notranslate nohighlight">\(\text{Beta}(1+U,1+D)\)</span>, comments are then ranked by this score in descending order… This randomization has a unique benefit in that even untouched comments <span class="math notranslate nohighlight">\((U=1,D=0)\)</span> have some chance of being seen even in threads with 5000+ comments (something that is not happening now), but, at the same time, the user is not likely to be inundated with rating these new comments.</p>
+</div></blockquote>
+<p>Just for fun, though the colors explode, we watch the Bayesian Bandit algorithm learn 15 different options.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.0</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span>
+<span class="n">hidden_prob</span> <span class="o">=</span> <span class="n">beta</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">35</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hidden_prob</span><span class="p">)</span>
+<span class="n">bandits</span> <span class="o">=</span> <span class="n">Bandits</span><span class="p">(</span><span class="n">hidden_prob</span><span class="p">)</span>
+<span class="n">bayesian_strat</span> <span class="o">=</span> <span class="n">BayesianStrategy</span><span class="p">(</span><span class="n">bandits</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1300</span><span class="p">]):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="n">bayesian_strat</span><span class="o">.</span><span class="n">sample_bandits</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">plot_priors</span><span class="p">(</span><span class="n">bayesian_strat</span><span class="p">,</span> <span class="n">hidden_prob</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">plt_vlines</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1">#plt.legend()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  6.78509844e-03   9.68721665e-02   3.16101371e-02   8.88059449e-02
+   3.32812651e-02   6.59572621e-02   7.91635546e-02   5.97822577e-02
+   1.17088549e-01   1.29945195e-05   3.66798062e-02   5.77077187e-02
+   4.32774140e-02   6.94914246e-02   1.22741733e-01   5.13528129e-02
+   3.29414904e-01   5.13320236e-02   5.35031763e-02   1.57610420e-02
+   1.94570205e-02   1.11759388e-01   3.23349076e-02   2.04068995e-02
+   1.47822753e-01   8.24022697e-03   3.20395660e-04   4.45643230e-03
+   6.42090321e-03   7.29322919e-02   8.18486095e-02   5.05066236e-03
+   1.73946201e-01   6.48018322e-02   7.70657954e-03]
+</pre></div>
+</div>
+<img alt="../_images/Ch6_Priors_PyMC3_30_1.png" src="../_images/Ch6_Priors_PyMC3_30_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="eliciting-expert-prior">
+<h2>Eliciting expert prior<a class="headerlink" href="#eliciting-expert-prior" title="Permalink to this headline">¶</a></h2>
+<p>Specifying a subjective prior is how practitioners incorporate domain knowledge about the problem into our mathematical framework. Allowing domain knowledge is useful for many reasons:</p>
+<ul class="simple">
+<li><p>Aids speeds of MCMC convergence. For example, if we know the unknown parameter is strictly positive, then we can restrict our attention there, hence saving time that would otherwise be spent exploring negative values.</p></li>
+<li><p>More accurate inference. By weighing prior values near the true unknown value higher, we are narrowing our eventual inference (by making the posterior tighter around the unknown)</p></li>
+<li><p>Express our uncertainty better. See the <em>Price is Right</em> problem in Chapter 5.</p></li>
+</ul>
+<p>plus many other reasons. Of course, practitioners of Bayesian methods are not experts in every field, so we must turn to domain experts to craft our priors. We must be careful with how we elicit these priors though. Some things to consider:</p>
+<ol class="simple">
+<li><p>From experience, I would avoid introducing Betas, Gammas, etc. to non-Bayesian practitioners. Furthermore, non-statisticians can get tripped up by how a continuous probability function can have a value exceeding one.</p></li>
+<li><p>Individuals often neglect the rare <em>tail-events</em> and put too much weight around the mean of distribution.</p></li>
+<li><p>Related to above is that almost always individuals will under-emphasize the uncertainty in their guesses.</p></li>
+</ol>
+<p>Eliciting priors from non-technical experts is especially difficult. Rather than introduce the notion of probability distributions, priors, etc. that may scare an expert, there is a much simpler solution.</p>
+<div class="section" id="trial-roulette-method">
+<h3>Trial roulette method<a class="headerlink" href="#trial-roulette-method" title="Permalink to this headline">¶</a></h3>
+<p>The <em>trial roulette method</em> [8] focuses on building a prior distribution by placing counters (think casino chips) on what the expert thinks are possible outcomes. The expert is given <span class="math notranslate nohighlight">\(N\)</span> counters (say <span class="math notranslate nohighlight">\(N=20\)</span>) and is asked to place them on a pre-printed grid, with bins representing intervals.  Each column would represent their belief of the probability of getting the corresponding bin result. Each chip would represent an <span class="math notranslate nohighlight">\(\frac{1}{N} = 0.05\)</span> increase in the probability of the outcome being in that interval. For example [9]:</p>
+<blockquote>
+<div><p>A student is asked to predict the mark in a future exam. The figure below shows a completed grid for the elicitation of a subjective probability distribution. The horizontal axis of the grid shows the possible bins (or mark intervals) that the student was asked to consider. The numbers in top row record the number of chips per bin. The completed grid (using a total of 20 chips) shows that the student believes there is a 30% chance that the mark will be between 60 and 64.9.</p>
+</div></blockquote>
+<img style="margin: auto" src="http://img641.imageshack.us/img641/4716/chipsbinscrisp.png" />
+<p>From this, we can fit a distribution that captures the expert’s choice. Some reasons in favor of using this technique are:</p>
+<ol class="simple">
+<li><p>Many questions about the shape of the expert’s subjective probability distribution can be answered without the need to pose a long series of questions to the expert - the statistician can simply read off density above or below any given point, or that between any two points.</p></li>
+<li><p>During the elicitation process, the experts can move around the chips if unsatisfied with the way they placed them initially - thus they can be sure of the final result to be submitted.</p></li>
+<li><p>It forces the expert to be coherent in the set of probabilities that are provided. If all the chips are used, the probabilities must sum to one.</p></li>
+<li><p>Graphical methods seem to provide more accurate results, especially for participants with modest levels of statistical sophistication.</p></li>
+</ol>
+<div class="section" id="example-stock-returns">
+<h4>Example: Stock Returns<a class="headerlink" href="#example-stock-returns" title="Permalink to this headline">¶</a></h4>
+<p>Take note stock brokers: you’re doing it wrong. When choosing which stocks to pick, an analyst will often look at the <em>daily return</em> of the stock. Suppose <span class="math notranslate nohighlight">\(S_t\)</span> is the price of the stock on day <span class="math notranslate nohighlight">\(t\)</span>, then the daily return on day <span class="math notranslate nohighlight">\(t\)</span> is :</p>
+<div class="math notranslate nohighlight">
+\[r_t = \frac{ S_t - S_{t-1} }{ S_{t-1} } \]</div>
+<p>The <em>expected daily return</em> of a stock is denoted <span class="math notranslate nohighlight">\(\mu = E[ r_t ]\)</span>. Obviously, stocks with high expected returns are desirable. Unfortunately, stock returns are so filled with noise that it is very hard to estimate this parameter. Furthermore, the parameter might change over time (consider the rises and falls of AAPL stock), hence it is unwise to use a large historical dataset.</p>
+<p>Historically, the expected return has been estimated by using the sample mean. This is a bad idea. As mentioned, the sample mean of a small sized dataset has enormous potential to be very wrong (again, see Chapter 4 for full details). Thus Bayesian inference is the correct procedure here, since we are able to see our uncertainty along with probable values.</p>
+<p>For this exercise, we will be examining the daily returns of the AAPL, GOOG, MSFT and AMZN. Before we pull in the data, suppose we ask our a stock fund manager (an expert in finance, but see [10] ),</p>
+<blockquote>
+<div><p>What do you think the return profile looks like for each of these companies?</p>
+</div></blockquote>
+<p>Our stock broker, without needing to know the language of Normal distributions, or priors, or variances, etc. creates four distributions using the trial roulette method above. Suppose they look enough like Normals, so we fit Normals to them. They may look like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">11.</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#348ABD&quot;</span><span class="p">,</span> <span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="s2">&quot;#7A68A6&quot;</span><span class="p">,</span> <span class="s2">&quot;#467821&quot;</span><span class="p">]</span>
+
+<span class="n">normal</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">expert_prior_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;AAPL&quot;</span><span class="p">:(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">),</span>
+                 <span class="s2">&quot;GOOG&quot;</span><span class="p">:(</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">),</span> 
+                 <span class="s2">&quot;TSLA&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">),</span> 
+                 <span class="s2">&quot;AMZN&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">),</span> 
+                 <span class="p">}</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">expert_prior_params</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">normal</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c1">#plt.plot( x, y, c = colors[i] )</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                     <span class="n">edgecolor</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; prior&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_33_0.png" src="../_images/Ch6_Priors_PyMC3_33_0.png" />
+</div>
+</div>
+<p>Note that these are subjective priors: the expert has a personal opinion on the stock returns of each of these companies, and is expressing them in a distribution. He’s not wishful thinking – he’s introducing domain knowledge.</p>
+<p>In order to better model these returns, we should investigate the <em>covariance matrix</em> of the returns. For example, it would be unwise to invest in two stocks that are highly correlated, since they are likely to tank together (hence why fund managers suggest a diversification strategy). We will use the <em>Wishart distribution</em> for this, introduced earlier.</p>
+<p>Let’s get some historical data for these stocks. We will use the covariance of the returns as a starting point for our Wishart random variable. This is not empirical bayes (as we will go over later) because we are only deciding the starting point, not influencing the parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I wish I could have used Pandas as a prereq for this book, but oh well.</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">ystockquote</span> <span class="k">as</span> <span class="nn">ysq</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">n_observations</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># we will truncate the the most recent 100 days.</span>
+
+<span class="n">stocks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span> <span class="s2">&quot;GOOG&quot;</span><span class="p">,</span> <span class="s2">&quot;TSLA&quot;</span><span class="p">,</span> <span class="s2">&quot;AMZN&quot;</span><span class="p">]</span>
+
+<span class="n">enddate</span> <span class="o">=</span> <span class="s2">&quot;2015-04-27&quot;</span>
+<span class="n">startdate</span> <span class="o">=</span> <span class="s2">&quot;2012-09-01&quot;</span>
+
+<span class="n">CLOSE</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="n">stock_closes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">stock</span> <span class="ow">in</span> <span class="n">stocks</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ysq</span><span class="o">.</span><span class="n">get_historical_prices</span><span class="p">(</span><span class="n">stock</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">))</span>
+    <span class="n">stock_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span><span class="n">CLOSE</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="n">stock</span><span class="p">)</span>
+    <span class="n">stock_closes</span><span class="p">[</span><span class="n">stock</span><span class="p">]</span> <span class="o">=</span> <span class="n">stock_series</span>
+
+<span class="n">stock_closes</span> <span class="o">=</span> <span class="n">stock_closes</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">stock_returns</span> <span class="o">=</span> <span class="n">stock_closes</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()[</span><span class="mi">1</span><span class="p">:][</span><span class="o">-</span><span class="n">n_observations</span><span class="p">:]</span>
+    
+<span class="n">dates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">),</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">n_observations</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here let’s form our basic model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">import</span> <span class="nn">theano.tensor</span> <span class="k">as</span> <span class="nn">tt</span>
+<span class="kn">from</span> <span class="nn">theano.tensor.nlinalg</span> <span class="kn">import</span> <span class="n">matrix_inverse</span><span class="p">,</span> <span class="n">diag</span><span class="p">,</span> <span class="n">matrix_dot</span>
+
+<span class="n">prior_mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">expert_prior_params</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
+<span class="n">prior_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">expert_prior_params</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
+
+<span class="n">init</span> <span class="o">=</span> <span class="n">stock_returns</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">pm</span><span class="o">.</span><span class="n">Model</span><span class="p">()</span> <span class="k">as</span> <span class="n">model</span><span class="p">:</span>
+    <span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">WishartBartlett</span><span class="p">(</span><span class="s2">&quot;covariance&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">prior_std</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="n">testval</span> <span class="o">=</span> <span class="n">init</span><span class="p">)</span>
+
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;returns&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">prior_mu</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applied log-transform to c and added transformed c_log_ to model.
+Added new variable c to model diagonal of Wishart.
+Added new variable z to model off-diagonals of Wishart.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are the returns for our chosen stocks:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="n">cum_returns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumprod</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">stock_returns</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">cum_returns</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">dates</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">cum_returns</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Return space&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Return of $1 on first date, x100%&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_40_0.png" src="../_images/Ch6_Priors_PyMC3_40_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">11.</span><span class="p">,</span> <span class="mi">5</span> <span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_stock</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">stocks</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">stock_returns</span><span class="p">[</span><span class="n">_stock</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+             <span class="n">normed</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;stepfilled&quot;</span><span class="p">,</span>
+             <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">_stock</span> <span class="o">+</span> <span class="s2">&quot; returns&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Histogram of daily returns&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_41_0.png" src="../_images/Ch6_Priors_PyMC3_41_0.png" />
+</div>
+</div>
+<p>Below we perform the inference on the posterior mean return and posterior covariance matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">model</span><span class="p">:</span>
+    <span class="n">obs</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">MvNormal</span><span class="p">(</span><span class="s2">&quot;observed returns&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">cov</span><span class="o">=</span><span class="n">cov_matrix</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">stock_returns</span><span class="p">)</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">NUTS</span><span class="p">()</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [-------100%-------] 5000 of 5000 in 40.4 sec. | SPS: 123.8 | ETA: 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1">#examine the mean return first.</span>
+<span class="n">mu_samples</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;returns&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mu_samples</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">-</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+             <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;stepfilled&quot;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+             <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">stock_returns</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">mu_samples</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Posterior distribution of $\mu$, daily stock returns&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_44_0.png" src="../_images/Ch6_Priors_PyMC3_44_0.png" />
+</div>
+</div>
+<p>(Plots like these are what inspired the book’s cover.)</p>
+<p>What can we say about the results above? Clearly TSLA has been a strong performer, and our analysis suggests that it has an almost 1% daily return! Similarly, most of the distribution of AAPL is negative, suggesting that its <em>true daily return</em> is negative.</p>
+<p>You may not have immediately noticed, but these variables are a whole order of magnitude <em>less</em> than our priors on them. For example, to put these one the same scale as the above prior distributions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">11.0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mu_samples</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">-</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+             <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;stepfilled&quot;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+             <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">stock_returns</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">stock_returns</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Posterior distribution of daily stock returns&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_46_0.png" src="../_images/Ch6_Priors_PyMC3_46_0.png" />
+</div>
+</div>
+<p>Why did this occur? Recall how I mentioned that finance has a very very low signal to noise ratio. This implies an environment where inference is much more difficult. One should be careful about over-interpreting these results: notice (in the first figure) that each distribution is positive at 0, implying that the stock may return nothing. Furthermore, the subjective priors influenced the results. From the fund managers point of view, this is good as it reflects his updated beliefs about the stocks, whereas from a neutral viewpoint this can be too subjective of a result.</p>
+<p>Below we show the posterior correlation matrix, and posterior standard deviations. An important caveat to know is that the Wishart distribution models the <em>inverse covariance matrix</em>, so we must invert it to get the covariance matrix. We also normalize the matrix to acquire the <em>correlation matrix</em>. Since we cannot plot hundreds of matrices effectively, we settle by summarizing the posterior distribution of correlation matrices by showing the <em>mean posterior correlation matrix</em> (defined on line 2).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cov_samples</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;covariance&quot;</span><span class="p">]</span>
+<span class="n">mean_covariance_matrix</span> <span class="o">=</span> <span class="n">cov_samples</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">cov2corr</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    covariance matrix to correlation matrix.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">diagonal</span><span class="p">())</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="o">/</span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="n">d</span>
+    <span class="c1">#A[ np.diag_indices(A.shape[0]) ] = np.ones( A.shape[0] )</span>
+    <span class="k">return</span> <span class="n">A</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cov2corr</span><span class="p">(</span><span class="n">mean_covariance_matrix</span><span class="p">)</span> <span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> 
+                <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;hot&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">stock_returns</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">stock_returns</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;(mean posterior) Correlation Matrix&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">mean_covariance_matrix</span><span class="p">)),</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#348ABD&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">stock_returns</span><span class="o">.</span><span class="n">columns</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;(mean posterior) standard deviations of daily stock returns&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_48_0.png" src="../_images/Ch6_Priors_PyMC3_48_0.png" />
+</div>
+</div>
+<p>Looking at the above figures, we can say that likely TSLA has an above-average volatility (looking at the return graph this is quite clear). The correlation matrix shows that there are not strong correlations present, but perhaps GOOG and AMZN express a higher correlation (about 0.30).</p>
+<p>With this Bayesian analysis of the stock market, we can throw it into a Mean-Variance optimizer (which I cannot stress enough, do not use with frequentist point estimates) and find the minimum. This optimizer balances the tradeoff between a high return and high variance.</p>
+<div class="math notranslate nohighlight">
+\[ w_{opt} = \max_{w} \frac{1}{N}\left( \sum_{i=0}^N \mu_i^T w - \frac{\lambda}{2}w^T\Sigma_i w \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu_i\)</span> and <span class="math notranslate nohighlight">\(\Sigma_i\)</span> are the <span class="math notranslate nohighlight">\(i\)</span>th posterior estimate of the mean returns and the covariance matrix. This is another example of loss function optimization.</p>
+</div>
+</div>
+<div class="section" id="protips-for-the-wishart-distribution">
+<h3>Protips for the Wishart distribution<a class="headerlink" href="#protips-for-the-wishart-distribution" title="Permalink to this headline">¶</a></h3>
+<p>If you plan to be using the Wishart distribution, read on. Else, feel free to skip this.</p>
+<p>In the problem above, the Wishart distribution behaves pretty nicely. Unfortunately, this is rarely the case. The problem is that estimating an <span class="math notranslate nohighlight">\(NxN\)</span> covariance matrix involves estimating <span class="math notranslate nohighlight">\(\frac{1}{2}N(N-1)\)</span> unknowns. This is a large number even for modest <span class="math notranslate nohighlight">\(N\)</span>. Personally, I’ve tried performing a similar simulation as above with <span class="math notranslate nohighlight">\(N = 23\)</span> stocks, and ended up giving considering that I was requesting my MCMC simulation to estimate at least <span class="math notranslate nohighlight">\(\frac{1}{2}23*22 = 253\)</span> additional unknowns (plus the other interesting unknowns in the problem). This is not easy for MCMC. Essentially, you are asking you MCMC to traverse 250+ dimensional space. And the problem seemed so innocent initially! Below are some tips, in order of supremacy:</p>
+<ol class="simple">
+<li><p>Use conjugancy if it applies. See section below.</p></li>
+<li><p>Use a good starting value. What might be a good starting value? Why, the data’s sample covariance matrix is! Note that this is not empirical Bayes: we are not touching the prior’s parameters, we are modifying the starting value of the MCMC. Due to numerical instability, it is best to truncate the floats in the sample covariance matrix down a few degrees of precision (e.g. instability can cause unsymmetrical matrices, which can cause PyMC3 to cry.).</p></li>
+<li><p>Provide as much domain knowledge in the form of priors, if possible. I stress <em>if possible</em>. It is likely impossible to have an estimate about each <span class="math notranslate nohighlight">\(\frac{1}{2}N(N-1)\)</span> unknown. In this case, see number 4.</p></li>
+<li><p>Use empirical Bayes, i.e. use the sample covariance matrix as the prior’s parameter.</p></li>
+<li><p>For problems where <span class="math notranslate nohighlight">\(N\)</span> is very large, nothing is going to help. Instead, ask, do I really care about <em>every</em> correlation? Probably not. Further ask yourself, do I really really care about correlations? Possibly not. In finance, we can set an informal hierarchy of what we might be interested in the most: first a good estimate of <span class="math notranslate nohighlight">\(\mu\)</span>, the variances along the diagonal of the covariance matrix are secondly important, and finally the correlations are least important. So, it might be better to ignore the <span class="math notranslate nohighlight">\(\frac{1}{2}(N-1)(N-2)\)</span> correlations and instead focus on the more important unknowns.</p></li>
+</ol>
+<p><strong>Another thing</strong> to note is that the implementation of the Wishart distribution has changed in from PyMC to PyMC3. Wishart distribution matrices are required to have certain mathematical characteristics that are very restrictive. This makes it so that it is impossible for MCMC methods to propose matrices that will be accepted in our sampling procedure. With our model here we sample the Bartlett decomposition of a Wishart distribution matrix and use that to calculate our samples for the covariance matrix (<a class="reference external" href="http://en.wikipedia.org/wiki/Wishart_distribution#Bartlett_decomposition">http://en.wikipedia.org/wiki/Wishart_distribution#Bartlett_decomposition</a>).</p>
+</div>
+</div>
+<div class="section" id="conjugate-priors">
+<h2>Conjugate Priors<a class="headerlink" href="#conjugate-priors" title="Permalink to this headline">¶</a></h2>
+<p>Recall that a <span class="math notranslate nohighlight">\(\text{Beta}\)</span> prior with <span class="math notranslate nohighlight">\(\text{Binomial}\)</span> data implies a <span class="math notranslate nohighlight">\(\text{Beta}\)</span> posterior. Graphically:</p>
+<div class="math notranslate nohighlight">
+\[ \underbrace{\text{Beta}}_{\text{prior}} \cdot \overbrace{\text{Binomial}}^{\text{data}} = \overbrace{\text{Beta}}^{\text{posterior} } \]</div>
+<p>Notice the <span class="math notranslate nohighlight">\(\text{Beta}\)</span> on both sides of this equation (no, you cannot cancel them, this is not a <em>real</em> equation). This is a really useful property. It allows us to avoid using MCMC, since the posterior is known in closed form. Hence inference and analytics are easy to derive. This shortcut was the heart of the  Bayesian Bandit algorithm above. Fortunately, there is an entire family of distributions that have similar behaviour.</p>
+<p>Suppose <span class="math notranslate nohighlight">\(X\)</span> comes from, or is believed to come from, a well-known distribution, call it <span class="math notranslate nohighlight">\(f_{\alpha}\)</span>, where <span class="math notranslate nohighlight">\(\alpha\)</span> are possibly unknown parameters of <span class="math notranslate nohighlight">\(f\)</span>. <span class="math notranslate nohighlight">\(f\)</span> could be a Normal distribution, or Binomial distribution, etc. For particular distributions <span class="math notranslate nohighlight">\(f_{\alpha}\)</span>, there may exist a prior distribution <span class="math notranslate nohighlight">\(p_{\beta}\)</span>, such that:</p>
+<div class="math notranslate nohighlight">
+\[ \overbrace{p_{\beta}}^{\text{prior}} \cdot \overbrace{f_{\alpha}(X)}^{\text{data}} = \overbrace{p_{\beta'}}^{\text{posterior} } \]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta'\)</span> is a different set of parameters <em>but <span class="math notranslate nohighlight">\(p\)</span> is the same distribution as the prior</em>. A prior <span class="math notranslate nohighlight">\(p\)</span> that satisfies this relationship is called a <em>conjugate prior</em>. As I mentioned, they are useful computationally, as we can avoided approximate inference using MCMC and go directly to the posterior. This sounds great, right?</p>
+<p>Unfortunately, not quite. There are a few issues with conjugate priors.</p>
+<ol class="simple">
+<li><p>The conjugate prior is not objective. Hence only useful when a subjective prior is required. It is not guaranteed that the conjugate prior can accommodate the practitioner’s subjective opinion.</p></li>
+<li><p>There typically exist conjugate priors for simple, one dimensional problems. For larger problems, involving more complicated structures, hope is lost to find a conjugate prior. For smaller models, Wikipedia has a nice <a class="reference external" href="http://en.wikipedia.org/wiki/Conjugate_prior#Table_of_conjugate_distributions">table of conjugate priors</a>.</p></li>
+</ol>
+<p>Really, conjugate priors are only useful for their mathematical convenience: it is simple to go from prior to posterior. I personally see conjugate priors as only a neat mathematical trick, and offer little insight into the problem at hand.</p>
+</div>
+<div class="section" id="jefferys-priors">
+<h2>Jefferys Priors<a class="headerlink" href="#jefferys-priors" title="Permalink to this headline">¶</a></h2>
+<p>Earlier, we talked about objective priors rarely being <em>objective</em>. Partly what we mean by this is that we want a prior that doesn’t bias our posterior estimates. The flat prior seems like a reasonable choice as it assigns equal probability to all values.</p>
+<p>But the flat prior is not transformation invariant. What does this mean? Suppose we have a random variable <span class="math notranslate nohighlight">\(\textbf X\)</span> from Bernoulli(<span class="math notranslate nohighlight">\(\theta\)</span>). We define the prior on <span class="math notranslate nohighlight">\(p(\theta) = 1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.000</span> <span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">tight</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_53_0.png" src="../_images/Ch6_Priors_PyMC3_53_0.png" />
+</div>
+</div>
+<p>Now, let’s transform <span class="math notranslate nohighlight">\(\theta\)</span> with the function <span class="math notranslate nohighlight">\(\psi = log \frac{\theta}{1-\theta}\)</span>. This is just a function to stretch <span class="math notranslate nohighlight">\(\theta\)</span> across the real line. Now how likely are different values of <span class="math notranslate nohighlight">\(\psi\)</span> under our transformation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="n">psi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span> <span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">psi</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">tight</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_55_0.png" src="../_images/Ch6_Priors_PyMC3_55_0.png" />
+</div>
+</div>
+<p>Oh no! Our function is no longer flat. It turns out flat priors do carry information in them after all. The point of Jeffreys Priors is to create priors that don’t accidentally become informative when you transform the variables you placed them originally on.</p>
+<p>Jeffreys Priors are defined as:</p>
+<div class="math notranslate nohighlight">
+\[p_J(\theta) \propto \mathbf{I}(\theta)^\frac{1}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{I}(\theta) = - \mathbb{E}\bigg[\frac{d^2 \text{ log } p(X|\theta)}{d\theta^2}\bigg]\]</div>
+<p><span class="math notranslate nohighlight">\(\mathbf{I}\)</span> being the <em>Fisher information</em></p>
+</div>
+<div class="section" id="effect-of-the-prior-as-n-increases">
+<h2>Effect of the prior as <span class="math notranslate nohighlight">\(N\)</span> increases<a class="headerlink" href="#effect-of-the-prior-as-n-increases" title="Permalink to this headline">¶</a></h2>
+<p>In the first chapter, I proposed that as the amount of our observations or data increases, the influence of the prior decreases. This is intuitive. After all, our prior is based on previous information, and eventually enough new information will shadow our previous information’s value. The smothering of the prior by enough data is also helpful: if our prior is significantly wrong, then the self-correcting nature of the data will present to us a <em>less wrong</em>, and eventually <em>correct</em>, posterior.</p>
+<p>We can see this mathematically. First, recall Bayes Theorem from Chapter 1 that relates the prior to the posterior. The following is a sample from <a class="reference external" href="http://stats.stackexchange.com/questions/30387/what-is-the-relationship-between-sample-size-and-the-influence-of-prior-on-poste">What is the relationship between sample size and the influence of prior on posterior?</a>[1] on CrossValidated.</p>
+<blockquote>
+<div><p>The posterior distribution for a parameter <span class="math notranslate nohighlight">\(\theta\)</span>, given a data set <span class="math notranslate nohighlight">\({\textbf X}\)</span> can be written as</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[p(\theta | {\textbf X}) \propto \underbrace{p({\textbf X} | \theta)}_{{\textrm likelihood}}  \cdot  \overbrace{ p(\theta) }^{ {\textrm prior} }  \]</div>
+<blockquote>
+<div><p>or, as is more commonly displayed on the log scale,</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[ \log( p(\theta | {\textbf X})  ) = c + L(\theta;{\textbf X}) + \log(p(\theta)) \]</div>
+<blockquote>
+<div><p>The log-likelihood, <span class="math notranslate nohighlight">\(L(\theta;{\textbf X}) = \log \left( p({\textbf X}|\theta) \right)\)</span>, <strong>scales with the sample size</strong>, since it is a function of the data, while the prior density does not. Therefore, as the sample size increases, the absolute value of <span class="math notranslate nohighlight">\(L(\theta;{\textbf X})\)</span> is getting larger while <span class="math notranslate nohighlight">\(\log(p(\theta))\)</span> stays fixed (for a fixed value of <span class="math notranslate nohighlight">\(\theta\)</span>), thus the sum <span class="math notranslate nohighlight">\(L(\theta;{\textbf X}) + \log(p(\theta))\)</span> becomes more heavily influenced by <span class="math notranslate nohighlight">\(L(\theta;{\textbf X})\)</span> as the sample size increases.</p>
+</div></blockquote>
+<p>There is an interesting consequence not immediately apparent. As the sample size increases, the chosen prior has less influence. Hence inference converges regardless of chosen prior, so long as the areas of non-zero probabilities are the same.</p>
+<p>Below we visualize this. We examine the convergence of two posteriors of a Binomial’s parameter <span class="math notranslate nohighlight">\(\theta\)</span>, one with a flat prior and the other with a biased prior towards 0. As the sample size increases, the posteriors, and hence the inference, converge.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">beta1_params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">])</span>
+<span class="n">beta2_params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.00</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">125</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">bernoulli</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">N</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">500</span><span class="p">]):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">params1</span> <span class="o">=</span> <span class="n">beta1_params</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">s</span><span class="p">,</span> <span class="n">N</span><span class="o">-</span><span class="n">s</span><span class="p">])</span>
+    <span class="n">params2</span> <span class="o">=</span> <span class="n">beta2_params</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">s</span><span class="p">,</span> <span class="n">N</span><span class="o">-</span><span class="n">s</span><span class="p">])</span>
+    <span class="n">y1</span><span class="p">,</span><span class="n">y2</span> <span class="o">=</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params1</span><span class="p">),</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">params2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;flat prior&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;biased prior&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s2">&quot;#348ABD&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">)</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">)</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;N=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="n">linestyles</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1">#plt.ylim( 0, 10)#</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch6_Priors_PyMC3_58_0.png" src="../_images/Ch6_Priors_PyMC3_58_0.png" />
+</div>
+</div>
+<p>Keep in mind, not all posteriors will “forget” the prior this quickly. This example was just to show that <em>eventually</em> the prior is forgotten. The “forgetfulness” of the prior as we become awash in more and more data is the reason why Bayesian and Frequentist inference eventually converge as well.</p>
+<div class="section" id="bayesian-perspective-of-penalized-linear-regressions">
+<h3>Bayesian perspective of Penalized Linear Regressions<a class="headerlink" href="#bayesian-perspective-of-penalized-linear-regressions" title="Permalink to this headline">¶</a></h3>
+<p>There is a very interesting relationship between a penalized least-squares regression and Bayesian priors. A penalized linear regression is a optimization problem of the form:</p>
+<div class="math notranslate nohighlight">
+\[ \text{argmin}_{\beta} \;\; (Y - X\beta)^T(Y - X\beta)  + f(\beta)\]</div>
+<p>for some function <span class="math notranslate nohighlight">\(f\)</span> (typically a norm like <span class="math notranslate nohighlight">\(|| \cdot ||_p^p\)</span>).</p>
+<p>We will first describe the probabilistic interpretation of least-squares linear regression. Denote our response variable <span class="math notranslate nohighlight">\(Y\)</span>, and features are contained in the data matrix <span class="math notranslate nohighlight">\(X\)</span>. The standard linear model is:</p>
+<p>\begin{equation}
+Y = X\beta + \epsilon
+\end{equation}</p>
+<p>where <span class="math notranslate nohighlight">\(\epsilon \sim \text{Normal}( {\textbf 0}, \sigma{\textbf I })\)</span>. Simply, the observed <span class="math notranslate nohighlight">\(Y\)</span> is a linear function of <span class="math notranslate nohighlight">\(X\)</span> (with coefficients <span class="math notranslate nohighlight">\(\beta\)</span>) plus some noise term. Our unknown to be determined is <span class="math notranslate nohighlight">\(\beta\)</span>. We use the following property of Normal random variables:</p>
+<div class="math notranslate nohighlight">
+\[ \mu' + \text{Normal}( \mu, \sigma ) \sim \text{Normal}( \mu' + \mu , \sigma ) \]</div>
+<p>to rewrite the above linear model as:</p>
+<p>\begin{align}
+&amp; Y = X\beta + \text{Normal}( {\textbf 0}, \sigma{\textbf I }) \
+&amp; Y = \text{Normal}( X\beta , \sigma{\textbf I }) \
+\end{align}</p>
+<p>In probabilistic notation, denote <span class="math notranslate nohighlight">\(f_Y(y \; | \; \beta )\)</span> the probability distribution of <span class="math notranslate nohighlight">\(Y\)</span>, and recalling the density function for a Normal random variable (see <a class="reference external" href="http://en.wikipedia.org/wiki/Normal_distribution">here</a> ):</p>
+<div class="math notranslate nohighlight">
+\[ f_Y( Y \; |\; \beta, X) = L(\beta|\; X,Y)= \frac{1}{\sqrt{ 2\pi\sigma} } \exp \left( \frac{1}{2\sigma^2} (Y - X\beta)^T(Y - X\beta) \right) \]</div>
+<p>This is the likelihood function for <span class="math notranslate nohighlight">\(\beta\)</span>. Taking the <span class="math notranslate nohighlight">\(\log\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \ell(\beta) = K - c(Y - X\beta)^T(Y - X\beta) \]</div>
+<p>where <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(c&gt;0\)</span> are constants. Maximum likelihood techniques wish to maximize this for <span class="math notranslate nohighlight">\(\beta\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\hat{ \beta } = \text{argmax}_{\beta} \;\; - (Y - X\beta)^T(Y - X\beta) \]</div>
+<p>Equivalently we can <em>minimize the negative</em> of the above:</p>
+<div class="math notranslate nohighlight">
+\[\hat{ \beta } = \text{argmin}_{\beta} \;\; (Y - X\beta)^T(Y - X\beta) \]</div>
+<p>This is the familiar least-squares linear regression equation. Therefore we showed that the solution to a linear least-squares is the same as the maximum likelihood assuming Normal noise. Next we extend this to show how we can arrive at penalized linear regression by a suitable choice of prior on <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<div class="section" id="penalized-least-squares">
+<h4>Penalized least-squares<a class="headerlink" href="#penalized-least-squares" title="Permalink to this headline">¶</a></h4>
+<p>In the above, once we have the likelihood, we can include a prior distribution on <span class="math notranslate nohighlight">\(\beta\)</span> to derive to the equation for the posterior distribution:</p>
+<div class="math notranslate nohighlight">
+\[P( \beta | Y, X ) = L(\beta|\;X,Y)p( \beta )\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(\beta)\)</span> is a prior on the elements of <span class="math notranslate nohighlight">\(\beta\)</span>. What are some interesting priors?</p>
+<p>1. If we include <em>no explicit</em> prior term, we are actually including an uninformative prior, <span class="math notranslate nohighlight">\(P( \beta ) \propto 1\)</span>, think of it as uniform over all numbers.</p>
+<p>2. If we have reason to believe the elements of <span class="math notranslate nohighlight">\(\beta\)</span> are not too large, we can suppose that <em>a priori</em>:</p>
+<div class="math notranslate nohighlight">
+\[ \beta \sim \text{Normal}({\textbf 0 }, \lambda {\textbf I } ) \]</div>
+<p>The resulting posterior density function for <span class="math notranslate nohighlight">\(\beta\)</span> is <em>proportional to</em>:</p>
+<div class="math notranslate nohighlight">
+\[ \exp \left( \frac{1}{2\sigma^2} (Y - X\beta)^T(Y - X\beta) \right) \exp \left( \frac{1}{2\lambda^2} \beta^T\beta \right) \]</div>
+<p>and taking the <span class="math notranslate nohighlight">\(\log\)</span> of this, and combining and redefining constants, we arrive at:</p>
+<div class="math notranslate nohighlight">
+\[ \ell(\beta) \propto K -  (Y - X\beta)^T(Y - X\beta) - \alpha \beta^T\beta  \]</div>
+<p>we arrive at the function we wish to maximize (recall the point that maximizes the posterior distribution is the MAP, or <em>maximum a posterior</em>):</p>
+<div class="math notranslate nohighlight">
+\[\hat{ \beta } = \text{argmax}_{\beta} \;\; -(Y - X\beta)^T(Y - X\beta) - \alpha \;\beta^T\beta \]</div>
+<p>Equivalently, we can minimize the negative of the above, and rewriting <span class="math notranslate nohighlight">\(\beta^T \beta = ||\beta||_2^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{ \beta } = \text{argmin}_{\beta} \;\; (Y - X\beta)^T(Y - X\beta) + \alpha \;||\beta||_2^2\]</div>
+<p>This above term is exactly Ridge Regression. Thus we can see that ridge regression corresponds to the MAP of a linear model with Normal errors and a Normal prior on <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p>3. Similarly, if we assume a <em>Laplace</em> prior on <span class="math notranslate nohighlight">\(\beta\)</span>, ie.</p>
+<div class="math notranslate nohighlight">
+\[ f_\beta( \beta) \propto \exp \left(- \lambda ||\beta||_1 \right)\]</div>
+<p>and following the same steps as above, we recover:</p>
+<div class="math notranslate nohighlight">
+\[\hat{ \beta } = \text{argmin}_{\beta} \;\; (Y - X\beta)^T(Y - X\beta) + \alpha \;||\beta||_1\]</div>
+<p>which is LASSO regression. Some important notes about this equivalence. The sparsity that is a result of using a LASSO regularization is not a result of the prior assigning high probability to sparsity. Quite the opposite actually. It is the combination of the <span class="math notranslate nohighlight">\(|| \cdot ||_1\)</span> function and using the MAP that creates sparsity on <span class="math notranslate nohighlight">\(\beta\)</span>: <a class="reference external" href="http://camdp.com/blogs/least-squares-regression-l1-penalty">purely a geometric argument</a>. The prior does contribute to an overall shrinking of the coefficients towards 0 though. An interesting discussion of this can be found in [2].</p>
+<p>For an example of Bayesian linear regression, see Chapter 4’s example on financial losses.</p>
+<div class="section" id="references">
+<h5>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h5>
+<ol class="simple">
+<li><p>Macro, . “What is the relationship between sample size and the influence of prior on posterior?.” 13 Jun 2013. StackOverflow, Online Posting to Cross-Validated. Web. 25 Apr. 2013.</p></li>
+<li><p>Starck, J.-L., , et al. “Sparsity and the Bayesian Perspective.” Astronomy &amp; Astrophysics. (2013): n. page. Print.</p></li>
+<li><p>Kuleshov, Volodymyr, and Doina Precup. “Algorithms for the multi-armed bandit problem.” Journal of Machine Learning Research. (2000): 1-49. Print.</p></li>
+<li><p>Gelman, Andrew. “Prior distributions for variance parameters in hierarchical models.” Bayesian Analysis. 1.3 (2006): 515-533. Print.</p></li>
+<li><p>Gelman, Andrew, and Cosma R. Shalizi. “Philosophy and the practice of Bayesian statistics.” British Journal of Mathematical and Statistical Psychology. (2012): n. page. Web. 17 Apr. 2013.</p></li>
+<li><p><a class="reference external" href="http://jmlr.csail.mit.edu/proceedings/papers/v22/kaufmann12/kaufmann12.pdf">http://jmlr.csail.mit.edu/proceedings/papers/v22/kaufmann12/kaufmann12.pdf</a></p></li>
+<li><p>James, Neufeld. “Reddit’s “best” comment scoring algorithm as a multi-armed bandit task.” Simple ML Hacks. Blogger, 09 Apr 2013. Web. 25 Apr. 2013.</p></li>
+<li><p>Oakley, J. E., Daneshkhah, A. and O’Hagan, A. Nonparametric elicitation using the roulette method. Submitted to Bayesian Analysis.</p></li>
+<li><p>“Eliciting priors from experts.” 19 Jul 2010. StackOverflow, Online Posting to Cross-Validated. Web. 1 May. 2013. <a class="reference external" href="http://stats.stackexchange.com/questions/1/eliciting-priors-from-experts">http://stats.stackexchange.com/questions/1/eliciting-priors-from-experts</a>.</p></li>
+<li><p>Taleb, Nassim Nicholas (2007), The Black Swan: The Impact of the Highly Improbable, Random House, ISBN 978-1400063512</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="k">def</span> <span class="nf">css_styling</span><span class="p">():</span>
+    <span class="n">styles</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../styles/custom.css&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">styles</span><span class="p">)</span>
+<span class="n">css_styling</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+    @font-face {
+        font-family: "Computer Modern";
+        src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunss.otf');
+    }
+    div.cell{
+        width:800px;
+        margin-left:16% !important;
+        margin-right:auto;
+    }
+    h1 {
+        font-family: Helvetica, serif;
+    }
+    h4{
+        margin-top:12px;
+        margin-bottom: 3px;
+       }
+    div.text_cell_render{
+        font-family: Computer Modern, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        line-height: 145%;
+        font-size: 130%;
+        width:800px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .CodeMirror{
+            font-family: "Source Code Pro", source-code-pro,Consolas, monospace;
+    }
+    .prompt{
+        display: None;
+    }
+    .text_cell_render h5 {
+        font-weight: 300;
+        font-size: 16pt;
+        color: #4057A1;
+        font-style: italic;
+        margin-bottom: .5em;
+        margin-top: 0.5em;
+        display: block;
+    }
+
+    .warning{
+        color: rgb( 240, 20, 20 )
+        }  
+</style>
+<script>
+    MathJax.Hub.Config({
+                        TeX: {
+                           extensions: ["AMSmath.js"]
+                           },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                },
+                displayAlign: 'center', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 4}}
+                }
+        });
+</script></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nbs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Ch5_LossFunctions_PyMC3.html" title="previous page">Chapter 5</a>
+    <a class='right-next' id="next-link" href="Ch7.1_DontOverfit.html" title="next page">Implementation of Salisman’s Don’t Overfit submission</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By CamDavidsonPilon<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

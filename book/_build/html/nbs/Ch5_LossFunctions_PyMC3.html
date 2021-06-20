@@ -1,0 +1,1385 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 5 &#8212; Jupyter Book of Probabilistic Programming and Bayesian Methods for Hackers</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 6" href="Ch6_Priors_PyMC3.html" />
+    <link rel="prev" title="Chapter 4" href="Ch4_LawOfLargeNumbers_PyMC3.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Jupyter Book of Probabilistic Programming and Bayesian Methods for Hackers</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch1_Introduction_PyMC3.html">
+   Probabilistic Programming
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch2_MorePyMC_PyMC3.html">
+   Chapter 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch3_IntroMCMC_PyMC3.html">
+   Chapter 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch4_LawOfLargeNumbers_PyMC3.html">
+   Chapter 4
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch6_Priors_PyMC3.html">
+   Chapter 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch7.1_DontOverfit.html">
+   Implementation of Salisman’s Don’t Overfit submission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch7.1_DontOverfit.html#develop-tim-s-model">
+   Develop Tim’s model
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nbs/Ch5_LossFunctions_PyMC3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/nbs/Ch5_LossFunctions_PyMC3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#would-you-rather-lose-an-arm-or-a-leg">
+   Would you rather lose an arm or a leg?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loss-functions">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loss-functions-in-the-real-world">
+   Loss functions in the real world
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-optimizing-for-the-showcase-on-the-price-is-right">
+     Example: Optimizing for the
+     <em>
+      Showcase
+     </em>
+     on
+     <em>
+      The Price is Right
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#minimizing-our-losses">
+     Minimizing our losses
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shortcuts">
+     Shortcuts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#machine-learning-via-bayesian-methods">
+   Machine Learning via Bayesian Methods
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-financial-prediction">
+     Example: Financial prediction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-kaggle-contest-on-observing-dark-world">
+     Example: Kaggle contest on
+     <em>
+      Observing Dark World
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-data">
+     The Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#priors">
+     Priors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-pymc3-implementation">
+     Training &amp; PyMC3 implementation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="chapter-5">
+<h1>Chapter 5<a class="headerlink" href="#chapter-5" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Original</span> <span class="pre">content</span> <span class="pre">created</span> <span class="pre">by</span> <span class="pre">Cam</span> <span class="pre">Davidson-Pilon</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Ported</span> <span class="pre">to</span> <span class="pre">Python</span> <span class="pre">3</span> <span class="pre">and</span> <span class="pre">PyMC3</span> <span class="pre">by</span> <span class="pre">Max</span> <span class="pre">Margenot</span> <span class="pre">(&#64;clean_utensils)</span> <span class="pre">and</span> <span class="pre">Thomas</span> <span class="pre">Wiecki</span> <span class="pre">(&#64;twiecki)</span> <span class="pre">at</span> <span class="pre">Quantopian</span> <span class="pre">(&#64;quantopian)</span></code></p>
+<hr class="docutils" />
+<div class="section" id="would-you-rather-lose-an-arm-or-a-leg">
+<h2>Would you rather lose an arm or a leg?<a class="headerlink" href="#would-you-rather-lose-an-arm-or-a-leg" title="Permalink to this headline">¶</a></h2>
+<p>Statisticians can be a sour bunch. Instead of considering their winnings, they only measure how much they have lost. In fact, they consider their wins as <em>negative losses</em>. But what’s interesting is <em>how they measure their losses.</em></p>
+<p>For example, consider the following example:</p>
+<blockquote>
+<div><p>A meteorologist is predicting the probability of a possible hurricane striking his city. He estimates, with 95% confidence, that the probability of it <em>not</em> striking is between 99% - 100%. He is very happy with his precision and advises the city that a major evacuation is unnecessary. Unfortunately, the hurricane does strike and the city is flooded.</p>
+</div></blockquote>
+<p>This stylized example shows the flaw in using a pure accuracy metric to measure outcomes. Using a measure that emphasizes estimation accuracy, while an appealing and <em>objective</em> thing to do, misses the point of why you are even performing the statistical inference in the first place: results of inference. The author Nassim Taleb of <em>The Black Swan</em> and <em>Antifragility</em> stresses the importance of the <em>payoffs</em> of decisions, <em>not the accuracy</em>. Taleb distills this quite succinctly: “I would rather be vaguely right than very wrong.”</p>
+</div>
+<div class="section" id="loss-functions">
+<h2>Loss Functions<a class="headerlink" href="#loss-functions" title="Permalink to this headline">¶</a></h2>
+<p>We introduce what statisticians and decision theorists call <em>loss functions</em>. A loss function is a function of the true parameter, and an estimate of that parameter</p>
+<div class="math notranslate nohighlight">
+\[ L( \theta, \hat{\theta} ) = f( \theta, \hat{\theta} )\]</div>
+<p>The important point of loss functions is that it measures how <em>bad</em> our current estimate is: the larger the loss, the worse the estimate is according to the loss function. A simple, and very common, example of a loss function is the <em>squared-error loss</em>:</p>
+<div class="math notranslate nohighlight">
+\[ L( \theta, \hat{\theta} ) = ( \theta -  \hat{\theta} )^2\]</div>
+<p>The squared-error loss function is used in estimators like linear regression, UMVUEs and many areas of machine learning. We can also consider an asymmetric squared-error loss function, something like:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} L( \theta, \hat{\theta} ) = \begin{cases} ( \theta -  \hat{\theta} )^2 &amp; \hat{\theta} \lt \theta \\\\ c( \theta -  \hat{\theta} )^2 &amp; \hat{\theta} \ge \theta, \;\; 0\lt c \lt 1 \end{cases}\end{split}\]</div>
+<p>which represents that estimating a value larger than the true estimate is preferable to estimating a value below. A situation where this might be useful is in estimating web traffic for the next month, where an over-estimated outlook is preferred so as to avoid an underallocation of server resources.</p>
+<p>A negative property about the squared-error loss is that it puts a disproportionate emphasis on large outliers. This is because the loss increases quadratically, and not linearly, as the estimate moves away. That is, the penalty of being three units away is much less than being five units away, but the penalty is not much greater than being one unit away, though in both cases the magnitude of difference is the same:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{1^2}{3^2} \lt \frac{3^2}{5^2}, \;\; \text{although} \;\; 3-1 = 5-3 \]</div>
+<p>This loss function imposes that large errors are <em>very</em> bad. A more <em>robust</em> loss function that increases linearly with the difference is the <em>absolute-loss</em></p>
+<div class="math notranslate nohighlight">
+\[ L( \theta, \hat{\theta} ) = | \theta -  \hat{\theta} | \]</div>
+<p>Other popular loss functions include:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L( \theta, \hat{\theta} ) = \mathbb{1}_{ \hat{\theta} \neq \theta }\)</span> is the zero-one loss often used in machine learning classification algorithms.</p></li>
+<li><p><span class="math notranslate nohighlight">\(L( \theta, \hat{\theta} ) = -\theta\log( \hat{\theta} ) - (1- \theta)\log( 1 - \hat{\theta} ), \; \; \theta \in {0,1}, \; \hat{\theta} \in [0,1]\)</span>, called the <em>log-loss</em>, also used in machine learning.</p></li>
+</ul>
+<p>Historically, loss functions have been motivated from 1) mathematical convenience, and 2) they are robust to application, i.e., they are objective measures of loss. The first reason has really held back the full breadth of loss functions. With computers being agnostic to mathematical convenience, we are free to design our own loss functions, which we take full advantage of later in this Chapter.</p>
+<p>With respect to the second point, the above loss functions are indeed objective, in that they are most often a function of the difference between estimate and true parameter, independent of signage or payoff of choosing that estimate. This last point, its independence of payoff, causes quite pathological results though. Consider our hurricane example above: the statistician equivalently predicted that the probability of the hurricane striking was between 0% to 1%. But if he had ignored being precise and instead focused on outcomes (99% chance of no flood, 1% chance of flood), he might have advised differently.</p>
+<p>By shifting our focus from trying to be incredibly precise about parameter estimation to focusing on the outcomes of our parameter estimation, we can customize our estimates to be optimized for our application. This requires us to design new loss functions that reflect our goals and outcomes. Some examples of more interesting loss functions:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(L( \theta, \hat{\theta} ) = \frac{ | \theta - \hat{\theta} | }{ \theta(1-\theta) }, \; \; \hat{\theta}, \theta \in [0,1]\)</span> emphasizes an estimate closer to 0 or 1 since if the true value <span class="math notranslate nohighlight">\(\theta\)</span> is near 0 or 1, the loss will be <em>very</em> large unless <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> is similarly close to 0 or 1.
+This loss function might be used by a political pundit whose job requires him or her to give confident “Yes/No” answers. This loss reflects that if the true parameter is close to 1 (for example, if a political outcome is very likely to occur), he or she would want to strongly agree as to not look like a skeptic.</p></li>
+<li><p><span class="math notranslate nohighlight">\(L( \theta, \hat{\theta} ) =  1 - \exp \left( -(\theta -  \hat{\theta} )^2 \right)\)</span> is bounded between 0 and 1 and reflects that the user is indifferent to sufficiently-far-away estimates. It is similar to the zero-one loss above, but not quite as penalizing to estimates that are close to the true parameter.</p></li>
+<li><p>Complicated non-linear loss functions can programmed:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> def loss(true_value, estimate):
+     if estimate*true_value &gt; 0:
+         return abs(estimate - true_value)
+     else:
+        return abs(estimate)*(estimate - true_value)**2
+</pre></div>
+</div>
+</li>
+<li><p>Another example is from the book <em>The Signal and The Noise</em>. Weather forecasters have an interesting loss function for their predictions.</p></li>
+</ul>
+<blockquote>
+<div><p>People notice one type of mistake — the failure to predict rain — more than other, false alarms. If it rains when it isn’t supposed to, they curse the weatherman for ruining their picnic, whereas an unexpectedly sunny day is taken as a serendipitous bonus.</p>
+</div></blockquote>
+<blockquote>
+<div><p>[The Weather Channel’s bias] is limited to slightly exaggerating the probability of rain when it is unlikely to occur — saying there is a 20 percent change when they know it is really a 5 or 10 percent chance — covering their butts in the case of an unexpected sprinkle.</p>
+</div></blockquote>
+<p>As you can see, loss functions can be used for good and evil: with great power, comes great — well you know.</p>
+</div>
+<div class="section" id="loss-functions-in-the-real-world">
+<h2>Loss functions in the real world<a class="headerlink" href="#loss-functions-in-the-real-world" title="Permalink to this headline">¶</a></h2>
+<p>So far we have been under the unrealistic assumption that we know the true parameter. Of course if we knew the true parameter, bothering to guess an estimate is pointless. Hence a loss function is really only practical when the true parameter is unknown.</p>
+<p>In Bayesian inference, we have a mindset that the unknown parameters are really random variables with prior and posterior distributions. Concerning the posterior distribution, a value drawn from it is a <em>possible</em> realization of what the true parameter could be. Given that realization, we can compute a loss associated with an estimate. As we have a whole distribution of what the unknown parameter could be (the posterior), we should be more interested in computing the <em>expected loss</em> given an estimate. This expected loss is a better estimate of the true loss than comparing the given loss from only a single sample from the posterior.</p>
+<p>First it will be useful to explain a <em>Bayesian point estimate</em>. The systems and machinery present in the modern world are not built to accept posterior distributions as input. It is also rude to hand someone over a distribution when all they asked for was an estimate.  In the course of an individual’s day, when faced with uncertainty we still act by distilling our uncertainty down to a single action. Similarly, we need to distill our posterior distribution down to a single value (or vector in the multivariate case). If the value is chosen intelligently, we can avoid the flaw of frequentist methodologies that mask the uncertainty and provide a more informative result.The value chosen, if from a Bayesian posterior, is a Bayesian point estimate.</p>
+<p>Suppose <span class="math notranslate nohighlight">\(P(\theta | X)\)</span> is the posterior distribution of <span class="math notranslate nohighlight">\(\theta\)</span> after observing data <span class="math notranslate nohighlight">\(X\)</span>, then the following function is understandable as the <em>expected loss of choosing estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> to estimate <span class="math notranslate nohighlight">\(\theta\)</span></em>:</p>
+<div class="math notranslate nohighlight">
+\[ l(\hat{\theta} ) = E_{\theta}\left[ \; L(\theta, \hat{\theta}) \; \right] \]</div>
+<p>This is also known as the <em>risk</em> of estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>. The subscript <span class="math notranslate nohighlight">\(\theta\)</span> under the expectation symbol is used to denote that <span class="math notranslate nohighlight">\(\theta\)</span> is the unknown (random) variable in the expectation, something that at first can be difficult to consider.</p>
+<p>We spent all of last chapter discussing how to approximate expected values. Given <span class="math notranslate nohighlight">\(N\)</span> samples <span class="math notranslate nohighlight">\(\theta_i,\; i=1,...,N\)</span> from the posterior distribution, and a loss function <span class="math notranslate nohighlight">\(L\)</span>, we can approximate the expected loss of using estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> by the Law of Large Numbers:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{N} \sum_{i=1}^N \;L(\theta_i, \hat{\theta} ) \approx E_{\theta}\left[ \; L(\theta, \hat{\theta}) \; \right]  = l(\hat{\theta} ) \]</div>
+<p>Notice that measuring your loss via an <em>expected value</em> uses more information from the distribution than the MAP estimate which, if you recall, will only find the maximum value of the distribution and ignore the shape of the distribution. Ignoring information can over-expose yourself to tail risks, like the unlikely hurricane, and leaves your estimate ignorant of how ignorant you really are about the parameter.</p>
+<p>Similarly, compare this with frequentist methods, that traditionally only aim to minimize the error, and do not consider the <em>loss associated with the result of that error</em>. Compound this with the fact that frequentist methods are almost guaranteed to never be absolutely accurate. Bayesian point estimates fix this by planning ahead: your estimate is going to be wrong, you might as well err on the right side of wrong.</p>
+<div class="section" id="example-optimizing-for-the-showcase-on-the-price-is-right">
+<h3>Example: Optimizing for the <em>Showcase</em> on <em>The Price is Right</em><a class="headerlink" href="#example-optimizing-for-the-showcase-on-the-price-is-right" title="Permalink to this headline">¶</a></h3>
+<p>Bless you if you are ever chosen as a contestant on the Price is Right, for here we will show you how to optimize your final price on the <em>Showcase</em>. For those who forget the rules:</p>
+<ol class="simple">
+<li><p>Two contestants compete in <em>The Showcase</em>.</p></li>
+<li><p>Each contestant is shown a unique suite of prizes.</p></li>
+<li><p>After the viewing, the contestants are asked to bid on the price for their unique suite of prizes.</p></li>
+<li><p>If a bid price is over the actual price, the bid’s owner is disqualified from winning.</p></li>
+<li><p>If a bid price is under the true price by less than $250, the winner is awarded both prizes.</p></li>
+</ol>
+<p>The difficulty in the game is balancing your uncertainty in the prices, keeping your bid low enough so as to not bid over, and trying to bid close to the price.</p>
+<p>Suppose we have recorded the <em>Showcases</em> from previous <em>The Price is Right</em> episodes and have <em>prior</em> beliefs about what distribution the true price follows. For simplicity, suppose it follows a Normal:</p>
+<div class="math notranslate nohighlight">
+\[\text{True Price} \sim \text{Normal}(\mu_p, \sigma_p )\]</div>
+<p>In a later chapter, we will actually use <em>real Price is Right Showcase data</em> to form the historical prior, but this requires some advanced PyMC3 use so we will not use it here. For now, we will assume <span class="math notranslate nohighlight">\(\mu_p = 35 000\)</span> and <span class="math notranslate nohighlight">\(\sigma_p = 7500\)</span>.</p>
+<p>We need a model of how we should be playing the <em>Showcase</em>. For each prize in the prize suite, we have an idea of what it might cost, but this guess could differ significantly from the true price. (Couple this with increased pressure being onstage and you can see why some bids are so wildly off). Let’s suppose your beliefs about the prices of prizes also follow Normal distributions:</p>
+<div class="math notranslate nohighlight">
+\[ \text{Prize}_i \sim \text{Normal}(\mu_i, \sigma_i ),\;\; i=1,2\]</div>
+<p>This is really why Bayesian analysis is great: we can specify what we think a fair price is through the <span class="math notranslate nohighlight">\(\mu_i\)</span> parameter, and express uncertainty of our guess in the <span class="math notranslate nohighlight">\(\sigma_i\)</span> parameter.</p>
+<p>We’ll assume two prizes per suite for brevity, but this can be extended to any number.
+The true price of the prize suite is then given by <span class="math notranslate nohighlight">\(\text{Prize}_1 + \text{Prize}_2 + \epsilon\)</span>,
+where <span class="math notranslate nohighlight">\(\epsilon\)</span> is some error term.</p>
+<p>We are interested in the updated <span class="math notranslate nohighlight">\(\text{True Price}\)</span> given we have observed both prizes and have belief distributions about them. We can perform this using PyMC3.</p>
+<p>Lets make some values concrete. Suppose there are two prizes in the observed prize suite:</p>
+<ol class="simple">
+<li><p>A trip to wonderful Toronto, Canada!</p></li>
+<li><p>A lovely new snowblower!</p></li>
+</ol>
+<p>We have some guesses about the true prices of these objects, but we are also pretty uncertain about them. I can express this uncertainty through the parameters of the Normals:</p>
+<p>\begin{align}
+&amp; \text{snowblower} \sim \text{Normal}(3 000, 500 )\
+&amp; \text{Toronto} \sim \text{Normal}(12 000, 3000 )\
+\end{align}</p>
+<p>For example, I believe that the true price of the trip to Toronto is 12 000 dollars, and that there is a 68.2% chance the price falls 1 standard deviation away from this, i.e. my confidence is that there is a 68.2% chance the trip is in [9 000, 15 000].</p>
+<p>We can create some PyMC3 code to perform inference on the true price of the suite.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">from</span> <span class="nn">IPython.core.pylabtools</span> <span class="kn">import</span> <span class="n">figsize</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="n">norm_pdf</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">311</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60000</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">sp1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">norm_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">35000</span><span class="p">,</span> <span class="mi">7500</span><span class="p">),</span> 
+                <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#348ABD&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;historical total prices&quot;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="n">sp1</span><span class="o">.</span><span class="n">get_facecolor</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="n">p1</span><span class="p">],</span> <span class="p">[</span><span class="n">sp1</span><span class="o">.</span><span class="n">get_label</span><span class="p">()])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">312</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">sp2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">norm_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> 
+                 <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span>
+                 <span class="n">label</span><span class="o">=</span><span class="s2">&quot;snowblower price guess&quot;</span><span class="p">)</span>
+
+<span class="n">p2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="n">sp2</span><span class="o">.</span><span class="n">get_facecolor</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="n">p2</span><span class="p">],</span> <span class="p">[</span><span class="n">sp2</span><span class="o">.</span><span class="n">get_label</span><span class="p">()])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">313</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25000</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">sp3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">norm_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">12000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span> 
+                 <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#7A68A6&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span>
+                 <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Trip price guess&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">tight</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="n">sp3</span><span class="o">.</span><span class="n">get_facecolor</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="n">p3</span><span class="p">],</span> <span class="p">[</span><span class="n">sp3</span><span class="o">.</span><span class="n">get_label</span><span class="p">()]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch5_LossFunctions_PyMC3_5_0.png" src="../_images/Ch5_LossFunctions_PyMC3_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+
+<span class="n">data_mu</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3e3</span><span class="p">,</span> <span class="mf">12e3</span><span class="p">]</span>
+
+<span class="n">data_std</span> <span class="o">=</span>  <span class="p">[</span><span class="mf">5e2</span><span class="p">,</span> <span class="mf">3e3</span><span class="p">]</span> 
+
+<span class="n">mu_prior</span> <span class="o">=</span> <span class="mf">35e3</span>
+<span class="n">std_prior</span> <span class="o">=</span>  <span class="mf">75e2</span>
+<span class="k">with</span> <span class="n">pm</span><span class="o">.</span><span class="n">Model</span><span class="p">()</span> <span class="k">as</span> <span class="n">model</span><span class="p">:</span>
+    <span class="n">true_price</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;true_price&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu_prior</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="n">std_prior</span><span class="p">)</span>
+    
+    <span class="n">prize_1</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;first_prize&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">data_mu</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sd</span><span class="o">=</span><span class="n">data_std</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">prize_2</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;second_prize&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">data_mu</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sd</span><span class="o">=</span><span class="n">data_std</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">price_estimate</span> <span class="o">=</span> <span class="n">prize_1</span> <span class="o">+</span> <span class="n">prize_2</span>
+    
+    <span class="n">logp</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="n">price_estimate</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="p">(</span><span class="mf">3e3</span><span class="p">))</span><span class="o">.</span><span class="n">logp</span><span class="p">(</span><span class="n">true_price</span><span class="p">)</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Potential</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="n">logp</span><span class="p">)</span>
+    
+
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">50000</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">pm</span><span class="o">.</span><span class="n">Metropolis</span><span class="p">())</span>
+    <span class="n">burned_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="mi">10000</span><span class="p">:]</span>
+
+<span class="n">price_trace</span> <span class="o">=</span> <span class="n">burned_trace</span><span class="p">[</span><span class="s2">&quot;true_price&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [-------100%-------] 50000 of 50000 in 8.2 sec. | SPS: 6119.0 | ETA: 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">40000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">35000</span><span class="p">,</span> <span class="mi">7500</span><span class="p">),</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> 
+         <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;prior dist. of suite price&quot;</span><span class="p">)</span>
+
+<span class="n">_hist</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">price_trace</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">35</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span> <span class="s2">&quot;stepfilled&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Posterior of the true price estimate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">mu_prior</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">_hist</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;prior&#39;s mean&quot;</span><span class="p">,</span>
+           <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">price_trace</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">_hist</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> \
+           <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;posterior&#39;s mean&quot;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;upper left&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch5_LossFunctions_PyMC3_7_0.png" src="../_images/Ch5_LossFunctions_PyMC3_7_0.png" />
+</div>
+</div>
+<p>Notice that because of our two observed prizes and subsequent guesses (including uncertainty about those guesses), we shifted our mean price estimate down about $15,000 dollars from the previous mean price.</p>
+<p>A frequentist, seeing the two prizes and having the same beliefs about their prices, would bid <span class="math notranslate nohighlight">\(\mu_1 + \mu_2 = 35000\)</span>, regardless of any uncertainty. Meanwhile, the <em>naive Bayesian</em> would simply pick the mean of the posterior distribution. But we have more information about our eventual outcomes; we should incorporate this into our bid. We will use the loss function above to find the <em>best</em> bid (<em>best</em> according to our loss).</p>
+<p>What might a contestant’s loss function look like? I would think it would look something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def showcase_loss(guess, true_price, risk = 80000):
+    if true_price &lt; guess:
+        return risk
+    elif abs(true_price - guess) &lt;= 250:
+        return -2*np.abs(true_price)
+    else:
+        return np.abs(true_price - guess - 250)
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">risk</span></code> is a parameter that defines of how bad it is if your guess is over the true price. A lower <code class="docutils literal notranslate"><span class="pre">risk</span></code> means that you are more comfortable with the idea of going over. If we do bid under and the difference is less than $250, we receive both prizes (modeled here as receiving twice the original prize). Otherwise, when we bid under the <code class="docutils literal notranslate"><span class="pre">true_price</span></code> we want to be as close as possible, hence the <code class="docutils literal notranslate"><span class="pre">else</span></code> loss is a increasing function of the distance between the guess and true price.</p>
+<p>For every possible bid, we calculate the <em>expected loss</em> associated with that bid. We vary the <code class="docutils literal notranslate"><span class="pre">risk</span></code> parameter to see how it affects our loss:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="c1">#numpy friendly showdown_loss</span>
+
+
+<span class="k">def</span> <span class="nf">showdown_loss</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span> <span class="n">true_price</span><span class="p">,</span> <span class="n">risk</span> <span class="o">=</span> <span class="mi">80000</span><span class="p">):</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">true_price</span><span class="p">)</span>
+        <span class="n">ix</span> <span class="o">=</span> <span class="n">true_price</span> <span class="o">&lt;</span> <span class="n">guess</span>
+        <span class="n">loss</span><span class="p">[</span><span class="o">~</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">guess</span> <span class="o">-</span> <span class="n">true_price</span><span class="p">[</span><span class="o">~</span><span class="n">ix</span><span class="p">])</span>
+        <span class="n">close_mask</span> <span class="o">=</span> <span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">true_price</span> <span class="o">-</span> <span class="n">guess</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">250</span><span class="p">]</span>
+        <span class="n">loss</span><span class="p">[</span><span class="n">close_mask</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">true_price</span><span class="p">[</span><span class="n">close_mask</span><span class="p">]</span>
+        <span class="n">loss</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">risk</span>
+        <span class="k">return</span> <span class="n">loss</span>
+
+
+<span class="n">guesses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span> 
+<span class="n">risks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">30000</span><span class="p">,</span> <span class="mi">150000</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">expected_loss</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">guess</span><span class="p">,</span> <span class="n">risk</span><span class="p">:</span> \
+    <span class="n">showdown_loss</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span> <span class="n">price_trace</span><span class="p">,</span> <span class="n">risk</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        
+<span class="k">for</span> <span class="n">_p</span> <span class="ow">in</span> <span class="n">risks</span><span class="p">:</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">expected_loss</span><span class="p">(</span><span class="n">_g</span><span class="p">,</span> <span class="n">_p</span><span class="p">)</span> <span class="k">for</span> <span class="n">_g</span> <span class="ow">in</span> <span class="n">guesses</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">guesses</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">_p</span>)
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Expected loss of different guesses, </span><span class="se">\n</span><span class="s2">various risk-levels of </span><span class="se">\</span>
+<span class="s2">overestimating&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Risk parameter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;price bid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;expected loss&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch5_LossFunctions_PyMC3_10_0.png" src="../_images/Ch5_LossFunctions_PyMC3_10_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="minimizing-our-losses">
+<h3>Minimizing our losses<a class="headerlink" href="#minimizing-our-losses" title="Permalink to this headline">¶</a></h3>
+<p>It would be wise to choose the estimate that minimizes our expected loss. This corresponds to the minimum point on each of the curves above. More formally, we would like to minimize our expected loss by finding the solution to</p>
+<div class="math notranslate nohighlight">
+\[ \text{arg} \min_{\hat{\theta}} \;\;E_{\theta}\left[ \; L(\theta, \hat{\theta}) \; \right] \]</div>
+<p>The minimum of the expected loss is called the <em>Bayes action</em>. We can solve for the Bayes action using Scipy’s optimization routines. The function in <code class="docutils literal notranslate"><span class="pre">fmin</span></code> in <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> module uses an intelligent search to find a minimum (not necessarily a <em>global</em> minimum) of any uni- or multivariate function. For most purposes, <code class="docutils literal notranslate"><span class="pre">fmin</span></code> will provide you with a good answer.</p>
+<p>We’ll compute the minimum loss for the <em>Showcase</em> example above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">sop</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">_p</span> <span class="ow">in</span> <span class="n">risks</span><span class="p">:</span>
+    <span class="n">_color</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">_get_lines</span><span class="o">.</span><span class="n">prop_cycler</span><span class="p">)</span>
+    <span class="n">_min_results</span> <span class="o">=</span> <span class="n">sop</span><span class="o">.</span><span class="n">fmin</span><span class="p">(</span><span class="n">expected_loss</span><span class="p">,</span> <span class="mi">15000</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">_p</span><span class="p">,),</span><span class="n">disp</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">expected_loss</span><span class="p">(</span><span class="n">_g</span><span class="p">,</span> <span class="n">_p</span><span class="p">)</span> <span class="k">for</span> <span class="n">_g</span> <span class="ow">in</span> <span class="n">guesses</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">guesses</span><span class="p">,</span> <span class="n">_results</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">_color</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">_min_results</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span> \
+                <span class="n">color</span><span class="o">=</span> <span class="n">_color</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">_p</span>)
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">_min_results</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">120000</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">_color</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;minimum at risk </span><span class="si">%d</span><span class="s2">: </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_p</span><span class="p">,</span> <span class="n">_min_results</span><span class="p">))</span>
+                                    
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Expected loss &amp; Bayes actions of different guesses, </span><span class="se">\n</span><span class="s2"> </span><span class="se">\</span>
+<span class="s2">various risk-levels of overestimating&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">scatterpoints</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Bayes action at risk:&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;price guess&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;expected loss&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">7000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">80000</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>minimum at risk 30000: 14723.45
+minimum at risk 54000: 13500.92
+minimum at risk 78000: 11900.78
+minimum at risk 102000: 11649.08
+minimum at risk 126000: 11649.08
+minimum at risk 150000: 11329.30
+</pre></div>
+</div>
+<img alt="../_images/Ch5_LossFunctions_PyMC3_12_1.png" src="../_images/Ch5_LossFunctions_PyMC3_12_1.png" />
+</div>
+</div>
+<p>As intuition suggests, as we decrease the risk threshold (care about overbidding less), we increase our bid, willing to edge closer to the true price. It is interesting how far away our optimized loss is from the posterior mean, which was about 20 000.</p>
+<p>Suffice to say, in higher dimensions being able to eyeball the minimum expected loss is impossible. Hence why we require use of Scipy’s <code class="docutils literal notranslate"><span class="pre">fmin</span></code> function.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="shortcuts">
+<h3>Shortcuts<a class="headerlink" href="#shortcuts" title="Permalink to this headline">¶</a></h3>
+<p>For some loss functions, the Bayes action is known in closed form. We list some of them below:</p>
+<ul class="simple">
+<li><p>If using the mean-squared loss, the Bayes action is the mean of the posterior distribution, i.e. the value $<span class="math notranslate nohighlight">\( E_{\theta}\left[ \theta \right] \)</span><span class="math notranslate nohighlight">\( minimizes \)</span>E_{\theta}\left[ ; (\theta - \hat{\theta})^2 ; \right]$. Computationally this requires us to calculate the average of the posterior samples [See chapter 4 on The Law of Large Numbers]</p></li>
+<li><p>Whereas the <em>median</em> of the posterior distribution minimizes the expected absolute-loss. The sample median of the posterior samples is an appropriate and very accurate approximation to the true median.</p></li>
+<li><p>In fact, it is possible to show that the MAP estimate is the solution to using a loss function that shrinks to the zero-one loss.</p></li>
+</ul>
+<p>Maybe it is clear now why the first-introduced loss functions are used most often in the mathematics of Bayesian inference: no complicated optimizations are necessary. Luckily, we have machines to do the complications for us.</p>
+</div>
+</div>
+<div class="section" id="machine-learning-via-bayesian-methods">
+<h2>Machine Learning via Bayesian Methods<a class="headerlink" href="#machine-learning-via-bayesian-methods" title="Permalink to this headline">¶</a></h2>
+<p>Whereas frequentist methods strive to achieve the best precision about all possible parameters, machine learning cares to achieve the best <em>prediction</em> among all possible parameters. Of course, one way to achieve accurate predictions is to aim for accurate predictions, but often your prediction measure and what frequentist methods are optimizing for are very different.</p>
+<p>For example, least-squares linear regression is the most simple active machine learning algorithm. I say active as it engages in some learning, whereas predicting the sample mean is technically <em>simpler</em>, but is learning very little if anything. The loss that determines the coefficients of the regressors is a squared-error loss. On the other hand, if your prediction loss function (or score function, which is the negative loss) is not a squared-error, like AUC, ROC, precision, etc., your least-squares line will not be optimal for the prediction loss function. This can lead to prediction results that are suboptimal.</p>
+<p>Finding Bayes actions is equivalent to finding parameters that optimize <em>not parameter accuracy</em> but an arbitrary performance measure, however we wish to define performance (loss functions, AUC, ROC, precision/recall etc.).</p>
+<p>The next two examples demonstrate these ideas. The first example is a linear model where we can choose to predict using the least-squares loss or a novel, outcome-sensitive loss.</p>
+<p>The second example is adapted from a Kaggle data science project. The loss function associated with our predictions is incredibly complicated.</p>
+<div class="section" id="example-financial-prediction">
+<h3>Example: Financial prediction<a class="headerlink" href="#example-financial-prediction" title="Permalink to this headline">¶</a></h3>
+<p>Suppose the future return of a stock price is very small, say 0.01 (or 1%). We have a model that predicts the stock’s future price, and our profit and loss is directly tied to us acting on the prediction.  How should we measure the loss associated with the model’s predictions, and subsequent future predictions? A squared-error loss is agnostic to the signage and would penalize a prediction of -0.01 equally as bad a prediction of 0.03:</p>
+<div class="math notranslate nohighlight">
+\[ (0.01 - (-0.01))^2 = (0.01 - 0.03)^2 = 0.004\]</div>
+<p>If you had made a bet based on your model’s prediction, you would have earned money with a prediction of 0.03, and lost money with a prediction of -0.01, yet our loss did not capture this. We need a better loss that takes into account the <em>sign</em> of the prediction and true value. We design a new loss that is better for financial applications below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">stock_loss</span><span class="p">(</span><span class="n">true_return</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">100.</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">true_return</span> <span class="o">*</span> <span class="n">yhat</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1">#opposite signs, not good</span>
+        <span class="k">return</span> <span class="n">alpha</span><span class="o">*</span><span class="n">yhat</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">true_return</span><span class="p">)</span><span class="o">*</span><span class="n">yhat</span> \
+                        <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true_return</span><span class="p">)</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">true_return</span> <span class="o">-</span> <span class="n">yhat</span><span class="p">)</span>
+    
+    
+<span class="n">true_value</span> <span class="o">=</span> <span class="mf">.05</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">.04</span><span class="p">,</span> <span class="mf">.12</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="p">[</span><span class="n">stock_loss</span><span class="p">(</span><span class="n">true_value</span><span class="p">,</span> <span class="n">_p</span><span class="p">)</span> <span class="k">for</span> <span class="n">_p</span> <span class="ow">in</span> <span class="n">pred</span><span class="p">],</span> \
+        <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Loss associated with</span><span class="se">\n</span><span class="s2"> prediction if true value = 0.05&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span><span class="mi">3</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.25</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.04</span><span class="p">,</span> <span class="mf">.12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+
+<span class="n">true_value</span> <span class="o">=</span> <span class="o">-</span><span class="mf">.02</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="p">[</span><span class="n">stock_loss</span><span class="p">(</span><span class="n">true_value</span><span class="p">,</span> <span class="n">_p</span><span class="p">)</span> <span class="k">for</span> <span class="n">_p</span> <span class="ow">in</span> <span class="n">pred</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span> \
+        <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Loss associated with</span><span class="se">\n</span><span class="s2"> prediction if true value = -0.02&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span><span class="mi">3</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Stock returns loss if true value = 0.05, -0.02&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch5_LossFunctions_PyMC3_16_0.png" src="../_images/Ch5_LossFunctions_PyMC3_16_0.png" />
+</div>
+</div>
+<p>Note the change in the shape of the loss as the prediction crosses zero. This loss reflects that the user really does not want to guess the wrong sign, especially be wrong <em>and</em> a large magnitude.</p>
+<p>Why would the user care about the magnitude? Why is the loss not 0 for predicting the correct sign? Surely, if the return is 0.01 and we bet millions we will still be (very) happy.</p>
+<p>Financial institutions treat downside risk, as in predicting a lot on the wrong side, and upside risk, as in predicting a lot on the right side, similarly. Both are seen as risky behaviour and discouraged. Hence why we have an increasing loss as we move further away from the true price. (With less extreme loss in the direction of the correct sign.)</p>
+<p>We will perform a regression on a trading signal that we believe predicts future returns well. Our dataset is artificial, as most financial data is not even close to linear. Below, we plot the data along with the least-squares line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Code to create artificial data</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mf">0.025</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.01</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> 
+
+<span class="n">ls_coef_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">ls_intercept</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">ls_coef_</span><span class="o">*</span><span class="n">X</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;trading signal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;returns&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Empirical returns vs trading signal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">ls_coef_</span><span class="o">*</span><span class="n">X</span> <span class="o">+</span> <span class="n">ls_intercept</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Least-squares line&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">Y</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch5_LossFunctions_PyMC3_18_0.png" src="../_images/Ch5_LossFunctions_PyMC3_18_0.png" />
+</div>
+</div>
+<p>We perform a simple Bayesian linear regression on this dataset. We look for a model like:</p>
+<div class="math notranslate nohighlight">
+\[ R = \alpha + \beta x + \epsilon\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha, \beta\)</span> are our unknown parameters and <span class="math notranslate nohighlight">\(\epsilon \sim \text{Normal}(0, \sigma)\)</span>. The most common priors on <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> are Normal priors. We will also assign a prior on <span class="math notranslate nohighlight">\(\sigma\)</span>, so that <span class="math notranslate nohighlight">\(\sigma\)</span> is uniform over 0 to 100.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+
+<span class="k">with</span> <span class="n">pm</span><span class="o">.</span><span class="n">Model</span><span class="p">()</span> <span class="k">as</span> <span class="n">model</span><span class="p">:</span>
+    <span class="n">std</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;beta&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    
+    <span class="n">mean</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Deterministic</span><span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span><span class="o">*</span><span class="n">X</span><span class="p">)</span>
+    
+    <span class="n">obs</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;obs&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="n">std</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">Y</span><span class="p">)</span>
+    
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">pm</span><span class="o">.</span><span class="n">Metropolis</span><span class="p">())</span>
+    <span class="n">burned_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="mi">20000</span><span class="p">:]</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applied interval-transform to std and added transformed std_interval_ to model.
+ [-------100%-------] 100000 of 100000 in 26.5 sec. | SPS: 3769.6 | ETA: 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">traceplot</span><span class="p">(</span><span class="n">trace</span><span class="o">=</span><span class="n">burned_trace</span><span class="p">,</span> <span class="n">varnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">])</span>
+<span class="n">pm</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">trace</span><span class="o">=</span><span class="n">burned_trace</span><span class="p">,</span> <span class="n">varnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">],</span> <span class="n">kde_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch5_LossFunctions_PyMC3_21_0.png" src="../_images/Ch5_LossFunctions_PyMC3_21_0.png" />
+<img alt="../_images/Ch5_LossFunctions_PyMC3_21_1.png" src="../_images/Ch5_LossFunctions_PyMC3_21_1.png" />
+</div>
+</div>
+<p>It appears the MCMC has converged so we may continue.</p>
+<p>For a specific trading signal, call it <span class="math notranslate nohighlight">\(x\)</span>, the distribution of possible returns has the form:</p>
+<div class="math notranslate nohighlight">
+\[R_i(x) =  \alpha_i + \beta_ix + \epsilon \]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon \sim \text{Normal}(0, \sigma_i)\)</span> and <span class="math notranslate nohighlight">\(i\)</span> indexes our posterior samples. We wish to find the solution to</p>
+<div class="math notranslate nohighlight">
+\[ \arg \min_{r} \;\;E_{R(x)}\left[ \; L(R(x), r) \; \right] \]</div>
+<p>according to the loss given above. This <span class="math notranslate nohighlight">\(r\)</span> is our Bayes action for trading signal <span class="math notranslate nohighlight">\(x\)</span>. Below we plot the Bayes action over different trading signals. What do you notice?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fmin</span>
+
+
+<span class="k">def</span> <span class="nf">stock_loss</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">pred</span><span class="p">,</span> <span class="n">coef</span> <span class="o">=</span> <span class="mi">500</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;vectorized for numpy&quot;&quot;&quot;</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+    <span class="n">ix</span> <span class="o">=</span> <span class="n">price</span><span class="o">*</span><span class="n">pred</span> <span class="o">&lt;</span> <span class="mi">0</span> 
+    <span class="n">sol</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">coef</span><span class="o">*</span><span class="n">pred</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">price</span><span class="p">[</span><span class="n">ix</span><span class="p">])</span><span class="o">*</span><span class="n">pred</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">price</span><span class="p">[</span><span class="n">ix</span><span class="p">])</span>
+    <span class="n">sol</span><span class="p">[</span><span class="o">~</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">price</span><span class="p">[</span><span class="o">~</span><span class="n">ix</span><span class="p">]</span> <span class="o">-</span> <span class="n">pred</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sol</span>
+
+<span class="n">std_samples</span> <span class="o">=</span> <span class="n">burned_trace</span><span class="p">[</span><span class="s2">&quot;std&quot;</span><span class="p">]</span>
+<span class="n">alpha_samples</span> <span class="o">=</span> <span class="n">burned_trace</span><span class="p">[</span><span class="s2">&quot;alpha&quot;</span><span class="p">]</span>
+<span class="n">beta_samples</span> <span class="o">=</span> <span class="n">burned_trace</span><span class="p">[</span><span class="s2">&quot;beta&quot;</span><span class="p">]</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="n">std_samples</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">noise</span> <span class="o">=</span> <span class="n">std_samples</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> 
+
+<span class="n">possible_outcomes</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">signal</span><span class="p">:</span> <span class="n">alpha_samples</span> <span class="o">+</span> <span class="n">beta_samples</span><span class="o">*</span><span class="n">signal</span> <span class="o">+</span> <span class="n">noise</span>
+
+
+<span class="n">opt_predictions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">trading_signals</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">50</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_signal</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">trading_signals</span><span class="p">):</span>
+        <span class="n">_possible_outcomes</span> <span class="o">=</span> <span class="n">possible_outcomes</span><span class="p">(</span><span class="n">_signal</span><span class="p">)</span>
+        <span class="n">tomin</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">pred</span><span class="p">:</span> <span class="n">stock_loss</span><span class="p">(</span><span class="n">_possible_outcomes</span><span class="p">,</span> <span class="n">pred</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">opt_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fmin</span><span class="p">(</span><span class="n">tomin</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">disp</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        
+        
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;trading signal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Least-squares prediction vs. Bayes action prediction&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">ls_coef_</span><span class="o">*</span><span class="n">X</span> <span class="o">+</span> <span class="n">ls_intercept</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s2">&quot;Least-squares prediction&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">trading_signals</span><span class="p">,</span> <span class="n">opt_predictions</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s2">&quot;Bayes action prediction&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch5_LossFunctions_PyMC3_23_0.png" src="../_images/Ch5_LossFunctions_PyMC3_23_0.png" />
+</div>
+</div>
+<p>What is interesting about the above graph is that when the signal is near 0, and many of the possible  returns outcomes are possibly both positive and negative, our best (with respect to our loss) prediction is to predict close to 0, hence <em>take on no position</em>. Only when we are very confident do we enter into a position. I call this style of model a <em>sparse prediction</em>, where we feel uncomfortable with our uncertainty so choose not to act. (Compare with the least-squares prediction which will rarely, if ever, predict zero).</p>
+<p>A good sanity check that our model is still reasonable: as the signal becomes more and more extreme, and we feel more and more confident about the positive/negativeness of returns, our position converges with that of the least-squares line.</p>
+<p>The sparse-prediction model is not trying to <em>fit</em> the data the best (according to a <em>squared-error loss</em> definition of <em>fit</em>). That honor would go to the least-squares model. The sparse-prediction model is trying to find the best prediction <em>with respect to our <code class="docutils literal notranslate"><span class="pre">stock_loss</span></code>-defined loss</em>. We can turn this reasoning around: the least-squares model is not trying to <em>predict</em> the best (according to a <em><code class="docutils literal notranslate"><span class="pre">stock-loss</span></code></em> definition of <em>predict</em>). That honor would go the <em>sparse prediction</em> model. The least-squares model is trying to find the best fit of the data <em>with respect to the squared-error loss</em>.</p>
+</div>
+<div class="section" id="example-kaggle-contest-on-observing-dark-world">
+<h3>Example: Kaggle contest on <em>Observing Dark World</em><a class="headerlink" href="#example-kaggle-contest-on-observing-dark-world" title="Permalink to this headline">¶</a></h3>
+<p>A personal motivation for learning Bayesian methods was trying to piece together the winning solution to Kaggle’s <a class="reference external" href="http://www.kaggle.com/c/DarkWorlds"><em>Observing Dark Worlds</em></a> contest. From the contest’s website:</p>
+<blockquote>
+<div><p>There is more to the Universe than meets the eye. Out in the cosmos exists a form of matter that outnumbers the stuff we can see by almost 7 to 1, and we don’t know what it is. What we do know is that it does not emit or absorb light, so we call it Dark Matter. Such a vast amount of aggregated matter does not go unnoticed. In fact we observe that this stuff aggregates and forms massive structures called Dark Matter Halos. Although dark, it warps and bends spacetime such that any light from a background galaxy which passes close to the Dark Matter will have its path altered and changed. This bending causes the galaxy to appear as an ellipse in the sky.</p>
+</div></blockquote>
+<img src="http://timsalimans.com/wp-content/uploads/2012/12/dm.jpg" width = 730>
+<p>The contest required predictions about where dark matter was likely to be. The winner, <a class="reference external" href="http://timsalimans.com/">Tim Salimans</a>, used Bayesian inference to find the best locations for the halos (interestingly, the second-place winner also used Bayesian inference). With Tim’s permission, we provided his solution [1] here:</p>
+<ol class="simple">
+<li><p>Construct a prior distribution for the halo positions <span class="math notranslate nohighlight">\(p(x)\)</span>, i.e. formulate our expectations about the halo positions before looking at the data.</p></li>
+<li><p>Construct a probabilistic model for the data (observed ellipticities of the galaxies) given the positions of the dark matter halos: <span class="math notranslate nohighlight">\(p(e | x)\)</span>.</p></li>
+<li><p>Use Bayes’ rule to get the posterior distribution of the halo positions, i.e. use to the data to guess where the dark matter halos might be.</p></li>
+<li><p>Minimize the expected loss with respect to the posterior distribution over the predictions for the halo positions: <span class="math notranslate nohighlight">\(\hat{x} = \arg \min_{\text{prediction} } E_{p(x|e)}[ L( \text{prediction}, x) ]\)</span> , i.e. tune our predictions to be as good as possible for the given error metric.</p></li>
+</ol>
+<p>The loss function in this problem is very complicated. For the very determined, the loss function is contained in the file <a class="reference external" href="http://DarkWorldsMetric.py">DarkWorldsMetric.py</a> in the parent folder. Though I suggest not reading it all, suffice to say the loss function is about 160 lines of code — not something that can be written down in a single mathematical line. The loss function attempts to measure the accuracy of prediction, in a Euclidean distance sense, such that no shift-bias is present. More details can be found on the metric’s <a class="reference external" href="http://www.kaggle.com/c/DarkWorlds/details/evaluation">main page</a>.</p>
+<p>We will attempt to implement Tim’s winning solution using PyMC3 and our knowledge of loss functions.</p>
+</div>
+<div class="section" id="the-data">
+<h3>The Data<a class="headerlink" href="#the-data" title="Permalink to this headline">¶</a></h3>
+<p>The dataset is actually 300 separate files, each representing a sky. In each file, or sky, are between 300 and 720 galaxies. Each galaxy has an <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> position associated with it, ranging from 0 to 4200, and measures of ellipticity: <span class="math notranslate nohighlight">\(e_1\)</span> and <span class="math notranslate nohighlight">\(e_2\)</span>. Information about what these measures mean can be found <a class="reference external" href="https://www.kaggle.com/c/DarkWorlds/details/an-introduction-to-ellipticity">here</a>, but for our purposes it does not matter besides for visualization purposes. Thus a typical sky might look like the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draw_sky2</span> <span class="kn">import</span> <span class="n">draw_sky</span>
+
+<span class="n">n_sky</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">#choose a file/sky to examine.</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s2">&quot;data/Train_Skies/Train_Skies/</span><span class="se">\</span>
+<span class="s2">Training_Sky</span><span class="si">%d</span><span class="s2">.csv&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n_sky</span><span class="p">),</span>
+                      <span class="n">dtype</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                      <span class="n">skip_header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span>
+                      <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data on galaxies in sky </span><span class="si">%d</span><span class="s2">.&quot;</span><span class="o">%</span><span class="k">n_sky</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;position_x, position_y, e_1, e_2 &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">draw_sky</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Galaxy positions and ellipcities of sky </span><span class="si">%d</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">n_sky</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-position&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y-position&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data on galaxies in sky 3.
+position_x, position_y, e_1, e_2 
+[[  1.62690000e+02   1.60006000e+03   1.14664000e-01  -1.90326000e-01]
+ [  2.27228000e+03   5.40040000e+02   6.23555000e-01   2.14979000e-01]
+ [  3.55364000e+03   2.69771000e+03   2.83527000e-01  -3.01870000e-01]]
+</pre></div>
+</div>
+<img alt="../_images/Ch5_LossFunctions_PyMC3_28_1.png" src="../_images/Ch5_LossFunctions_PyMC3_28_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="priors">
+<h3>Priors<a class="headerlink" href="#priors" title="Permalink to this headline">¶</a></h3>
+<p>Each sky has one, two or three dark matter halos in it. Tim’s solution details that his prior distribution of halo positions was uniform, i.e.</p>
+<p>\begin{align}
+&amp; x_i \sim \text{Uniform}( 0, 4200)\
+&amp; y_i \sim \text{Uniform}( 0, 4200), ;; i=1,2,3\
+\end{align}</p>
+<p>Tim and other competitors noted that most skies had one large halo and other halos, if present, were much smaller. Larger halos, having more mass, will influence the surrounding galaxies more. He decided that the large halos would have a mass distributed as a <em>log</em>-uniform random variable between 40 and 180 i.e.</p>
+<div class="math notranslate nohighlight">
+\[  m_{\text{large} } = \log \text{Uniform}( 40, 180 ) \]</div>
+<p>and in PyMC3,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>exp_mass_large = pm.Uniform(&quot;exp_mass_large&quot;, 40, 180)
+mass_large = pm.Deterministic(&quot;mass_large&quot;, np.log(exp_max_large))
+</pre></div>
+</div>
+<p>(This is what we mean when we say <em>log</em>-uniform.) For smaller galaxies, Tim set the mass to be the logarithm of 20. Why did Tim not create a prior for the smaller mass, nor treat it as a unknown? I believe this decision was made to speed up convergence of the algorithm. This is not too restrictive, as by construction the smaller halos have less influence on the galaxies.</p>
+<p>Tim logically assumed that the ellipticity of each galaxy is dependent on the position of the halos, the distance between the galaxy and halo, and the mass of the halos. Thus the vector of ellipticity of each galaxy, <span class="math notranslate nohighlight">\(\mathbf{e}_i\)</span>, are <em>children</em> variables of the vector of halo positions <span class="math notranslate nohighlight">\((\mathbf{x},\mathbf{y})\)</span>, distance (which we will formalize), and halo masses.</p>
+<p>Tim conceived a relationship to connect positions and ellipticity by reading literature and forum posts. He supposed the following was a reasonable relationship:</p>
+<div class="math notranslate nohighlight">
+\[ e_i | ( \mathbf{x}, \mathbf{y} ) \sim \text{Normal}( \sum_{j = \text{halo positions} }d_{i,j} m_j f( r_{i,j} ), \sigma^2 ) \]</div>
+<p>where <span class="math notranslate nohighlight">\(d_{i,j}\)</span> is the <em>tangential direction</em> (the direction in which halo <span class="math notranslate nohighlight">\(j\)</span> bends the light of galaxy <span class="math notranslate nohighlight">\(i\)</span>), <span class="math notranslate nohighlight">\(m_j\)</span> is the mass of halo <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(f(r_{i,j})\)</span> is a <em>decreasing function</em> of the Euclidean distance between halo <span class="math notranslate nohighlight">\(j\)</span> and galaxy <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Tim’s function <span class="math notranslate nohighlight">\(f\)</span> was defined:</p>
+<div class="math notranslate nohighlight">
+\[ f( r_{i,j} ) = \frac{1}{\min( r_{i,j}, 240 ) } \]</div>
+<p>for large halos, and for small halos</p>
+<div class="math notranslate nohighlight">
+\[ f( r_{i,j} ) = \frac{1}{\min( r_{i,j}, 70 ) } \]</div>
+<p>This fully bridges our observations and unknown. This model is incredibly simple, and Tim mentions this simplicity was purposefully designed: it prevents the model from overfitting.</p>
+</div>
+<div class="section" id="training-pymc3-implementation">
+<h3>Training &amp; PyMC3 implementation<a class="headerlink" href="#training-pymc3-implementation" title="Permalink to this headline">¶</a></h3>
+<p>For each sky, we run our Bayesian model to find the posteriors for the halo positions — we ignore the (known) halo position. This is slightly different than perhaps traditional approaches to Kaggle competitions, where this model uses no data from other skies nor the known halo location. That does not mean other data are not necessary — in fact, the model was created by comparing different skies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">import</span> <span class="nn">theano.tensor</span> <span class="k">as</span> <span class="nn">T</span>
+
+<span class="k">def</span> <span class="nf">euclidean_distance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f_distance</span><span class="p">(</span><span class="n">gxy_pos</span><span class="p">,</span> <span class="n">halo_pos</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="c1"># foo_position should be a 2-d numpy array</span>
+    <span class="c1"># T.maximum() provides our element-wise maximum as in NumPy, but instead for theano tensors</span>
+    <span class="k">return</span> <span class="n">T</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">euclidean_distance</span><span class="p">(</span><span class="n">gxy_pos</span><span class="p">,</span> <span class="n">halo_pos</span><span class="p">),</span> <span class="n">c</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">tangential_distance</span><span class="p">(</span><span class="n">glxy_position</span><span class="p">,</span> <span class="n">halo_position</span><span class="p">):</span>
+    <span class="c1"># foo_position should be a 2-d numpy array</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">glxy_position</span> <span class="o">-</span> <span class="n">halo_position</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">T</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">delta</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">delta</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">T</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="o">-</span><span class="n">T</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="o">-</span><span class="n">T</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">with</span> <span class="n">pm</span><span class="o">.</span><span class="n">Model</span><span class="p">()</span> <span class="k">as</span> <span class="n">model</span><span class="p">:</span>
+    <span class="c1">#set the size of the halo&#39;s mass</span>
+    <span class="n">mass_large</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="s2">&quot;mass_large&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+    
+    <span class="c1">#set the initial prior position of the halos, it&#39;s a 2-d Uniform dist.</span>
+    <span class="n">halo_position</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="s2">&quot;halo_position&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4200</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    
+    <span class="n">mean</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Deterministic</span><span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">mass_large</span> <span class="o">/</span>\
+            <span class="n">f_distance</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span><span class="n">data</span><span class="p">[:,:</span><span class="mi">2</span><span class="p">]),</span> <span class="n">halo_position</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span><span class="o">*</span>\
+            <span class="n">tangential_distance</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span><span class="n">data</span><span class="p">[:,:</span><span class="mi">2</span><span class="p">]),</span> <span class="n">halo_position</span><span class="p">))</span>
+    
+    <span class="n">ellpty</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;ellipcity&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applied interval-transform to mass_large and added transformed mass_large_interval_ to model.
+Applied interval-transform to halo_position and added transformed halo_position_interval_ to model.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">model</span><span class="p">:</span>
+    <span class="n">mu</span><span class="p">,</span> <span class="n">sds</span><span class="p">,</span> <span class="n">elbo</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">variational</span><span class="o">.</span><span class="n">advi</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">NUTS</span><span class="p">(</span><span class="n">scaling</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">dict_to_array</span><span class="p">(</span><span class="n">sds</span><span class="p">),</span> <span class="n">is_cov</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">mu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 0 [0%]: ELBO = 58.1
+Iteration 5000 [10%]: Average ELBO = 51.72
+Iteration 10000 [20%]: Average ELBO = 69.89
+Iteration 15000 [30%]: Average ELBO = 82.23
+Iteration 20000 [40%]: Average ELBO = 102.96
+Iteration 25000 [50%]: Average ELBO = 130.65
+Iteration 30000 [60%]: Average ELBO = 145.73
+Iteration 35000 [70%]: Average ELBO = 149.08
+Iteration 40000 [80%]: Average ELBO = 149.4
+Iteration 45000 [90%]: Average ELBO = 149.36
+Finished [100%]: Average ELBO = 149.36
+ [-------100%-------] 5000 of 5000 in 32.4 sec. | SPS: 154.4 | ETA: 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use ADVI here to find a good starting point and scaling for our NUTS sampler. NUTS is a “smarter” MCMC sampling method than Metropolis, so as a result we need fewer total samples for our chains to converge. ADVI follows a completely different methodology to fit a model that we will not get into here. We may cover ADVI, as well as NUTS, in-depth in a later chapter.</p>
+<p>Below we plot a “heatmap” of the posterior distribution. (Which is just a scatter plot of the posterior, but we can visualize it as a heatmap.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;halo_position&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">draw_sky</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Galaxy positions and ellipcities of sky </span><span class="si">%d</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">n_sky</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-position&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y-position&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.015</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4200</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch5_LossFunctions_PyMC3_33_0.png" src="../_images/Ch5_LossFunctions_PyMC3_33_0.png" />
+</div>
+</div>
+<p>The most probable position reveals itself like a lethal wound.</p>
+<p>Associated with each sky is another data point, located in <code class="docutils literal notranslate"><span class="pre">./data/Training_halos.csv</span></code> that holds the locations of up to three dark matter halos contained in the sky. For example, the night sky we trained on has halo locations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">halo_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s2">&quot;data/Training_halos.csv&quot;</span><span class="p">,</span> 
+                          <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span>
+                          <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
+                          <span class="n">skip_header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">halo_data</span><span class="p">[</span><span class="n">n_sky</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  1.00000000e+00   1.40861000e+03   1.68586000e+03   1.40861000e+03
+   1.68586000e+03   0.00000000e+00   0.00000000e+00   0.00000000e+00
+   0.00000000e+00]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The third and fourth column represent the true <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> position of the halo. It appears that the Bayesian method has located the halo within a tight vicinity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">draw_sky</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Galaxy positions and ellipcities of sky </span><span class="si">%d</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">n_sky</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-position&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y-position&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.015</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">halo_data</span><span class="p">[</span><span class="n">n_sky</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">halo_data</span><span class="p">[</span><span class="n">n_sky</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">],</span> 
+            <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;True halo position&quot;</span><span class="p">,</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">70</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">scatterpoints</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;lower left&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4200</span><span class="p">);</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True halo location:&quot;</span><span class="p">,</span> <span class="n">halo_data</span><span class="p">[</span><span class="n">n_sky</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">halo_data</span><span class="p">[</span><span class="n">n_sky</span><span class="p">][</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True halo location: 1408.61 1685.86
+</pre></div>
+</div>
+<img alt="../_images/Ch5_LossFunctions_PyMC3_37_1.png" src="../_images/Ch5_LossFunctions_PyMC3_37_1.png" />
+</div>
+</div>
+<p>Perfect. Our next step is to use the loss function to optimize our location. A naive strategy would be to simply choose the mean:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_posterior</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mean_posterior</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2312.96009501  1127.87170923]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">DarkWorldsMetric</span> <span class="kn">import</span> <span class="n">main_score</span>
+
+<span class="n">_halo_data</span> <span class="o">=</span> <span class="n">halo_data</span><span class="p">[</span><span class="n">n_sky</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">nhalo_all</span> <span class="o">=</span>  <span class="n">_halo_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x_true_all</span> <span class="o">=</span> <span class="n">_halo_data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_true_all</span> <span class="o">=</span> <span class="n">_halo_data</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x_ref_all</span> <span class="o">=</span> <span class="n">_halo_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_ref_all</span> <span class="o">=</span> <span class="n">_halo_data</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sky_prediction</span> <span class="o">=</span> <span class="n">mean_posterior</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using the mean:&quot;</span><span class="p">)</span>
+<span class="n">main_score</span><span class="p">(</span><span class="n">nhalo_all</span><span class="p">,</span> <span class="n">x_true_all</span><span class="p">,</span> <span class="n">y_true_all</span><span class="p">,</span> \
+            <span class="n">x_ref_all</span><span class="p">,</span> <span class="n">y_ref_all</span><span class="p">,</span> <span class="n">sky_prediction</span><span class="p">)</span>
+
+<span class="c1">#what&#39;s a bad score?</span>
+<span class="n">random_guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4200</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using a random location:&quot;</span><span class="p">,</span> <span class="n">random_guess</span><span class="p">)</span>
+<span class="n">main_score</span><span class="p">(</span><span class="n">nhalo_all</span><span class="p">,</span> <span class="n">x_true_all</span><span class="p">,</span> <span class="n">y_true_all</span><span class="p">,</span> \
+            <span class="n">x_ref_all</span><span class="p">,</span> <span class="n">y_ref_all</span><span class="p">,</span> <span class="n">random_guess</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using the mean:
+Your average distance in pixels you are away from the true halo is 46.0082084242
+Your average angular vector is 1.0
+Your score for the training data is 1.04600820842
+Using a random location: [[ 288 3167]]
+Your average distance in pixels you are away from the true halo is 2908.49191694
+Your average angular vector is 1.0
+Your score for the training data is 3.90849191694
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.9084919169390866
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a good guess, it is not very far from the true location, but it ignores the loss function that was provided to us. We also need to extend our code to allow for up to two additional, <em>smaller</em> halos: Let’s create a function for automatizing our PyMC3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">halo_posteriors</span><span class="p">(</span><span class="n">n_halos_in_sky</span><span class="p">,</span> <span class="n">galaxy_data</span><span class="p">,</span><span class="n">samples</span> <span class="o">=</span> <span class="mf">5e5</span><span class="p">,</span> <span class="n">burn_in</span> <span class="o">=</span> <span class="mi">500</span><span class="p">):</span>
+    <span class="c1">#set the size of the halo&#39;s mass</span>
+    <span class="k">with</span> <span class="n">pm</span><span class="o">.</span><span class="n">Model</span><span class="p">()</span> <span class="k">as</span> <span class="n">model</span><span class="p">:</span>
+        <span class="n">mass_large</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="s2">&quot;mass_large&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+        
+        <span class="n">mass_small_1</span> <span class="o">=</span> <span class="mi">20</span>
+        <span class="n">mass_small_2</span> <span class="o">=</span> <span class="mi">20</span>
+    
+        <span class="n">masses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mass_large</span><span class="p">,</span><span class="n">mass_small_1</span><span class="p">,</span> <span class="n">mass_small_2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+    
+        <span class="c1">#set the initial prior positions of the halos, it&#39;s a 2-d Uniform dist.</span>
+        <span class="n">halo_positions</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="s2">&quot;halo_positions&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4200</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n_halos_in_sky</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#notice this size</span>
+    
+        <span class="n">fdist_constants</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">240</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">70</span><span class="p">])</span>
+        
+        <span class="n">_sum</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_halos_in_sky</span><span class="p">):</span>
+            <span class="n">_sum</span> <span class="o">+=</span> <span class="n">masses</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">f_distance</span><span class="p">(</span><span class="n">data</span><span class="p">[:,:</span><span class="mi">2</span><span class="p">],</span> <span class="n">halo_positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:],</span> <span class="n">fdist_constants</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">*</span>\
+                <span class="n">tangential_distance</span><span class="p">(</span><span class="n">data</span><span class="p">[:,:</span><span class="mi">2</span><span class="p">],</span> <span class="n">halo_positions</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:])</span>
+        
+        <span class="n">mean</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Deterministic</span><span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">_sum</span><span class="p">)</span>
+               
+        <span class="n">ellpty</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;ellipcity&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:])</span>
+    
+        <span class="n">mu</span><span class="p">,</span> <span class="n">sds</span><span class="p">,</span> <span class="n">elbo</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">variational</span><span class="o">.</span><span class="n">advi</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">NUTS</span><span class="p">(</span><span class="n">scaling</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">dict_to_array</span><span class="p">(</span><span class="n">sds</span><span class="p">),</span> <span class="n">is_cov</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">mu</span><span class="p">)</span>
+        
+    <span class="n">burned_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="n">burn_in</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">burned_trace</span><span class="p">[</span><span class="s2">&quot;halo_positions&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_sky</span> <span class="o">=</span> <span class="mi">215</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s2">&quot;data/Train_Skies/Train_Skies/</span><span class="se">\</span>
+<span class="s2">Training_Sky</span><span class="si">%d</span><span class="s2">.csv&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n_sky</span><span class="p">),</span>
+                      <span class="n">dtype</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                      <span class="n">skip_header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span>
+                      <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#there are 3 halos in this file. </span>
+<span class="n">samples</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">traces</span> <span class="o">=</span> <span class="n">halo_posteriors</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">samples</span> <span class="o">=</span> <span class="n">samples</span><span class="p">,</span> <span class="n">burn_in</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applied interval-transform to mass_large and added transformed mass_large_interval_ to model.
+Applied interval-transform to halo_positions and added transformed halo_positions_interval_ to model.
+Iteration 0 [0%]: ELBO = 102.73
+Iteration 5000 [10%]: Average ELBO = 113.4
+Iteration 10000 [20%]: Average ELBO = 128.11
+Iteration 15000 [30%]: Average ELBO = 131.97
+Iteration 20000 [40%]: Average ELBO = 132.94
+Iteration 25000 [50%]: Average ELBO = 133.52
+Iteration 30000 [60%]: Average ELBO = 133.95
+Iteration 35000 [70%]: Average ELBO = 134.24
+Iteration 40000 [80%]: Average ELBO = 134.31
+Iteration 45000 [90%]: Average ELBO = 134.43
+Finished [100%]: Average ELBO = 134.31
+ [-------100%-------] 5000 of 5000 in 621.1 sec. | SPS: 8.1 | ETA: -0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">draw_sky</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Galaxy positions and ellipcities of sky </span><span class="si">%d</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">n_sky</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-position&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y-position&quot;</span><span class="p">)</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#467821&quot;</span><span class="p">,</span> <span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="s2">&quot;#7A68A6&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">traces</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">traces</span><span class="p">[:,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  <span class="n">traces</span><span class="p">[:,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.02</span><span class="p">)</span>
+    
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">traces</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">halo_data</span><span class="p">[</span><span class="n">n_sky</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">],</span> <span class="n">halo_data</span><span class="p">[</span><span class="n">n_sky</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">],</span> 
+            <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;True halo position&quot;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">90</span><span class="p">)</span>
+    
+<span class="c1">#plt.legend(scatterpoints = 1)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4200</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch5_LossFunctions_PyMC3_45_0.png" src="../_images/Ch5_LossFunctions_PyMC3_45_0.png" />
+</div>
+</div>
+<p>This looks pretty good, though it took a long time for the system to (sort of) converge. Our optimization step would look something like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_halo_data</span> <span class="o">=</span> <span class="n">halo_data</span><span class="p">[</span><span class="n">n_sky</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">traces</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">mean_posterior</span> <span class="o">=</span> <span class="n">traces</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mean_posterior</span><span class="p">)</span>
+
+
+<span class="n">nhalo_all</span> <span class="o">=</span>  <span class="n">_halo_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x_true_all</span> <span class="o">=</span> <span class="n">_halo_data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_true_all</span> <span class="o">=</span> <span class="n">_halo_data</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x_ref_all</span> <span class="o">=</span> <span class="n">_halo_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_ref_all</span> <span class="o">=</span> <span class="n">_halo_data</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sky_prediction</span> <span class="o">=</span> <span class="n">mean_posterior</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using the mean:&quot;</span><span class="p">)</span>
+<span class="n">main_score</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="n">x_true_all</span><span class="p">,</span> <span class="n">y_true_all</span><span class="p">,</span> \
+            <span class="n">x_ref_all</span><span class="p">,</span> <span class="n">y_ref_all</span><span class="p">,</span> <span class="n">sky_prediction</span><span class="p">)</span>
+
+<span class="c1">#what&#39;s a bad score?</span>
+<span class="n">random_guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4200</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using a random location:&quot;</span><span class="p">,</span> <span class="n">random_guess</span><span class="p">)</span>
+<span class="n">main_score</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="n">x_true_all</span><span class="p">,</span> <span class="n">y_true_all</span><span class="p">,</span> \
+            <span class="n">x_ref_all</span><span class="p">,</span> <span class="n">y_ref_all</span><span class="p">,</span> <span class="n">random_guess</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4500, 3, 2)
+[[ 3790.95827012  3794.60133909  3170.00252772  3142.31644835
+   2265.01634741  3623.32277728]]
+Using the mean:
+Your average distance in pixels you are away from the true halo is 175.125422038
+Your average angular vector is 1.0
+Your score for the training data is 1.17512542204
+Using a random location: [[1199 3589]]
+Your average distance in pixels you are away from the true halo is 2522.2681726
+Your average angular vector is 1.0
+Your score for the training data is 3.5222681726
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.5222681725978306
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Antifragile: Things That Gain from Disorder. New York: Random House. 2012. ISBN 978-1-4000-6782-4.</p></li>
+<li><p><a class="reference external" href="http://www.timsalimans.com/observing-dark-worlds">Tim Saliman’s solution to the Dark World’s Contest</a></p></li>
+<li><p>Silver, Nate. The Signal and the Noise: Why So Many Predictions Fail — but Some Don’t. 1. Penguin Press HC, The, 2012. Print.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="k">def</span> <span class="nf">css_styling</span><span class="p">():</span>
+    <span class="n">styles</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../styles/custom.css&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">styles</span><span class="p">)</span>
+<span class="n">css_styling</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+    @font-face {
+        font-family: "Computer Modern";
+        src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunss.otf');
+    }
+    div.cell{
+        width:800px;
+        margin-left:16% !important;
+        margin-right:auto;
+    }
+    h1 {
+        font-family: Helvetica, serif;
+    }
+    h4{
+        margin-top:12px;
+        margin-bottom: 3px;
+       }
+    div.text_cell_render{
+        font-family: Computer Modern, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        line-height: 145%;
+        font-size: 130%;
+        width:800px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .CodeMirror{
+            font-family: "Source Code Pro", source-code-pro,Consolas, monospace;
+    }
+    .prompt{
+        display: None;
+    }
+    .text_cell_render h5 {
+        font-weight: 300;
+        font-size: 16pt;
+        color: #4057A1;
+        font-style: italic;
+        margin-bottom: .5em;
+        margin-top: 0.5em;
+        display: block;
+    }
+
+    .warning{
+        color: rgb( 240, 20, 20 )
+        }  
+</style>
+<script>
+    MathJax.Hub.Config({
+                        TeX: {
+                           extensions: ["AMSmath.js"]
+                           },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                },
+                displayAlign: 'center', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 4}}
+                }
+        });
+</script></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nbs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Ch4_LawOfLargeNumbers_PyMC3.html" title="previous page">Chapter 4</a>
+    <a class='right-next' id="next-link" href="Ch6_Priors_PyMC3.html" title="next page">Chapter 6</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By CamDavidsonPilon<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

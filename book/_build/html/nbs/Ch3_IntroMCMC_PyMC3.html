@@ -1,0 +1,1311 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 3 &#8212; Jupyter Book of Probabilistic Programming and Bayesian Methods for Hackers</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 4" href="Ch4_LawOfLargeNumbers_PyMC3.html" />
+    <link rel="prev" title="Chapter 2" href="Ch2_MorePyMC_PyMC3.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Jupyter Book of Probabilistic Programming and Bayesian Methods for Hackers</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch1_Introduction_PyMC3.html">
+   Probabilistic Programming
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch2_MorePyMC_PyMC3.html">
+   Chapter 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch4_LawOfLargeNumbers_PyMC3.html">
+   Chapter 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch5_LossFunctions_PyMC3.html">
+   Chapter 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch6_Priors_PyMC3.html">
+   Chapter 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch7.1_DontOverfit.html">
+   Implementation of Salisman’s Don’t Overfit submission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ch7.1_DontOverfit.html#develop-tim-s-model">
+   Develop Tim’s model
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nbs/Ch3_IntroMCMC_PyMC3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/nbs/Ch3_IntroMCMC_PyMC3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opening-the-black-box-of-mcmc">
+   Opening the black box of MCMC
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-bayesian-landscape">
+     The Bayesian landscape
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploring-the-landscape-using-the-mcmc">
+     Exploring the landscape using the MCMC
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-thousands-of-samples">
+       Why Thousands of Samples?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithms-to-perform-mcmc">
+     Algorithms to perform MCMC
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-approximation-solutions-to-the-posterior">
+     Other approximation solutions to the posterior
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-unsupervised-clustering-using-a-mixture-model">
+       Example: Unsupervised Clustering using a Mixture Model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cluster-investigation">
+       Cluster Investigation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#important-don-t-mix-posterior-samples">
+     Important: Don’t mix posterior samples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#returning-to-clustering-prediction">
+       Returning to Clustering: Prediction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-map-to-improve-convergence">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       MAP
+      </span>
+     </code>
+     to improve convergence
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#speaking-of-the-burn-in-period">
+       Speaking of the burn-in period
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagnosing-convergence">
+   Diagnosing Convergence
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autocorrelation">
+     Autocorrelation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-does-this-relate-to-mcmc-convergence">
+       How does this relate to MCMC convergence?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#thinning">
+     Thinning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pymc3-plots">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pymc3.plots
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#useful-tips-for-mcmc">
+   Useful tips for MCMC
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intelligent-starting-values">
+     Intelligent starting values
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#priors">
+       Priors
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#covariance-matrices-and-eliminating-parameters">
+       Covariance matrices and eliminating parameters
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-folk-theorem-of-statistical-computing">
+     The Folk Theorem of Statistical Computing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="chapter-3">
+<h1>Chapter 3<a class="headerlink" href="#chapter-3" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Original</span> <span class="pre">content</span> <span class="pre">created</span> <span class="pre">by</span> <span class="pre">Cam</span> <span class="pre">Davidson-Pilon</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Ported</span> <span class="pre">to</span> <span class="pre">Python</span> <span class="pre">3</span> <span class="pre">and</span> <span class="pre">PyMC3</span> <span class="pre">by</span> <span class="pre">Max</span> <span class="pre">Margenot</span> <span class="pre">(&#64;clean_utensils)</span> <span class="pre">and</span> <span class="pre">Thomas</span> <span class="pre">Wiecki</span> <span class="pre">(&#64;twiecki)</span> <span class="pre">at</span> <span class="pre">Quantopian</span> <span class="pre">(&#64;quantopian)</span></code></p>
+<hr class="docutils" />
+<div class="section" id="opening-the-black-box-of-mcmc">
+<h2>Opening the black box of MCMC<a class="headerlink" href="#opening-the-black-box-of-mcmc" title="Permalink to this headline">¶</a></h2>
+<p>The previous two chapters hid the inner-mechanics of PyMC3, and more generally Markov Chain Monte Carlo (MCMC), from the reader. The reason for including this chapter is three-fold. The first is that any book on Bayesian inference must discuss MCMC. I cannot fight this. Blame the statisticians. Secondly, knowing the process of MCMC gives you insight into whether your algorithm has converged. (Converged to what? We will get to that) Thirdly, we’ll understand <em>why</em> we are returned thousands of samples from the posterior as a solution, which at first thought can be odd.</p>
+<div class="section" id="the-bayesian-landscape">
+<h3>The Bayesian landscape<a class="headerlink" href="#the-bayesian-landscape" title="Permalink to this headline">¶</a></h3>
+<p>When we setup a Bayesian inference problem with <span class="math notranslate nohighlight">\(N\)</span> unknowns, we are implicitly creating an <span class="math notranslate nohighlight">\(N\)</span> dimensional space for the prior distributions to exist in. Associated with the space is an additional dimension, which we can describe as the <em>surface</em>, or <em>curve</em>, that sits on top of the space, that reflects the <em>prior probability</em> of a particular point. The surface on the space is defined by our prior distributions. For example, if we have two unknowns <span class="math notranslate nohighlight">\(p_1\)</span> and <span class="math notranslate nohighlight">\(p_2\)</span>, and priors for both are <span class="math notranslate nohighlight">\(\text{Uniform}(0,5)\)</span>, the space created is a square of length 5 and the surface is a flat plane that sits on top of the square (representing that every point is equally likely).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">from</span> <span class="nn">IPython.core.pylabtools</span> <span class="kn">import</span> <span class="n">figsize</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="n">jet</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">uni_x</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">uni_y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">uni_x</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">uni_y</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:])</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">jet</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">.15</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Landscape formed by Uniform priors.&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">.15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">azim</span><span class="o">=</span><span class="mi">390</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Uniform prior landscape; alternate view&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_3_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_3_0.png" />
+</div>
+</div>
+<p>Alternatively, if the two priors are <span class="math notranslate nohighlight">\(\text{Exp}(3)\)</span> and <span class="math notranslate nohighlight">\(\text{Exp}(10)\)</span>, then the space is all positive numbers on the 2-D plane, and the surface induced by the priors looks like a water fall that starts at the point (0,0) and flows over the positive numbers.</p>
+<p>The plots below visualize this. The more dark red the color, the more prior probability is assigned to that location. Conversely, areas with darker blue represent that our priors assign very low probability to that location.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+
+<span class="n">exp_x</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">exp_y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">exp_x</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">exp_y</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:])</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">jet</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="c1">#plt.xlabel(&quot;prior on $p_1$&quot;)</span>
+<span class="c1">#plt.ylabel(&quot;prior on $p_2$&quot;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$Exp(3), Exp(10)$ prior landscape&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">azim</span><span class="o">=</span><span class="mi">390</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$Exp(3), Exp(10)$ prior landscape; </span><span class="se">\n</span><span class="s2">alternate view&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_5_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_5_0.png" />
+</div>
+</div>
+<p>These are simple examples in 2D space, where our brains can understand surfaces well. In practice, spaces and surfaces generated by our priors can be much higher dimensional.</p>
+<p>If these surfaces describe our <em>prior distributions</em> on the unknowns, what happens to our space after we incorporate our observed data <span class="math notranslate nohighlight">\(X\)</span>? The data <span class="math notranslate nohighlight">\(X\)</span> does not change the space, but it changes the surface of the space by <em>pulling and stretching the fabric of the prior surface</em> to reflect where the true parameters likely live. More data means more pulling and stretching, and our original shape becomes mangled or insignificant compared to the newly formed shape. Less data, and our original shape is more present.  Regardless, the resulting surface describes the <em>posterior distribution</em>.</p>
+<p>Again I must stress that it is, unfortunately, impossible to visualize this in large dimensions. For two dimensions, the data essentially <em>pushes up</em> the original surface to make <em>tall mountains</em>. The tendency of the observed data to <em>push up</em> the posterior probability in certain areas is checked by the prior probability distribution, so that less prior probability means more resistance. Thus in the double-exponential prior case above, a mountain (or multiple mountains) that might erupt near the (0,0) corner would be much higher than mountains that erupt closer to (5,5), since there is more resistance (low prior probability) near (5,5). The peak reflects the posterior probability of where the true parameters are likely to be found. Importantly, if the prior has assigned a probability of 0, then no posterior probability will be assigned there.</p>
+<p>Suppose the priors mentioned above represent different parameters <span class="math notranslate nohighlight">\(\lambda\)</span> of two Poisson distributions. We observe a few data points and visualize the new landscape:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create the observed data</span>
+
+<span class="c1"># sample size of data we observe, trying varying this (keep it less than 100 ;)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># the true parameters, but of course we do not see these values...</span>
+<span class="n">lambda_1_true</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">lambda_2_true</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1">#...we see the data generated, dependent on the above two values.</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span>
+    <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">lambda_1_true</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">lambda_2_true</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;observed (2-dimensional,sample size = </span><span class="si">%d</span><span class="s2">):&quot;</span> <span class="o">%</span> <span class="n">N</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># plotting details.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">likelihood_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">_x</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">_x</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">likelihood_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">_y</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">_y</span> <span class="ow">in</span> <span class="n">y</span><span class="p">])</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">likelihood_x</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">likelihood_y</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>observed (2-dimensional,sample size = 1): [[0 2]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="c1"># matplotlib heavy lifting below, beware!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">)</span>
+<span class="n">uni_x</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">uni_y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">uni_x</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">uni_y</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:])</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">jet</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">.15</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lambda_2_true</span><span class="p">,</span> <span class="n">lambda_1_true</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Landscape formed by Uniform priors on $p_1, p_2$.&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">M</span> <span class="o">*</span> <span class="n">L</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">M</span> <span class="o">*</span> <span class="n">L</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">jet</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Landscape warped by </span><span class="si">%d</span><span class="s2"> data observation;</span><span class="se">\n</span><span class="s2"> Uniform priors on $p_1, p_2$.&quot;</span> <span class="o">%</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lambda_2_true</span><span class="p">,</span> <span class="n">lambda_1_true</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
+<span class="n">exp_x</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">exp_y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">exp_x</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">exp_y</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">jet</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lambda_2_true</span><span class="p">,</span> <span class="n">lambda_1_true</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Landscape formed by Exponential priors on $p_1, p_2$.&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">224</span><span class="p">)</span>
+<span class="c1"># This is the likelihood times prior, that results in the posterior.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">M</span> <span class="o">*</span> <span class="n">L</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">M</span> <span class="o">*</span> <span class="n">L</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">jet</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lambda_2_true</span><span class="p">,</span> <span class="n">lambda_1_true</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Landscape warped by </span><span class="si">%d</span><span class="s2"> data observation;</span><span class="se">\n</span><span class="s2"> Exponential priors on </span><span class="se">\</span>
+<span class="s2">$p_1, p_2$.&quot;</span> <span class="o">%</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_8_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_8_0.png" />
+</div>
+</div>
+<p>The plot on the left is the deformed landscape with the <span class="math notranslate nohighlight">\(\text{Uniform}(0,5)\)</span> priors, and the plot on the right is the deformed landscape with the exponential priors. Notice that the posterior landscapes look different from one another, though the data observed is identical in both cases. The reason is as follows. Notice the exponential-prior landscape, bottom right figure, puts very little <em>posterior</em> weight on values in the upper right corner of the figure: this is because <em>the prior does not put much weight there</em>. On the other hand, the uniform-prior landscape is happy to put posterior weight in the upper-right corner, as the prior puts more weight there.</p>
+<p>Notice also the highest-point, corresponding the the darkest red, is biased towards (0,0) in the exponential case, which is the result from the exponential prior putting more prior weight in the (0,0) corner.</p>
+<p>The black dot represents the true parameters. Even with 1 sample point, the mountains attempts to contain the true parameter. Of course, inference with a sample size of 1 is incredibly naive, and choosing such a small sample size was only illustrative.</p>
+<p>It’s a great exercise to try changing the sample size to other values (try 2,5,10,100?…) and observing how our “mountain” posterior changes.</p>
+</div>
+<div class="section" id="exploring-the-landscape-using-the-mcmc">
+<h3>Exploring the landscape using the MCMC<a class="headerlink" href="#exploring-the-landscape-using-the-mcmc" title="Permalink to this headline">¶</a></h3>
+<p>We should explore the deformed posterior space generated by our prior surface and observed data to find the posterior mountain. However, we cannot naively search the space: any computer scientist will tell you that traversing <span class="math notranslate nohighlight">\(N\)</span>-dimensional space is exponentially difficult in <span class="math notranslate nohighlight">\(N\)</span>: the size of the space quickly blows-up as we increase <span class="math notranslate nohighlight">\(N\)</span> (see <a class="reference external" href="http://en.wikipedia.org/wiki/Curse_of_dimensionality">the curse of dimensionality</a>). What hope do we have to find these hidden mountains? The idea behind MCMC is to perform an intelligent search of the space. To say “search” implies we are looking for a particular point, which is perhaps not an accurate as we are really looking for a broad mountain.</p>
+<p>Recall that MCMC returns <em>samples</em> from the posterior distribution, not the distribution itself. Stretching our mountainous analogy to its limit, MCMC performs a task similar to repeatedly asking  “How likely is this pebble I found to be from the mountain I am searching for?”, and completes its task by returning thousands of accepted pebbles in hopes of reconstructing the original mountain. In MCMC and PyMC3 lingo, the returned sequence of “pebbles” are the samples,  cumulatively called the <em>traces</em>.</p>
+<p>When I say MCMC intelligently searches, I really am saying MCMC will <em>hopefully</em> converge towards the areas of high posterior probability. MCMC does this by exploring nearby positions and moving into areas with higher probability. Again, perhaps “converge” is not an accurate term to describe MCMC’s progression. Converging usually implies moving towards a point in space, but MCMC moves towards a <em>broader area</em> in the space and randomly walks in that area, picking up samples from that area.</p>
+<div class="section" id="why-thousands-of-samples">
+<h4>Why Thousands of Samples?<a class="headerlink" href="#why-thousands-of-samples" title="Permalink to this headline">¶</a></h4>
+<p>At first, returning thousands of samples to the user might sound like being an inefficient way to describe the posterior distributions. I would argue that this is extremely efficient. Consider the alternative possibilities:</p>
+<ol class="simple">
+<li><p>Returning a mathematical formula for the “mountain ranges” would involve describing a N-dimensional surface with arbitrary peaks and valleys.</p></li>
+<li><p>Returning the “peak” of the landscape, while mathematically possible and a sensible thing to do as the highest point corresponds to most probable estimate of the unknowns, ignores the shape of the landscape, which we have previously argued is very important in determining posterior confidence in unknowns.</p></li>
+</ol>
+<p>Besides computational reasons, likely the strongest reason for returning samples is that we can easily use <em>The Law of Large Numbers</em> to solve otherwise intractable problems. I postpone this discussion for the next chapter. With the thousands of samples, we can reconstruct the posterior surface by organizing them in a histogram.</p>
+</div>
+</div>
+<div class="section" id="algorithms-to-perform-mcmc">
+<h3>Algorithms to perform MCMC<a class="headerlink" href="#algorithms-to-perform-mcmc" title="Permalink to this headline">¶</a></h3>
+<p>There is a large family of algorithms that perform MCMC. Most of these algorithms can be expressed at a high level as follows: (Mathematical details can be found in the appendix.)</p>
+<ol class="simple">
+<li><p>Start at current position.</p></li>
+<li><p>Propose moving to a new position (investigate a pebble near you).</p></li>
+<li><p>Accept/Reject the new position based on the position’s adherence to the data and prior distributions (ask if the pebble likely came from the mountain).</p></li>
+<li><ol class="simple">
+<li><p>If you accept: Move to the new position. Return to Step 1.</p></li>
+<li><p>Else: Do not move to new position. Return to Step 1.</p></li>
+</ol>
+</li>
+<li><p>After a large number of iterations, return all accepted positions.</p></li>
+</ol>
+<p>This way we move in the general direction towards the regions where the posterior distributions exist, and collect samples sparingly on the journey. Once we reach the posterior distribution, we can easily collect samples as they likely all belong to the posterior distribution.</p>
+<p>If the current position of the MCMC algorithm is in an area of extremely low probability, which is often the case when the algorithm begins (typically at a random location in the space), the algorithm will move in positions <em>that are likely not from the posterior</em> but better than everything else nearby. Thus the first moves of the algorithm are not reflective of the posterior.</p>
+<p>In the above algorithm’s pseudocode, notice that only the current position matters (new positions are investigated only near the current position). We can describe this property as <em>memorylessness</em>, i.e. the algorithm does not care <em>how</em> it arrived at its current position, only that it is there.</p>
+</div>
+<div class="section" id="other-approximation-solutions-to-the-posterior">
+<h3>Other approximation solutions to the posterior<a class="headerlink" href="#other-approximation-solutions-to-the-posterior" title="Permalink to this headline">¶</a></h3>
+<p>Besides MCMC, there are other procedures available for determining the posterior distributions. A Laplace approximation is an approximation of the posterior using simple functions. A more advanced method is <a class="reference external" href="http://en.wikipedia.org/wiki/Variational_Bayesian_methods">Variational Bayes</a>. All three methods, Laplace Approximations, Variational Bayes, and classical MCMC have their pros and cons. We will only focus on MCMC in this book. That being said, my friend Imri Sofar likes to classify MCMC algorithms as either “they suck”, or “they really suck”. He classifies the particular flavour of MCMC used by PyMC3 as just <em>sucks</em> ;)</p>
+<div class="section" id="example-unsupervised-clustering-using-a-mixture-model">
+<h4>Example: Unsupervised Clustering using a Mixture Model<a class="headerlink" href="#example-unsupervised-clustering-using-a-mixture-model" title="Permalink to this headline">¶</a></h4>
+<p>Suppose we are given the following dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;data/mixture_data.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;stepfilled&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Histogram of the dataset&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">]);</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="s2">&quot;...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 115.85679142  152.26153716  178.87449059  162.93500815  107.02820697
+  105.19141146  118.38288501  125.3769803   102.88054011  206.71326136] ...
+</pre></div>
+</div>
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_12_1.png" src="../_images/Ch3_IntroMCMC_PyMC3_12_1.png" />
+</div>
+</div>
+<p>What does the data suggest? It appears the data has a bimodal form, that is, it appears to have two peaks, one near 120 and the other near 200. Perhaps there are <em>two clusters</em> within this dataset.</p>
+<p>This dataset is a good example of the data-generation modeling technique from last chapter. We can propose <em>how</em> the data might have been created. I suggest the following data generation algorithm:</p>
+<ol class="simple">
+<li><p>For each data point, choose cluster 1 with probability <span class="math notranslate nohighlight">\(p\)</span>, else choose cluster 2.</p></li>
+<li><p>Draw a random variate from a Normal distribution with parameters <span class="math notranslate nohighlight">\(\mu_i\)</span> and <span class="math notranslate nohighlight">\(\sigma_i\)</span> where <span class="math notranslate nohighlight">\(i\)</span> was chosen in step 1.</p></li>
+<li><p>Repeat.</p></li>
+</ol>
+<p>This algorithm would create a similar effect as the observed dataset, so we choose this as our model. Of course, we do not know <span class="math notranslate nohighlight">\(p\)</span> or the parameters of the Normal distributions. Hence we must infer, or <em>learn</em>, these unknowns.</p>
+<p>Denote the Normal distributions <span class="math notranslate nohighlight">\(\text{N}_0\)</span> and <span class="math notranslate nohighlight">\(\text{N}_1\)</span> (having variables’ index start at 0 is just Pythonic). Both currently have unknown mean and standard deviation, denoted <span class="math notranslate nohighlight">\(\mu_i\)</span> and <span class="math notranslate nohighlight">\(\sigma_i, \; i =0,1\)</span> respectively. A specific data point can be from either <span class="math notranslate nohighlight">\(\text{N}_0\)</span> or <span class="math notranslate nohighlight">\(\text{N}_1\)</span>, and we assume that the data point is assigned to <span class="math notranslate nohighlight">\(\text{N}_0\)</span> with probability <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>An appropriate way to assign data points to clusters is to use a PyMC3 <code class="docutils literal notranslate"><span class="pre">Categorical</span></code> stochastic variable. Its parameter is a <span class="math notranslate nohighlight">\(k\)</span>-length array of probabilities that must sum to one and its <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute is a integer between 0 and <span class="math notranslate nohighlight">\(k-1\)</span> randomly chosen according to the crafted array of probabilities (In our case <span class="math notranslate nohighlight">\(k=2\)</span>). <em>A priori</em>, we do not know what the probability of assignment to cluster 1 is, so we form a uniform variable on <span class="math notranslate nohighlight">\((0, 1)\)</span>. We call call this <span class="math notranslate nohighlight">\(p_1\)</span>, so the probability of belonging to cluster 2 is therefore <span class="math notranslate nohighlight">\(p_2 = 1 - p_1\)</span>.</p>
+<p>Unfortunately, we can’t we just give <code class="docutils literal notranslate"><span class="pre">[p1,</span> <span class="pre">p2]</span></code> to our <code class="docutils literal notranslate"><span class="pre">Categorical</span></code> variable. PyMC3 uses Theano under the hood to construct the models so we need to use <code class="docutils literal notranslate"><span class="pre">theano.tensor.stack()</span></code> to combine <span class="math notranslate nohighlight">\(p_1\)</span> and <span class="math notranslate nohighlight">\(p_2\)</span> into a vector that it can understand. We pass this vector into the <code class="docutils literal notranslate"><span class="pre">Categorical</span></code> variable as well as the <code class="docutils literal notranslate"><span class="pre">testval</span></code> parameter to give our variable an idea of where to start from.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">import</span> <span class="nn">theano.tensor</span> <span class="k">as</span> <span class="nn">T</span>
+
+<span class="k">with</span> <span class="n">pm</span><span class="o">.</span><span class="n">Model</span><span class="p">()</span> <span class="k">as</span> <span class="n">model</span><span class="p">:</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">])</span>
+    <span class="n">assignment</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="s2">&quot;assignment&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> 
+                                <span class="n">shape</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                <span class="n">testval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;prior assignment, with p = </span><span class="si">%.2f</span><span class="s2">:&quot;</span> <span class="o">%</span> <span class="n">p1</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">test_value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">assignment</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">test_value</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applied interval-transform to p and added transformed p_interval_ to model.
+prior assignment, with p = 0.50:
+[0 0 0 0 1 1 1 0 0 1]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looking at the above dataset, I would guess that the standard deviations of the two Normals are different. To maintain ignorance of what the standard deviations might be, we will initially model them as uniform on 0 to 100. We will include both standard deviations in our model using a single line of PyMC3 code:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sds = pm.Uniform(&quot;sds&quot;, 0, 100, shape=2)
+</pre></div>
+</div>
+<p>Notice that we specified <code class="docutils literal notranslate"><span class="pre">shape=2</span></code>: we are modeling both <span class="math notranslate nohighlight">\(\sigma\)</span>s as a single PyMC3 variable. Note that this does not induce a necessary relationship between the two <span class="math notranslate nohighlight">\(\sigma\)</span>s, it is simply for succinctness.</p>
+<p>We also need to specify priors on the centers of the clusters. The centers are really the <span class="math notranslate nohighlight">\(\mu\)</span> parameters in these Normal distributions. Their priors can be modeled by a Normal distribution. Looking at the data, I have an idea where the two centers might be — I would guess somewhere around 120 and 190 respectively, though I am not very confident in these eyeballed estimates. Hence I will set <span class="math notranslate nohighlight">\(\mu_0 = 120, \mu_1 = 190\)</span> and <span class="math notranslate nohighlight">\(\sigma_0 = \sigma_1 = 10\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">model</span><span class="p">:</span>
+    <span class="n">sds</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="s2">&quot;sds&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">centers</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;centers&quot;</span><span class="p">,</span> 
+                        <span class="n">mu</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span> <span class="mi">190</span><span class="p">]),</span> 
+                        <span class="n">sd</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]),</span> 
+                        <span class="n">shape</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">center_i</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Deterministic</span><span class="p">(</span><span class="s1">&#39;center_i&#39;</span><span class="p">,</span> <span class="n">centers</span><span class="p">[</span><span class="n">assignment</span><span class="p">])</span>
+    <span class="n">sd_i</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Deterministic</span><span class="p">(</span><span class="s1">&#39;sd_i&#39;</span><span class="p">,</span> <span class="n">sds</span><span class="p">[</span><span class="n">assignment</span><span class="p">])</span>
+    
+    <span class="c1"># and to combine it with the observations:</span>
+    <span class="n">observations</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;obs&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">center_i</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="n">sd_i</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random assignments: &quot;</span><span class="p">,</span> <span class="n">assignment</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">test_value</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Assigned center: &quot;</span><span class="p">,</span> <span class="n">center_i</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">test_value</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Assigned standard deviation: &quot;</span><span class="p">,</span> <span class="n">sd_i</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">test_value</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applied interval-transform to sds and added transformed sds_interval_ to model.
+Random assignments:  [0 0 0 0] ...
+Assigned center:  [ 120.  120.  120.  120.] ...
+Assigned standard deviation:  [ 50.  50.  50.  50.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how we continue to build the model within the context of <code class="docutils literal notranslate"><span class="pre">Model()</span></code>. This automatically adds the variables that we create to our model. As long as we work within this context we will be working with the same variables that we have already defined.</p>
+<p>Similarly, any sampling that we do within the context of <code class="docutils literal notranslate"><span class="pre">Model()</span></code> will be done only on the model whose context in which we are working. We will tell our model to explore the space that we have so far defined by defining the sampling methods, in this case <code class="docutils literal notranslate"><span class="pre">Metropolis()</span></code> for our continuous variables and <code class="docutils literal notranslate"><span class="pre">ElemwiseCategorical()</span></code> for our categorical variable. We will use these sampling methods together to explore the space by using <code class="docutils literal notranslate"><span class="pre">sample(</span> <span class="pre">iterations,</span> <span class="pre">step</span> <span class="pre">)</span></code>, where <code class="docutils literal notranslate"><span class="pre">iterations</span></code> is the number of steps you wish the algorithm to perform and <code class="docutils literal notranslate"><span class="pre">step</span></code> is the way in which you want to handle those steps. We use our combination of <code class="docutils literal notranslate"><span class="pre">Metropolis()</span></code> and <code class="docutils literal notranslate"><span class="pre">ElemwiseCategorical()</span></code> for the <code class="docutils literal notranslate"><span class="pre">step</span></code> and sample 25000 <code class="docutils literal notranslate"><span class="pre">iterations</span></code> below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">model</span><span class="p">:</span>
+    <span class="n">step1</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Metropolis</span><span class="p">(</span><span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="n">p</span><span class="p">,</span> <span class="n">sds</span><span class="p">,</span> <span class="n">centers</span><span class="p">])</span>
+    <span class="n">step2</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">ElemwiseCategorical</span><span class="p">(</span><span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="n">assignment</span><span class="p">])</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">25000</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="p">[</span><span class="n">step1</span><span class="p">,</span> <span class="n">step2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [-------100%-------] 25000 of 25000 in 130.7 sec. | SPS: 191.3 | ETA: 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have stored the paths of all our variables, or “traces”, in the <code class="docutils literal notranslate"><span class="pre">trace</span></code> variable. These paths are the routes the unknown parameters (centers, precisions, and <span class="math notranslate nohighlight">\(p\)</span>) have taken thus far. The individual path of each variable is indexed by the PyMC3 variable <code class="docutils literal notranslate"><span class="pre">name</span></code> that we gave that variable when defining it within our model. For example, <code class="docutils literal notranslate"><span class="pre">trace[&quot;sds&quot;]</span></code> will return a <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">array</span></code> object that we can then index and slice as we would any other <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">array</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">311</span><span class="p">)</span>
+<span class="n">lw</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">center_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;centers&quot;</span><span class="p">]</span>
+
+<span class="c1"># for pretty colors later in the book.</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#348ABD&quot;</span><span class="p">,</span> <span class="s2">&quot;#A60628&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">center_trace</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">center_trace</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> \
+    <span class="k">else</span> <span class="p">[</span><span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="s2">&quot;#348ABD&quot;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">center_trace</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;trace of center 0&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">center_trace</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;trace of center 1&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Traces of unknown parameters&quot;</span><span class="p">)</span>
+<span class="n">leg</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
+<span class="n">leg</span><span class="o">.</span><span class="n">get_frame</span><span class="p">()</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">312</span><span class="p">)</span>
+<span class="n">std_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;sds&quot;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">std_trace</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;trace of standard deviation of cluster 0&quot;</span><span class="p">,</span>
+     <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">std_trace</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;trace of standard deviation of cluster 1&quot;</span><span class="p">,</span>
+     <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">313</span><span class="p">)</span>
+<span class="n">p_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p_trace</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$p$: frequency of assignment to cluster 0&quot;</span><span class="p">,</span>
+     <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_20_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_20_0.png" />
+</div>
+</div>
+<p>Notice the following characteristics:</p>
+<ol class="simple">
+<li><p>The traces converges, not to a single point, but to a <em>distribution</em> of possible points. This is <em>convergence</em> in an MCMC algorithm.</p></li>
+<li><p>Inference using the first few thousand points is a bad idea, as they are unrelated to the final distribution we are interested in. Thus is it a good idea to discard those samples before using the samples for inference. We call this period before converge the <em>burn-in period</em>.</p></li>
+<li><p>The traces appear as a random “walk” around the space, that is, the paths exhibit correlation with previous positions. This is both good and bad. We will always have correlation between current positions and the previous positions, but too much of it means we are not exploring the space well. This will be detailed in the Diagnostics section  later in this chapter.</p></li>
+</ol>
+<p>To achieve further convergence, we will perform more MCMC steps. In the pseudo-code algorithm of MCMC above, the only position that matters is the current position (new positions are investigated near the current position), implicitly stored as part of the <code class="docutils literal notranslate"><span class="pre">trace</span></code> object. To continue where we left off, we pass the <code class="docutils literal notranslate"><span class="pre">trace</span></code> that we have already stored into the <code class="docutils literal notranslate"><span class="pre">sample()</span></code> function with the same step value. The values that we have already calculated will not be overwritten. This ensures that our sampling continues where it left off in the same way that it left off.</p>
+<p>We will sample the MCMC fifty thousand more times and visualize the progress below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">model</span><span class="p">:</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">50000</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="p">[</span><span class="n">step1</span><span class="p">,</span> <span class="n">step2</span><span class="p">],</span> <span class="n">trace</span><span class="o">=</span><span class="n">trace</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [-------100%-------] 50000 of 50000 in 215.4 sec. | SPS: 232.2 | ETA: 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">center_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;centers&quot;</span><span class="p">][</span><span class="mi">25000</span><span class="p">:]</span>
+<span class="n">prev_center_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;centers&quot;</span><span class="p">][:</span><span class="mi">25000</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">prev_center_trace</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;previous trace of center 0&quot;</span><span class="p">,</span>
+     <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">prev_center_trace</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;previous trace of center 1&quot;</span><span class="p">,</span>
+     <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25000</span><span class="p">,</span> <span class="mi">75000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">center_trace</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;new trace of center 0&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;#348ABD&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">center_trace</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;new trace of center 1&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;#A60628&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Traces of unknown center parameters&quot;</span><span class="p">)</span>
+<span class="n">leg</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
+<span class="n">leg</span><span class="o">.</span><span class="n">get_frame</span><span class="p">()</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_23_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_23_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="cluster-investigation">
+<h4>Cluster Investigation<a class="headerlink" href="#cluster-investigation" title="Permalink to this headline">¶</a></h4>
+<p>We have not forgotten our main challenge: identify the clusters. We have determined posterior distributions for our unknowns. We plot the posterior distributions of the center and standard deviation variables below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">11.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">std_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;sds&quot;</span><span class="p">][</span><span class="mi">25000</span><span class="p">:]</span>
+<span class="n">prev_std_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;sds&quot;</span><span class="p">][:</span><span class="mi">25000</span><span class="p">]</span>
+
+<span class="n">_i</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">_i</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Posterior of center of cluster </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">center_trace</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+             <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;stepfilled&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">_i</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Posterior of standard deviation of cluster </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">std_trace</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+             <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;stepfilled&quot;</span><span class="p">)</span>
+    <span class="c1"># plt.autoscale(tight=True)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_25_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_25_0.png" />
+</div>
+</div>
+<p>The MCMC algorithm has proposed that the most likely centers of the two clusters are near 120 and 200 respectively. Similar inference can be applied to the standard deviation.</p>
+<p>We are also given the posterior distributions for the labels of the data point, which is present in <code class="docutils literal notranslate"><span class="pre">trace[&quot;assignment&quot;]</span></code>. Below is a visualization of this. The y-axis represents a subsample of the posterior labels for each data point. The x-axis are the sorted values of the data points. A red square is an assignment to cluster 1, and a blue square is an assignment to cluster 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">trace</span><span class="p">[</span><span class="s2">&quot;assignment&quot;</span><span class="p">][::</span><span class="mi">400</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">data</span><span class="p">)],</span>
+       <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cmap</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">.4</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.9</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">40</span><span class="p">),</span>
+       <span class="p">[</span><span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">data</span><span class="p">)[::</span><span class="mi">40</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;posterior sample&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;value of $i$th data point&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Posterior labels of data points&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_27_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_27_0.png" />
+</div>
+</div>
+<p>Looking at the above plot, it appears that the most uncertainty is between 150 and 170. The above plot slightly misrepresents things, as the x-axis is not a true scale (it displays the value of the <span class="math notranslate nohighlight">\(i\)</span>th sorted data point.) A more clear diagram is below, where we have estimated the <em>frequency</em> of each data point belonging to the labels 0 and 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">cmap</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s2">&quot;BMH&quot;</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+<span class="n">assign_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;assignment&quot;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">assign_trace</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+        <span class="n">c</span><span class="o">=</span><span class="n">assign_trace</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Probability of data point belonging to cluster 0&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;probability&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;value of data point&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_29_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_29_0.png" />
+</div>
+</div>
+<p>Even though we modeled the clusters using Normal distributions, we didn’t get just a single Normal distribution that <em>best</em> fits the data (whatever our definition of best is), but a distribution of values for the Normal’s parameters. How can we choose just a single pair of values for the mean and variance and determine a <em>sorta-best-fit</em> gaussian?</p>
+<p>One quick and dirty way (which has nice theoretical properties we will see in Chapter 5), is to use the <em>mean</em> of the posterior distributions. Below we overlay the Normal density functions, using the mean of the posterior distributions as the chosen parameters, with our observed data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">posterior_center_means</span> <span class="o">=</span> <span class="n">center_trace</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">posterior_std_means</span> <span class="o">=</span> <span class="n">std_trace</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">posterior_p_mean</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+     <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;histogram of data&quot;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">posterior_p_mean</span> <span class="o">*</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">posterior_center_means</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                <span class="n">scale</span><span class="o">=</span><span class="n">posterior_std_means</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cluster 0 (using posterior-mean parameters)&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">posterior_p_mean</span><span class="p">)</span> <span class="o">*</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">posterior_center_means</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                      <span class="n">scale</span><span class="o">=</span><span class="n">posterior_std_means</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cluster 1 (using posterior-mean parameters)&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Visualizing Clusters using posterior-mean parameters&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_31_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_31_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="important-don-t-mix-posterior-samples">
+<h3>Important: Don’t mix posterior samples<a class="headerlink" href="#important-don-t-mix-posterior-samples" title="Permalink to this headline">¶</a></h3>
+<p>In the above example, a possible (though less likely) scenario is that cluster 0 has a very large standard deviation, and cluster 1 has a small standard deviation. This would still satisfy the evidence, albeit less so than our original inference. Alternatively, it would be incredibly unlikely for <em>both</em> distributions to have a small standard deviation, as the data does not support this hypothesis at all. Thus the two standard deviations are <em>dependent</em> on each other: if one is small, the other must be large. In fact, <em>all</em> the unknowns are related in a similar manner. For example, if a standard deviation is large, the mean has a wider possible space of realizations. Conversely, a small standard deviation restricts the mean to a small area.</p>
+<p>During MCMC, we are returned vectors representing samples from the unknown posteriors. Elements of different vectors cannot be used together, as this would break the above logic: perhaps a sample has returned that cluster 1 has a small standard deviation, hence all the other variables in that sample would incorporate that and be adjusted accordingly. It is easy to avoid this problem though, just make sure you are indexing traces correctly.</p>
+<p>Another small example to illustrate the point. Suppose two variables, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, are related by <span class="math notranslate nohighlight">\(x+y=10\)</span>. We model <span class="math notranslate nohighlight">\(x\)</span> as a Normal random variable with mean 4 and explore 500 samples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+
+<span class="k">with</span> <span class="n">pm</span><span class="o">.</span><span class="n">Model</span><span class="p">()</span> <span class="k">as</span> <span class="n">model</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Deterministic</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+
+    <span class="n">trace_2</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="n">pm</span><span class="o">.</span><span class="n">Metropolis</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">trace_2</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">trace_2</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Displaying (extreme) case of dependence between unknowns&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [-------100%-------] 10000 of 10000 in 0.9 sec. | SPS: 11550.9 | ETA: 0.0
+</pre></div>
+</div>
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_33_1.png" src="../_images/Ch3_IntroMCMC_PyMC3_33_1.png" />
+</div>
+</div>
+<p>As you can see, the two variables are not unrelated, and it would be wrong to add the <span class="math notranslate nohighlight">\(i\)</span>th sample of <span class="math notranslate nohighlight">\(x\)</span> to the <span class="math notranslate nohighlight">\(j\)</span>th sample of <span class="math notranslate nohighlight">\(y\)</span>, unless <span class="math notranslate nohighlight">\(i = j\)</span>.</p>
+<div class="section" id="returning-to-clustering-prediction">
+<h4>Returning to Clustering: Prediction<a class="headerlink" href="#returning-to-clustering-prediction" title="Permalink to this headline">¶</a></h4>
+<p>The above clustering can be generalized to <span class="math notranslate nohighlight">\(k\)</span> clusters. Choosing <span class="math notranslate nohighlight">\(k=2\)</span> allowed us to visualize the MCMC better, and examine some very interesting plots.</p>
+<p>What about prediction? Suppose we observe a new data point, say <span class="math notranslate nohighlight">\(x = 175\)</span>, and we wish to label it to a cluster. It is foolish to simply assign it to the <em>closer</em> cluster center, as this ignores the standard deviation of the clusters, and we have seen from the plots above that this consideration is very important. More formally: we are interested in the <em>probability</em> (as we cannot be certain about labels) of assigning <span class="math notranslate nohighlight">\(x=175\)</span> to cluster 1. Denote the assignment of <span class="math notranslate nohighlight">\(x\)</span> as <span class="math notranslate nohighlight">\(L_x\)</span>, which is equal to 0 or 1, and we are interested in <span class="math notranslate nohighlight">\(P(L_x = 1 \;|\; x = 175 )\)</span>.</p>
+<p>A naive method to compute this is to re-run the above MCMC with the additional data point appended. The disadvantage with this method is that it will be slow to infer for each novel data point. Alternatively, we can try a <em>less precise</em>, but much quicker method.</p>
+<p>We will use Bayes Theorem for this. If you recall, Bayes Theorem looks like:</p>
+<div class="math notranslate nohighlight">
+\[ P( A | X ) = \frac{ P( X  | A )P(A) }{P(X) }\]</div>
+<p>In our case, <span class="math notranslate nohighlight">\(A\)</span> represents <span class="math notranslate nohighlight">\(L_x = 1\)</span> and <span class="math notranslate nohighlight">\(X\)</span> is the evidence we have: we observe that <span class="math notranslate nohighlight">\(x = 175\)</span>. For a particular sample set of parameters for our posterior distribution, <span class="math notranslate nohighlight">\(( \mu_0, \sigma_0, \mu_1, \sigma_1, p)\)</span>, we are interested in asking “Is the probability that <span class="math notranslate nohighlight">\(x\)</span> is in cluster 1 <em>greater</em> than the probability it is in cluster 0?”, where the probability is dependent on the chosen parameters.</p>
+<p>\begin{align}
+&amp; P(L_x = 1| x = 175 ) \gt P(L_x = 0| x = 175 ) \[5pt]
+&amp; \frac{ P( x=175  | L_x = 1  )P( L_x = 1 ) }{P(x = 175) } \gt \frac{ P( x=175  | L_x = 0  )P( L_x = 0 )}{P(x = 175) }
+\end{align}</p>
+<p>As the denominators are equal, they can be ignored (and good riddance, because computing the quantity <span class="math notranslate nohighlight">\(P(x = 175)\)</span> can be difficult).</p>
+<div class="math notranslate nohighlight">
+\[  P( x=175  | L_x = 1  )P( L_x = 1 ) \gt  P( x=175  | L_x = 0  )P( L_x = 0 ) \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">norm_pdf</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span>
+<span class="n">p_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">][</span><span class="mi">25000</span><span class="p">:]</span>
+<span class="n">prev_p_trace</span> <span class="o">=</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">][:</span><span class="mi">25000</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">175</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">p_trace</span> <span class="o">*</span> <span class="n">norm_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">center_trace</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">std_trace</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> \
+    <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_trace</span><span class="p">)</span> <span class="o">*</span> <span class="n">norm_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">center_trace</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">std_trace</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Probability of belonging to cluster 1:&quot;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probability of belonging to cluster 1: 0.01062
+</pre></div>
+</div>
+</div>
+</div>
+<p>Giving us a probability instead of a label is a very useful thing. Instead of the naive</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>L = 1 if prob &gt; 0.5 else 0
+</pre></div>
+</div>
+<p>we can optimize our guesses using a <em>loss function</em>, which the entire fifth chapter is devoted to.</p>
+</div>
+</div>
+<div class="section" id="using-map-to-improve-convergence">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">MAP</span></code> to improve convergence<a class="headerlink" href="#using-map-to-improve-convergence" title="Permalink to this headline">¶</a></h3>
+<p>If you ran the above example yourself, you may have noticed that our results were not consistent: perhaps your cluster division was more scattered, or perhaps less scattered. The problem is that our traces are a function of the <em>starting values</em> of the MCMC algorithm.</p>
+<p>It can be mathematically shown that letting the MCMC run long enough, by performing many steps, the algorithm <em>should forget its initial position</em>. In fact, this is what it means to say the MCMC converged (in practice though we can never achieve total convergence). Hence if we observe different posterior analysis, it is likely because our MCMC has not fully converged yet, and we should not use samples from it yet (we should use a larger burn-in period ).</p>
+<p>In fact, poor starting values can prevent any convergence, or significantly slow it down. Ideally, we would like to have the chain start at the <em>peak</em> of our landscape, as this is exactly where the posterior distributions exist. Hence, if we started at the “peak”, we could avoid a lengthy burn-in period and incorrect inference. Generally, we call this “peak” the <em>maximum a posterior</em> or, more simply, the <em>MAP</em>.</p>
+<p>Of course, we do not know where the MAP is. PyMC3 provides a function that will approximate, if not find, the MAP location. In the PyMC3 main namespace is the <code class="docutils literal notranslate"><span class="pre">find_MAP</span></code> function. If you call this function within the context of <code class="docutils literal notranslate"><span class="pre">Model()</span></code>, it will calculate the MAP which you can then pass to <code class="docutils literal notranslate"><span class="pre">pm.sample()</span></code> as a <code class="docutils literal notranslate"><span class="pre">start</span></code> parameter.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>start = pm.find_MAP()
+trace = pm.sample(2000, step=pm.Metropolis, start=start)
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">find_MAP()</span></code> function has the flexibility of allowing the user to choose which optimization algorithm to use (after all, this is a optimization problem: we are looking for the values that maximize our landscape), as not all optimization algorithms are created equal. The default optimization algorithm in function call is the Broyden-Fletcher-Goldfarb-Shanno (<a class="reference external" href="https://en.wikipedia.org/wiki/Broyden-Fletcher-Goldfarb-Shanno_algorithm">BFGS</a>) algorithm to find the maximum of the log-posterior. As an alternative, you can use other optimization algorithms from the <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> module. For example, you can use Powell’s Method, a favourite of PyMC blogger <a class="reference external" href="http://healthyalgorithms.com/">Abraham Flaxman</a> [1], by calling <code class="docutils literal notranslate"><span class="pre">find_MAP(fmin=scipy.optimize.fmin_powell)</span></code>. The default works well enough, but if convergence is slow or not guaranteed, feel free to experiment with Powell’s method or the other algorithms available.</p>
+<p>The MAP can also be used as a solution to the inference problem, as mathematically it  is the <em>most likely</em> value for the unknowns. But as mentioned earlier in this chapter,  this location ignores the uncertainty and doesn’t return a distribution.</p>
+<div class="section" id="speaking-of-the-burn-in-period">
+<h4>Speaking of the burn-in period<a class="headerlink" href="#speaking-of-the-burn-in-period" title="Permalink to this headline">¶</a></h4>
+<p>It is still a good idea to decide on a burn-in period, even if we are using <code class="docutils literal notranslate"><span class="pre">find_MAP()</span></code> prior to sampling, just to be safe. We can no longer automatically discard sample with a <code class="docutils literal notranslate"><span class="pre">burn</span></code> parameter in the <code class="docutils literal notranslate"><span class="pre">sample()</span></code> function as we could in PyMC2, but it is easy enough to simply discard the beginning section of the trace just through array slicing. As one does not know when the chain has fully converged, a good rule of thumb is to discard the first <em>half</em> of your samples, sometimes up to 90% of the samples for longer runs. To continue the clustering example from above, the new code would look something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>with pm.Model() as model:
+    start = pm.find_MAP()
+    
+    step = pm.Metropolis()
+    trace = pm.sample(100000, step=step, start=start)
+
+burned_trace = trace[50000:]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="diagnosing-convergence">
+<h2>Diagnosing Convergence<a class="headerlink" href="#diagnosing-convergence" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="autocorrelation">
+<h3>Autocorrelation<a class="headerlink" href="#autocorrelation" title="Permalink to this headline">¶</a></h3>
+<p>Autocorrelation is a measure of how related a series of numbers is with itself. A measurement of 1.0 is perfect positive autocorrelation, 0 no autocorrelation, and -1 is perfect negative correlation.  If you are familiar with standard <em>correlation</em>, then autocorrelation is just how correlated a series, <span class="math notranslate nohighlight">\(x_t\)</span>, at time <span class="math notranslate nohighlight">\(t\)</span> is with the series at time <span class="math notranslate nohighlight">\(t-k\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[R(k) = Corr( x_t, x_{t-k} ) \]</div>
+<p>For example, consider the two series:</p>
+<div class="math notranslate nohighlight">
+\[x_t \sim \text{Normal}(0,1), \;\; x_0 = 0\]</div>
+<div class="math notranslate nohighlight">
+\[y_t \sim \text{Normal}(y_{t-1}, 1 ), \;\; y_0 = 0\]</div>
+<p>which have example paths like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">figsize</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="n">x_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">x_t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">y_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">):</span>
+    <span class="n">y_t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">y_t</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_t</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$y_t$&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_t</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$x_t$&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;time, $t$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_39_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_39_0.png" />
+</div>
+</div>
+<p>One way to think of autocorrelation is “If I know the position of the series at time <span class="math notranslate nohighlight">\(s\)</span>, can it help me know where I am at time <span class="math notranslate nohighlight">\(t\)</span>?” In the series <span class="math notranslate nohighlight">\(x_t\)</span>, the answer is No. By construction, <span class="math notranslate nohighlight">\(x_t\)</span> are random variables. If I told you that <span class="math notranslate nohighlight">\(x_2 = 0.5\)</span>, could you give me a better guess about <span class="math notranslate nohighlight">\(x_3\)</span>? No.</p>
+<p>On the other hand, <span class="math notranslate nohighlight">\(y_t\)</span> is autocorrelated. By construction, if I knew that <span class="math notranslate nohighlight">\(y_2 = 10\)</span>, I can be very confident that <span class="math notranslate nohighlight">\(y_3\)</span> will not be very far from 10. Similarly, I can even make a (less confident guess) about <span class="math notranslate nohighlight">\(y_4\)</span>: it will probably not be near 0 or 20, but a value of 5 is not too unlikely. I can make a similar argument about <span class="math notranslate nohighlight">\(y_5\)</span>, but again, I am less confident. Taking this to it’s logical conclusion, we must concede that as <span class="math notranslate nohighlight">\(k\)</span>, the lag between time points, increases the autocorrelation decreases. We can visualize this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">autocorr</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># from http://tinyurl.com/afz57c4</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">correlate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">size</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:]</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#348ABD&quot;</span><span class="p">,</span> <span class="s2">&quot;#A60628&quot;</span><span class="p">,</span> <span class="s2">&quot;#7A68A6&quot;</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">autocorr</span><span class="p">(</span><span class="n">y_t</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$y_t$&quot;</span><span class="p">,</span>
+        <span class="n">edgecolor</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">autocorr</span><span class="p">(</span><span class="n">x_t</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$x_t$&quot;</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Autocorrelation&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;measured correlation </span><span class="se">\n</span><span class="s2">between $y_t$ and $y_{t-k}$.&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;k (lag)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Autocorrelation plot of $y_t$ and $x_t$ for differing $k$ lags.&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_41_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_41_0.png" />
+</div>
+</div>
+<p>Notice that as <span class="math notranslate nohighlight">\(k\)</span> increases, the autocorrelation of <span class="math notranslate nohighlight">\(y_t\)</span> decreases from a very high point. Compare with the autocorrelation of <span class="math notranslate nohighlight">\(x_t\)</span> which looks like noise (which it really is), hence we can conclude no autocorrelation exists in this series.</p>
+<div class="section" id="how-does-this-relate-to-mcmc-convergence">
+<h4>How does this relate to MCMC convergence?<a class="headerlink" href="#how-does-this-relate-to-mcmc-convergence" title="Permalink to this headline">¶</a></h4>
+<p>By the nature of the MCMC algorithm, we will always be returned samples that exhibit autocorrelation (this is because of the step <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">your</span> <span class="pre">current</span> <span class="pre">position,</span> <span class="pre">move</span> <span class="pre">to</span> <span class="pre">a</span> <span class="pre">position</span> <span class="pre">near</span> <span class="pre">you</span></code>).</p>
+<p>A chain that is not exploring the space well will exhibit very high autocorrelation. Visually, if the trace seems to meander like a river, and not settle down, the chain will have high autocorrelation.</p>
+<p>This does not imply that a converged MCMC has low autocorrelation. Hence low autocorrelation is not necessary for convergence, but it is sufficient. PyMC3 has a built-in autocorrelation plotting function in the <code class="docutils literal notranslate"><span class="pre">plots</span></code> module.</p>
+</div>
+</div>
+<div class="section" id="thinning">
+<h3>Thinning<a class="headerlink" href="#thinning" title="Permalink to this headline">¶</a></h3>
+<p>Another issue can arise if there is high-autocorrelation between posterior samples. Many post-processing algorithms require samples to be <em>independent</em> of each other. This can be solved, or at least reduced, by only returning to the user every <span class="math notranslate nohighlight">\(n\)</span>th sample, thus removing some autocorrelation. Below we perform an autocorrelation plot for <span class="math notranslate nohighlight">\(y_t\)</span> with differing levels of thinning:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">max_x</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">//</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">autocorr</span><span class="p">(</span><span class="n">y_t</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="n">max_x</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;no thinning&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">autocorr</span><span class="p">(</span><span class="n">y_t</span><span class="p">[::</span><span class="mi">2</span><span class="p">])[</span><span class="mi">1</span><span class="p">:</span><span class="n">max_x</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;keeping every 2nd sample&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">autocorr</span><span class="p">(</span><span class="n">y_t</span><span class="p">[::</span><span class="mi">3</span><span class="p">])[</span><span class="mi">1</span><span class="p">:</span><span class="n">max_x</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;keeping every 3rd sample&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="n">tight</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Autocorrelation plot for $y_t$&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower left&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;measured correlation </span><span class="se">\n</span><span class="s2">between $y_t$ and $y_{t-k}$.&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;k (lag)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Autocorrelation of $y_t$ (no thinning vs. thinning) </span><span class="se">\</span>
+<span class="s2">at differing $k$ lags.&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_44_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_44_0.png" />
+</div>
+</div>
+<p>With more thinning, the autocorrelation drops quicker. There is a tradeoff though: higher thinning requires more MCMC iterations to achieve the same number of returned samples. For example, 10 000 samples unthinned is 100 000 with a thinning of 10 (though the latter has less autocorrelation).</p>
+<p>What is a good amount of thinning? The returned samples will always exhibit some autocorrelation, regardless of how much thinning is done. So long as the autocorrelation tends to zero, you are probably ok. Typically thinning of more than 10 is not necessary.</p>
+</div>
+<div class="section" id="pymc3-plots">
+<h3><code class="docutils literal notranslate"><span class="pre">pymc3.plots</span></code><a class="headerlink" href="#pymc3-plots" title="Permalink to this headline">¶</a></h3>
+<p>It seems silly to have to manually create histograms, autocorrelation plots and trace plots each time we perform MCMC. The authors of PyMC3 have included a visualization tool for just this purpose.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pymc3.plots</span></code> module contains a few different plotting functions that you might find useful. For each different plotting function contained therein, you simply pass a <code class="docutils literal notranslate"><span class="pre">trace</span></code> returned from sampling as well as a list, <code class="docutils literal notranslate"><span class="pre">varnames</span></code>, of the variables that you are interested in. This module can provide you with plots of autocorrelation and the posterior distributions of each variable and their traces, among others.</p>
+<p>Below we use the tool to plot the centers of the clusters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">traceplot</span><span class="p">(</span><span class="n">trace</span><span class="o">=</span><span class="n">trace</span><span class="p">,</span> <span class="n">varnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;centers&quot;</span><span class="p">])</span>
+<span class="n">pm</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">trace</span><span class="o">=</span><span class="n">trace</span><span class="p">[</span><span class="s2">&quot;centers&quot;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">pm</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">trace</span><span class="o">=</span><span class="n">trace</span><span class="p">[</span><span class="s2">&quot;centers&quot;</span><span class="p">][:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">pm</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">autocorrplot</span><span class="p">(</span><span class="n">trace</span><span class="o">=</span><span class="n">trace</span><span class="p">,</span> <span class="n">varnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;centers&quot;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_47_0.png" src="../_images/Ch3_IntroMCMC_PyMC3_47_0.png" />
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_47_1.png" src="../_images/Ch3_IntroMCMC_PyMC3_47_1.png" />
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_47_2.png" src="../_images/Ch3_IntroMCMC_PyMC3_47_2.png" />
+<img alt="../_images/Ch3_IntroMCMC_PyMC3_47_3.png" src="../_images/Ch3_IntroMCMC_PyMC3_47_3.png" />
+</div>
+</div>
+<p>The first plotting function gives us the posterior density of each unknown in the <code class="docutils literal notranslate"><span class="pre">centers</span></code> variable as well as the <code class="docutils literal notranslate"><span class="pre">trace</span></code> of each. <code class="docutils literal notranslate"><span class="pre">trace</span></code> plot is useful for inspecting that possible “meandering” property that is a result of non-convergence. The density plot gives us an idea of the shape of the distribution of each unknown, but it is better to look at each of them individually.</p>
+<p>The second plotting function(s) provides us with a histogram of the samples with a few added features. The text overlay in the center shows us the posterior mean, which is a good summary of posterior distribution. The interval marked by the horizontal black line overlay represents the <em>95% credible interval</em>, sometimes called the <em>highest posterior density interval</em> and not to be confused with a <em>95% confidence interval</em>. We won’t get into the latter, but the former can be interpreted as “there is a 95% chance the parameter of interest lies in this interval”. When communicating your results to others, it is incredibly important to state this interval. One of our purposes for studying Bayesian methods is to have a clear understanding of our uncertainty in unknowns. Combined with the posterior mean, the 95% credible interval provides a reliable interval to communicate the likely location of the unknown (provided by the mean) <em>and</em> the uncertainty (represented by the width of the interval).</p>
+<p>The last plots, titled <code class="docutils literal notranslate"><span class="pre">center_0</span></code> and <code class="docutils literal notranslate"><span class="pre">center_1</span></code> are the generated autocorrelation plots, similar to the ones displayed above.</p>
+</div>
+</div>
+<div class="section" id="useful-tips-for-mcmc">
+<h2>Useful tips for MCMC<a class="headerlink" href="#useful-tips-for-mcmc" title="Permalink to this headline">¶</a></h2>
+<p>Bayesian inference would be the <em>de facto</em> method if it weren’t for MCMC’s computational difficulties. In fact, MCMC is what turns most users off practical Bayesian inference. Below I present some good heuristics to help convergence and speed up the MCMC engine:</p>
+<div class="section" id="intelligent-starting-values">
+<h3>Intelligent starting values<a class="headerlink" href="#intelligent-starting-values" title="Permalink to this headline">¶</a></h3>
+<p>It would be great to start the MCMC algorithm off near the posterior distribution, so that it will take little time to start sampling correctly. We can aid the algorithm by telling where we <em>think</em> the posterior distribution will be by specifying the <code class="docutils literal notranslate"><span class="pre">testval</span></code> parameter in the <code class="docutils literal notranslate"><span class="pre">Stochastic</span></code> variable creation. In many cases we can produce a reasonable guess for the parameter. For example, if we have data from a Normal distribution, and we wish to estimate the <span class="math notranslate nohighlight">\(\mu\)</span> parameter, then a good starting value would be the <em>mean</em> of the data.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> mu = pm.Uniform( &quot;mu&quot;, 0, 100, testval = data.mean() )
+</pre></div>
+</div>
+<p>For most parameters in models, there is a frequentist estimate of it. These estimates are a good starting value for our MCMC algorithms. Of course, this is not always possible for some variables, but including as many appropriate initial values is always a good idea. Even if your guesses are wrong, the MCMC will still converge to the proper distribution, so there is little to lose.</p>
+<p>This is what using <code class="docutils literal notranslate"><span class="pre">MAP</span></code> tries to do, by giving good initial values to the MCMC. So why bother specifying user-defined values? Well, even giving <code class="docutils literal notranslate"><span class="pre">MAP</span></code> good values will help it find the maximum a-posterior.</p>
+<p>Also important, <em>bad initial values</em> are a source of major bugs in PyMC3 and can hurt convergence.</p>
+<div class="section" id="priors">
+<h4>Priors<a class="headerlink" href="#priors" title="Permalink to this headline">¶</a></h4>
+<p>If the priors are poorly chosen, the MCMC algorithm may not converge, or atleast have difficulty converging. Consider what may happen if the prior chosen does not even contain the true parameter: the prior assigns 0 probability to the unknown, hence the posterior will assign 0 probability as well. This can cause pathological results.</p>
+<p>For this reason, it is best to carefully choose the priors. Often, lack of covergence or evidence of samples crowding to boundaries implies something is wrong with the chosen priors (see <em>Folk Theorem of Statistical Computing</em> below).</p>
+</div>
+<div class="section" id="covariance-matrices-and-eliminating-parameters">
+<h4>Covariance matrices and eliminating parameters<a class="headerlink" href="#covariance-matrices-and-eliminating-parameters" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="the-folk-theorem-of-statistical-computing">
+<h3>The Folk Theorem of Statistical Computing<a class="headerlink" href="#the-folk-theorem-of-statistical-computing" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><em>If you are having computational problems, probably your model is wrong.</em></p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>PyMC3 provides a very strong backend to performing Bayesian inference, mostly because it has abstracted the inner mechanics of MCMC from the user. Despite this, some care must be applied to ensure your inference is not being biased by the iterative nature of MCMC.</p>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Flaxman, Abraham. “Powell’s Methods for Maximization in PyMC.” Healthy Algorithms. N.p., 9 02 2012. Web. 28 Feb 2013. <a class="reference external" href="http://healthyalgorithms.com/2012/02/09/powells-method-for-maximization-in-pymc/">http://healthyalgorithms.com/2012/02/09/powells-method-for-maximization-in-pymc/</a>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+
+<span class="k">def</span> <span class="nf">css_styling</span><span class="p">():</span>
+    <span class="n">styles</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../styles/custom.css&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">styles</span><span class="p">)</span>
+<span class="n">css_styling</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+    @font-face {
+        font-family: "Computer Modern";
+        src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunss.otf');
+    }
+    @font-face {
+        font-family: "Computer Modern";
+        font-weight: bold;
+        src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunsx.otf');
+    }
+    @font-face {
+        font-family: "Computer Modern";
+        font-style: oblique;
+        src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunsi.otf');
+    }
+    @font-face {
+        font-family: "Computer Modern";
+        font-weight: bold;
+        font-style: oblique;
+        src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunso.otf');
+    }
+    div.cell{
+        width:800px;
+        margin-left:16% !important;
+        margin-right:auto;
+    }
+    h1 {
+        font-family: Helvetica, serif;
+    }
+    h4{
+        margin-top:12px;
+        margin-bottom: 3px;
+       }
+    div.text_cell_render{
+        font-family: Computer Modern, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+        line-height: 145%;
+        font-size: 130%;
+        width:800px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .CodeMirror{
+            font-family: "Source Code Pro", source-code-pro,Consolas, monospace;
+    }
+    .prompt{
+        display: None;
+    }
+    .text_cell_render h5 {
+        font-weight: 300;
+        font-size: 22pt;
+        color: #4057A1;
+        font-style: italic;
+        margin-bottom: .5em;
+        margin-top: 0.5em;
+        display: block;
+    }
+
+    .warning{
+        color: rgb( 240, 20, 20 )
+        }  
+</style>
+<script>
+    MathJax.Hub.Config({
+                        TeX: {
+                           extensions: ["AMSmath.js"]
+                           },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                },
+                displayAlign: 'center', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 4}}
+                }
+        });
+</script>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python2",
+            path: "./nbs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python2'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Ch2_MorePyMC_PyMC3.html" title="previous page">Chapter 2</a>
+    <a class='right-next' id="next-link" href="Ch4_LawOfLargeNumbers_PyMC3.html" title="next page">Chapter 4</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By CamDavidsonPilon<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
