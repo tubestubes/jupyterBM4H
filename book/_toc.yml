@@ -1,0 +1,8 @@
+- file: nbs/Ch1_Introduction_PyMC3.ipynb
+- file: nbs/Ch2_MorePyMC_PyMC3.ipynb
+- file: nbs/Ch3_IntroMCMC_PyMC3.ipynb
+- file: nbs/Ch4_LawOfLargeNumbers_PyMC3.ipynb
+- file: nbs/Ch5_LossFunctions_PyMC3.ipynb
+- file: nbs/Ch6_Priors_PyMC3.ipynb
+- file: nbs/Ch7.1_DontOverfit.ipynb
+- file: nbs/Ch7.2_MachineLearning.ipynb

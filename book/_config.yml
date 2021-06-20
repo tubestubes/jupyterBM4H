@@ -1,0 +1,4 @@
+title: "Jupyter Book of Probabilistic Programming and Bayesian Methods for Hackers"
+author: CamDavidsonPilon
+execute:
+  execute_notebooks: "off"
